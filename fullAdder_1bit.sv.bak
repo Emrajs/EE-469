@@ -1,0 +1,14 @@
+module fullAdder_1bit(in, out, Cin, Cout);
+	input logic [1:0] in;
+	input logic Cin;
+	output logic Cout;
+	output logic out;
+	
+	wire [3:0] w;
+	
+	xor xor1 (w[0], in[1], in[0]);
+	xor xor2 (out, w[0], out);
+	and and1 (w[1], w[0], Cin);
+	and and2 (w[2], in[1], in[0]);
+	or  or1  (Cout, w[1], w[2]):  
+endmodule 

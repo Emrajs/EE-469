@@ -1,0 +1,196 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Emraj/Desktop/EE_469/Lab 2
+valu_1bit
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1508308253
+!i10b 1
+!s100 A8M5bZlNUN3>gVk9f^PJ^0
+Ik2:H=E^D42IjO8m?mWC`P0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 !s105 alu_1bit_sv_unit
+S1
+Z4 dC:/Users/Emraj/Desktop/EE_469/Lab2
+Z5 w1508308115
+Z6 8./alu_1bit.sv
+Z7 F./alu_1bit.sv
+L0 1
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1508308253.000000
+Z10 !s107 ./alu_1bit.sv|
+Z11 !s90 -reportprogress|300|./alu_1bit.sv|
+!i113 1
+Z12 tCvgOpt 0
+valu_1bit_testbench
+R0
+R1
+!i10b 1
+!s100 =7j[V3P^8B@m[[]BKcK?d1
+IYXCz8VfJ`dN`2gAYXAEV=1
+R2
+R3
+S1
+R4
+R5
+R6
+R7
+L0 18
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vfullAdder_1bit
+R0
+Z13 !s110 1508353790
+!i10b 1
+!s100 lSlPd]:zGDL9O]YDeYImW3
+ILW1@aaEF:nECAfX]S9EYo1
+R2
+Z14 !s105 fullAdder_1bit_sv_unit
+S1
+R4
+Z15 w1508352966
+Z16 8./fullAdder_1bit.sv
+Z17 F./fullAdder_1bit.sv
+L0 1
+R8
+r1
+!s85 0
+31
+Z18 !s108 1508353790.000000
+Z19 !s107 ./fullAdder_1bit.sv|
+Z20 !s90 -reportprogress|300|./fullAdder_1bit.sv|
+!i113 1
+R12
+nfull@adder_1bit
+vfullAdder_1bit_testbench
+R0
+R13
+!i10b 1
+!s100 9g?2knZREWKb2?0EYDO>F1
+IA:?5h8MNjeOc]TYRVJI<l1
+R2
+R14
+S1
+R4
+R15
+R16
+R17
+L0 23
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 1
+R12
+nfull@adder_1bit_testbench
+vmux2_1
+R0
+R13
+!i10b 1
+!s100 9NQ^Thb0=Z@mHFcDh8Ozd0
+I1zaOM3N3i3E`NmD0blW::1
+R2
+Z21 !s105 mux2_1_sv_unit
+S1
+R4
+Z22 w1508310188
+Z23 8./mux2_1.sv
+Z24 F./mux2_1.sv
+L0 9
+R8
+r1
+!s85 0
+31
+R18
+Z25 !s107 ./mux2_1.sv|
+Z26 !s90 -reportprogress|300|./mux2_1.sv|
+!i113 1
+R12
+vmux2_1_testbench
+R0
+R13
+!i10b 1
+!s100 >Y_n`oLI7P6UG@g=cmb@G2
+ICzF0HDK^;?f;2`D4hXIBj1
+R2
+R21
+S1
+R4
+R22
+R23
+R24
+L0 22
+R8
+r1
+!s85 0
+31
+R18
+R25
+R26
+!i113 1
+R12
+vmux_4_1
+R0
+R1
+!i10b 1
+!s100 :<_@3KNfgEDbAkG@F;;WP0
+IeG3n43@7;IeiXog4Y[3IZ3
+R2
+Z27 !s105 mux_4_1_sv_unit
+S1
+R4
+Z28 w1508267838
+Z29 8./mux_4_1.sv
+Z30 F./mux_4_1.sv
+L0 9
+R8
+r1
+!s85 0
+31
+R9
+Z31 !s107 ./mux_4_1.sv|
+Z32 !s90 -reportprogress|300|./mux_4_1.sv|
+!i113 1
+R12
+vmux_4_1_testbench
+R0
+R1
+!i10b 1
+!s100 hc>D2Qm^ERTzO6d<H6b?F1
+I?Pl4iNGoQ19Z1YY:N`YMK3
+R2
+R27
+S1
+R4
+R28
+R29
+R30
+L0 25
+R8
+r1
+!s85 0
+31
+R9
+R31
+R32
+!i113 1
+R12

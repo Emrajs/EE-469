@@ -1,0 +1,8 @@
+module alu_1bit (in, out, Cin, Cout, en);
+	input logic [1:0] in;
+	output logic out;
+	input logic Cin;
+	output logic Cout;
+	input logic [1:0] en;
+	
+endmodule
