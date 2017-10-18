@@ -1,13 +1,23 @@
-/*
-File name: fullAdder_1bit.sv
+/*******************************************************************************
+*	Authors:
+*		Emraj Sidhu and Nesta Isakovic	
+*
+*	Description:
+*		This file acts as a subtractor and an adder 
+*
+*	Inputs:
+*		a:
+*     b:
+*     Cin:
+*     sel:
+*
+*	Outputs:
+*		Cout:
+*     out:
+*
+*******************************************************************************/
 
-Authors: Emraj Sidhu and Nesta
-
-Description: This file acts as a subtractor and an adder.
-NOTE: In progress
-*/
-
-
+`timescale 10ps/1fs
 
 module fullAdder_1bit(a, b, out, sel, Cin, Cout);
 	input logic a;
@@ -25,17 +35,17 @@ module fullAdder_1bit(a, b, out, sel, Cin, Cout);
 	// b will stay the same. Output of this mux will go into the adder.
 	// NOTE: B can be inverted. However addition of 1 still needs to be implemented.
 	wire [2:0] x;
-	not not1(x[0], b);
+	not #5 not1(x[0], b);
 	assign x[1] = b;
 	mux2_1 subtractor (.in(x[1:0]), .sel, .out(x[2]));
 	
 	// Gate level logic for the adder. 
 	wire [2:0] w;
-	xor xor1 (w[0], b, a);
-	xor xor2 (out, w[0], Cin);
-	and and1 (w[1], w[0], Cin);
-	and and2 (w[2], b, a);
-	or  or1  (Cout, w[1], w[2]);  
+	xor #5 xor1 (w[0], b, a);
+	xor #5 xor2 (out, w[0], Cin);
+	and #5 and1 (w[1], w[0], Cin);
+	and #5 and2 (w[2], b, a);
+	or  #5 or1  (Cout, w[1], w[2]);  
 endmodule 
 
 module fullAdder_1bit_testbench();

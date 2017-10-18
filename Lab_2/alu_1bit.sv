@@ -1,13 +1,20 @@
-/*
-File name: alu_1bit.sv
+/*******************************************************************************
+*	Authors:
+*		Emraj Sidhu and Nesta Isakovic	
+*
+*	Description:
+*		Very basic alu so far. Can AND a and b, OR a and b, or add a and b. 
+*     Subtractor (a - B) still needs to be implemented.  
+*
+*	Inputs:
+*		
+*
+*	Outputs:
+*     
+*
+*******************************************************************************/
 
-Authors: Emraj Sidhu and Nesta
-
-Description. Very basic alu so far. Can AND a and b,
-OR a and b, or add a and b. Subtractor (a - B) still
-needs to be implemented. 
-*/
-
+`timescale 10ps/1fs
 
 module alu_1bit (a, b, out, Cin, Cout, en);
 	input logic  a;
@@ -19,9 +26,10 @@ module alu_1bit (a, b, out, Cin, Cout, en);
 	
 	wire[3:0] w;
 	
-	not not1 (w[0], a);
-	and and1 (w[1], b, a);
-	or  or1  (w[2], b, a);
+	not #5 not1 (w[0], a);
+	and #5 and1 (w[1], b, a);
+	or  #5 or1  (w[2], b, a);
+	
 	fullAdder_1bit submodule1 (.a, .b, .out(w[3]), .Cin, .Cout);
 	mux_4_1  submodule2 (.in(w[3:0]), .sel(en[1:0]), .out);		
 endmodule
