@@ -1,0 +1,16 @@
+module mux_64X32_1 # (parameter WIDTH = 64) (in, sel, out);
+	logic input [31:0] in;
+	logic input [4:0] sel;
+	logic output [63:0] out;
+	
+	initial assert (WIDTH > 0);
+	
+	genvar i;
+	
+	generate 
+		for (i = 0; i < WIDTH; i++) begin : eachMux
+			mux32_1 largeMux (.in(in[31:0][i]), .sel(.sel[4:0]), .out(out));
+		end
+	endgenerate 
+
+endmodule
