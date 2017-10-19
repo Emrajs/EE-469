@@ -6,13 +6,19 @@
 *		Creates a 4 x 1 mux using gate level logic.  
 *
 *	Inputs:
-*		
+*		in: A 4 bit input signal.
+*     sel: A 2 bit input signal which decides which in bit is routed to the
+*          output:
+*                  sel[1] sel[0] |   out
+*                    0      0    |  in[0]
+*                    0      1    |  in[1]
+*                    1      0    |  in[2]
+*                    1      1    |  in[3]
 *
 *	Outputs:
-*     
+*		out: The output from the mux, selected by the sel signal.
 *
 *******************************************************************************/
-
 `timescale 10ps/1fs
 
 module mux_4_1(in, sel, out);
@@ -39,37 +45,18 @@ module mux_4_1_testbench();
 	mux_4_1 dut (.in, .sel, .out);
 	
 	initial begin
-	in[0] = 0;
-	in[1] = 0;
-	in[2] = 0;
-	in[3] = 0;
-	sel[0] = 0;
-	sel[1] = 0;
-	#100;
-	in[0] = 1;
-	#100;
-	in[0] = 0;
-	#100;
-	sel[0] = 1;
-	#100;
-	in[1] = 1;
-	#100;
-	in[1] = 0;
-	#100;
-	sel[0] = 0;
-	sel[1] = 1;
-	#100;
-	in[2] = 1;
-	#100;
-	in[2] = 0;
-	#100;
-	sel[0] = 1;
-	#100;
-	in[3] = 1;
-	#100;
-	in[3] = 0;
-	in[2] = 1;
-	#100;
+	in[0] = 0; in[1] = 0; in[2] = 0; in[3] = 0; sel[0] = 0; sel[1] = 0; #100;
+	in[0] = 1;																			  #100;
+	in[0] = 0;																			  #100;
+	                                            sel[0] = 1;				  #100;
+	           in[1] = 1;															  #100;
+	           in[1] = 0;															  #100;
+	sel[0] = 0;                                             sel[1] = 1; #100;
+	                      in[2] = 1;                                    #100;
+	                      in[2] = 0;                                    #100;
+	                                            sel[0] = 1;             #100;
+	                                 in[3] = 1;                         #100;
+	                      in[2] = 1; in[3] = 0;                         #100;
 	end
 
 endmodule

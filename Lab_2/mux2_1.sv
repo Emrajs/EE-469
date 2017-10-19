@@ -6,13 +6,13 @@
 *		Creates a 2 x 1 mux using gate level logic.  
 *
 *	Inputs:
-*		
+*		in: A two bit input signal.
+*     sel: A signal which selects in[1] when (sel==1), and in[0] when (sel==0).
 *
 *	Outputs:
-*     
+*     out: The output from the mux, selected by the sel signal.
 *
 *******************************************************************************/
-
 `timescale 10ps/1fs
 
 module mux2_1 (in, sel, out);

@@ -1,0 +1,14 @@
+|fullAdder_1bit
+a => xor1.IN0
+a => and1.IN0
+a => and2.IN0
+b => xor1.IN1
+b => and1.IN1
+b => and3.IN0
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+Cin => xor1.IN2
+Cin => and2.IN1
+Cin => and3.IN1
+Cout <= xor1.DB_MAX_OUTPUT_PORT_TYPE
+
+
