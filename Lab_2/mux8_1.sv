@@ -6,11 +6,21 @@
 *		Creates a 8 x 1 MUX using 4 x 1 and 2 x 1 MUXs.  
 *
 *	Inputs:
-*		in: 
-*     sel:
+*		in: A seven bit input signal.
+*     sel: A three bit input signal which decides which input bit is routed to
+*          the output:
+*           sel[3] sel[1] sel[0] |   out
+*             0      0      0    |  in[0]
+*             0      0      1    |  in[1]
+*             0      1      0    |  in[2]
+*             0      1      1    |  in[3]
+*             1      0      0    |  in[4]
+*             1      0      1    |  in[5]
+*             1      1      0    |  in[6]
+*             1      1      1    |  in[7]
 *
 *	Outputs:
-*     out: 
+*     out: The single bit output.
 *
 *******************************************************************************/
 `timescale 10ps/1fs
@@ -29,15 +39,30 @@ module mux8_1 (in, sel, out);
 endmodule
 
 module mux8_1_testbench();
-	logic [1:0] in;
-	logic sel;
+	logic [7:0] in;
+	logic [2:0] sel;
 	logic out;
 	
 	mux8_1 dut (.in, .sel, .out);
 	
+	integer i;
+	
 	initial begin 
-		sel = 0; in[0] = 0; in[1] = 0; #100;
-		//not tested
+		sel[2:0] = 3'b000;
+		in[7:0] = 8'b00000000;
+		
+		for(i=0; i<9; i++) begin
+			{sel[2], sel[1], sel[0]} = i; #100;
+		   
+			in = 8'b00000001; #100;
+			in = 8'b00000010; #100;
+			in = 8'b00000100; #100;
+			in = 8'b00001000; #100;
+			in = 8'b00010000; #100;
+			in = 8'b00100000; #100;
+			in = 8'b01000000; #100;
+			in = 8'b10000000; #100;
+		end
 	end
 
 endmodule

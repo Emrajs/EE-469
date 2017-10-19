@@ -26,4 +26,6 @@ module alu (A, B, cntrl, result, negative, zero, overflow, carry_out);
 	output logic [63:0] result;
 	output logic negative, zero, overflow, carry_out;
 	
+	//Generate a 64 bit alu, with the first Cin = cntrl[0]
+	
 endmodule
