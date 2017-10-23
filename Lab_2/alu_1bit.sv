@@ -49,7 +49,7 @@ module alu_1bit (a, b, out, Cin, Cout, en);
 	fullAdder_1bit submodule1 (.a, .b, .out(result[3]), .Cin, .Cout);
 	
 	//Information routing
-	mux8_1  submodule2 (.in({0, result[2:0], result[3], result[3], 0, b}), .sel(en[2:0]), .out);		
+	mux8_1  submodule2 (.in({1'b0, result[2:0], result[3], result[3], 1'b0, b}), .sel(en[2:0]), .out);		
 endmodule
 
 module alu_1bit_testbench();
