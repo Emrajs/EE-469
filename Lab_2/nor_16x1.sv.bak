@@ -1,0 +1,31 @@
+/*******************************************************************************
+*	Authors:
+*		Emraj Sidhu and Nesta Isakovic	
+*
+*	Description:
+*		This module acts as a simple 16x1 NOR gate with an inverted output.
+*
+*	Inputs:
+*		temp:
+*
+*	Outputs:
+*		result:
+*
+*******************************************************************************/
+`timescale 10ps/1fs
+
+module nor_16x1(result, checkZero);
+	input logic [15:0] result;
+   output logic checkZero;
+	logic [3:0] x;
+	
+	//These Gates NOR the first 
+	nor #5 nor1 (x[0], result[3], result[2], result[1], result[0]);
+	nor #5 nor2 (x[1], result[7], result[6], result[5], result[4]);
+	nor #5 nor3 (x[2], result[11], result[10], result[9], result[8]);
+	nor #5 nor4 (x[3], result[15], result[14], result[13], result[12]);
+	
+	//This Gate NORs the result
+	nor #5 nor1 (checkZero, x[0], x[1], x[2], x[3]);
+	
+endmodule

@@ -41,11 +41,11 @@ module fullAdder_1bit(a, b, out, Cin, Cout);
 	*/
 	
 	// Gate level logic for the adder. 
-	xor #5 xor1 (Cout, b, a, Cin);
+	xor #5 xor1 (out, b, a, Cin);
 	and #5 and1 (w[1], a, b);
 	and #5 and2 (w[2], a, Cin);
 	and #5 and3 (w[3], b, Cin);
-	or  #5 or1  (out, w[1], w[2], w[3]);  
+	or  #5 or1  (Cout, w[1], w[2], w[3]);  
 endmodule 
 
 module fullAdder_1bit_testbench();

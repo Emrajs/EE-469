@@ -52,5 +52,129 @@ module alustim();
 		#(delay);
 		assert(result == 64'h0000000000000002 && carry_out == 0 && overflow == 0 && negative == 0 && zero == 0);
 		
+		A = 64'h0000000000000000; B = 64'h0000000000000000;
+		#(delay);
+		assert(result == 64'h0000000000000000 && carry_out == 0 && overflow == 0 && negative == 0 && zero == 1);
+		
+		A = 64'hFFFFFFFFFFFFFFFF; B = 64'hFFFFFFFFFFFFFFFF;
+		#(delay);
+		assert(result == 64'hFFFFFFFFFFFFFFFE && carry_out == 1 && overflow == 0 && negative == 1 && zero == 0);
+		
+		A = 64'h5000000000000000; B = 64'hC000000000000000;
+		#(delay);
+		assert(result == 64'h1000000000000000 && carry_out == 1 && overflow == 0 && negative == 0 && zero == 0);
+		
+		A = 64'h3000000000000000; B = 64'h6000000000000000;
+		#(delay);
+		assert(result == 64'h9000000000000000 && carry_out == 0 && overflow == 1 && negative == 1 && zero == 0);
+		
+		A = 64'hFFFFFFFFFFFFFFFF; B = 64'h0000000000000001;
+		#(delay);
+		assert(result == 64'h0000000000000000 && carry_out == 1 && overflow == 0 && negative == 0 && zero == 1);
+		
+		
+		
+		$display("%t testing Subtraction", $time);
+		cntrl = ALU_SUBTRACT;
+		A = 64'h0000000000000001; B = 64'h0000000000000001;
+		#(delay);
+		assert(result == 64'h0000000000000000 && carry_out == 1 && overflow == 0 && negative == 0 && zero == 1);
+		
+		A = 64'h0000000000000000; B = 64'h0000000000000000;
+		#(delay);
+		assert(result == 64'h0000000000000000 && carry_out == 0 && overflow == 0 && negative == 0 && zero == 1);
+		
+		A = 64'hFFFFFFFFFFFFFFFF; B = 64'hFFFFFFFFFFFFFFFF;
+		#(delay);
+		assert(result == 64'h0000000000000000 && carry_out == 1 && overflow == 0 && negative == 0 && zero == 1);
+		
+		A = 64'h5000000000000000; B = 64'hC000000000000000;
+		#(delay);
+		assert(result == 64'h9000000000000000 && carry_out == 0 && overflow == 1 && negative == 1 && zero == 0);
+		
+		A = 64'h3000000000000000; B = 64'h6000000000000000;
+		#(delay);
+		assert(result == 64'hD000000000000000 && carry_out == 0 && overflow == 0 && negative == 1 && zero == 0);
+		
+		A = 64'hFFFFFFFFFFFFFFFF; B = 64'h0000000000000001;
+		#(delay);
+		assert(result == 64'hE000000000000000 && carry_out == 1 && overflow == 0 && negative == 1 && zero == 0);
+		
+		
+		
+		$display("%t testing AND", $time);
+		cntrl = ALU_AND;
+		A = 64'hFFFFFFFFFFFFFFFF; B = 64'hFFFFFFFFFFFFFFFF;
+		#(delay);
+		assert(result == 64'hFFFFFFFFFFFFFFFF);
+		
+		A = 64'hFFFFFFFFFFFFFFFF; B = 64'h0000000000000000;
+		#(delay);
+		assert(result == 64'h0000000000000000);
+		
+		A = 64'hFFFFFFFFFFFFFFFF; B = 64'hAAAAAAAAAAAAAAAA;
+		#(delay);
+		assert(result == 64'hAAAAAAAAAAAAAAAA);
+		
+		A = 64'hFFFFFFFFFFFFFFFF; B = 64'h5555555555555555;
+		#(delay);
+		assert(result == 64'h5555555555555555);
+		
+		
+		
+		$display("%t testing OR", $time);
+		cntrl = ALU_OR;
+		A = 64'hFFFFFFFFFFFFFFFF; B = 64'hFFFFFFFFFFFFFFFF;
+		#(delay);
+		assert(result == 64'hFFFFFFFFFFFFFFFF);
+		
+		A = 64'hFFFFFFFFFFFFFFFF; B = 64'h0000000000000000;
+		#(delay);
+		assert(result == 64'hFFFFFFFFFFFFFFFF);
+
+		A = 64'h0000000000000000; B = 64'hFFFFFFFFFFFFFFFF;
+		#(delay);
+		assert(result == 64'hFFFFFFFFFFFFFFFF);
+		
+		A = 64'hFFFFFFFFFFFFFFFF; B = 64'hAAAAAAAAAAAAAAAA;
+		#(delay);
+		assert(result == 64'hFFFFFFFFFFFFFFFF);
+		
+		A = 64'hFFFFFFFFFFFFFFFF; B = 64'h5555555555555555;
+		#(delay);
+		assert(result == 64'hFFFFFFFFFFFFFFFF);
+		
+		A = 64'h0000000000000000; B = 64'hAAAAAAAAAAAAAAAA;
+		#(delay);
+		assert(result == 64'hAAAAAAAAAAAAAAAA);
+		
+		A = 64'h0000000000000000; B = 64'h5555555555555555;
+		#(delay);
+		assert(result == 64'h5555555555555555);
+		
+		
+		
+		$display("%t testing XOR", $time);
+		cntrl = ALU_XOR;
+		A = 64'hFFFFFFFFFFFFFFFF; B = 64'hFFFFFFFFFFFFFFFF;
+		#(delay);
+		assert(result == 64'h0000000000000000);
+
+		A = 64'h0000000000000000; B = 64'h0000000000000000;
+		#(delay);
+		assert(result == 64'h0000000000000000);
+
+		A = 64'hF0F0F0F0F0F0F0F0; B = 64'hF0F0F0F0F0F0F0F0;
+		#(delay);
+		assert(result == 64'h0000000000000000);
+
+		A = 64'hF0F0F0F0F0F0F0F0; B = 64'h0F0F0F0F0F0F0F0F;
+		#(delay);
+		assert(result == 64'hFFFFFFFFFFFFFFFF);
+
+		A = 64'hA5A5A5A5A5A5A5A5; B = 64'h5A5A5A5A5A5A5A5A;
+		#(delay);
+		assert(result == 64'hFFFFFFFFFFFFFFFF);
+		
 	end
 endmodule

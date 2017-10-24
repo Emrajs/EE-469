@@ -3,7 +3,7 @@ File Name: alu_64bit.sv (main file)
 
 Authors: Emraj Sidhu and Nesta Isakovic
 
-Description: The main file used to contrust the 64 bit ALU.
+Description: This is the temp main file, main file has to be titled alu.sv
 */
 `timescale 10ps/1fs
 
