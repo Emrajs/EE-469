@@ -1,10 +1,3 @@
-/* 
-File Name: alu_64bit.sv (main file)
-
-Authors: Emraj Sidhu and Nesta Isakovic
-
-Description: The main file used to contrust the 64 bit ALU.
-*/
 module alu_64bit (a, b, cntrl, result, negative, zero, overflow, carry_out);
 	input logic [63:0] a;
 	input logic [63:0] b;
