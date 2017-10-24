@@ -5,6 +5,7 @@ Authors: Emraj Sidhu and Nesta Isakovic
 
 Description: The main file used to contrust the 64 bit ALU.
 */
+
 module alu_64bit (a, b, cntrl, result, negative, zero, overflow, carry_out);
 	input logic [63:0] a;
 	input logic [63:0] b;
@@ -25,6 +26,10 @@ module alu_64bit (a, b, cntrl, result, negative, zero, overflow, carry_out);
 	
 	alu_1bit sixtyFourthAlu (.a(a[63]), .b(b[63]), .out(result[63]), .Cin(w[62]), .Cout(carry_out), .en(cntrl[2:1]));
 	
-	//Logic for the zero flag
+	// Logic for the zero flag
 	zero_flag check (.result, .checkZero(zero));
+	
+	// Negative flag: If last bit is 1 (negativ) or 0 (positive) for 2'comp.
+	assign negative = result[63];
+	
 endmodule

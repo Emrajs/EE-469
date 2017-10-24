@@ -242,23 +242,23 @@ R45
 R12
 vzero_flag
 R0
-Z46 !s110 1508806991
+Z46 !s110 1508808047
 !i10b 1
-!s100 Qo^liISG[7?TGGK76ag9O3
-Ib]>fAeA7NBNhe:XA67J]U3
+!s100 ?Z6RVHIhCNH7Mj`1`@g0>2
+IM=L2bWn3i]NEbi]:dVP1i1
 R2
 Z47 !s105 zero_flag_sv_unit
 S1
 Z48 dC:/Users/Emraj/Desktop/EE-469/Lab_2
-Z49 w1508806887
+Z49 w1508807986
 Z50 8./zero_flag.sv
 Z51 F./zero_flag.sv
-L0 14
+L0 15
 R8
 r1
 !s85 0
 31
-Z52 !s108 1508806991.000000
+Z52 !s108 1508808047.000000
 Z53 !s107 ./zero_flag.sv|
 Z54 !s90 -reportprogress|300|./zero_flag.sv|
 !i113 1
@@ -267,8 +267,8 @@ vzero_flag_testbench
 R0
 R46
 !i10b 1
-!s100 QmW5@?:bcaLU]<6MCVenc1
-IW^AR=L=jOAW;8cV@SHTlP3
+!s100 ncjiAhO3J8]5VK9CC:QMQ2
+I^PEaJi;4]i0U`ZcRMW1jI1
 R2
 R47
 S1
@@ -276,7 +276,7 @@ R48
 R49
 R50
 R51
-L0 54
+L0 55
 R8
 r1
 !s85 0
