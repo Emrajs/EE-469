@@ -5,6 +5,7 @@ Authors: Emraj Sidhu and Nesta Isakovic
 
 Description: The main file used to contrust the 64 bit ALU.
 */
+`timescale 10ps/1fs
 
 module alu_64bit (a, b, cntrl, result, negative, zero, overflow, carry_out);
 	input logic [63:0] a;
@@ -31,5 +32,8 @@ module alu_64bit (a, b, cntrl, result, negative, zero, overflow, carry_out);
 	
 	// Negative flag: If last bit is 1 (negativ) or 0 (positive) for 2'comp.
 	assign negative = result[63];
+	
+	// Overflow check. XOR between carryin and carryout of the 64th 1-bit ALU.
+	xor #5 overflowCheck (overflow, carry_out, w[62]);
 	
 endmodule

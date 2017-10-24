@@ -196,7 +196,7 @@ result[62] <= alu_1bit:makeAlu[62].largeAlu.out
 result[63] <= alu_1bit:sixtyFourthAlu.out
 negative <= alu_1bit:sixtyFourthAlu.out
 zero <= zero_flag:check.checkZero
-overflow <= <GND>
+overflow <= overflowCheck.DB_MAX_OUTPUT_PORT_TYPE
 carry_out <= alu_1bit:sixtyFourthAlu.Cout
 
 
