@@ -1,166 +1,58 @@
 # Reading C:/intelFPGA/17.0/modelsim_ase/tcl/vsim/pref.tcl
-do runlab_alustim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:06:14 on Oct 24,2017
-# vlog -reportprogress 300 ./alustim.sv 
-# -- Compiling module alustim
-# 
-# Top level modules:
-# 	alustim
-# End time: 14:06:15 on Oct 24,2017, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:06:15 on Oct 24,2017
-# vlog -reportprogress 300 ./alu.sv 
-# -- Compiling module alu
-# 
-# Top level modules:
-# 	alu
-# End time: 14:06:15 on Oct 24,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:06:16 on Oct 24,2017
-# vlog -reportprogress 300 ./alu_1bit.sv 
-# -- Compiling module alu_1bit
-# -- Compiling module alu_1bit_testbench
-# 
-# Top level modules:
-# 	alu_1bit_testbench
-# End time: 14:06:16 on Oct 24,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:06:17 on Oct 24,2017
-# vlog -reportprogress 300 ./zero_flag.sv 
-# -- Compiling module zero_flag
-# -- Compiling module zero_flag_testbench
-# 
-# Top level modules:
-# 	zero_flag_testbench
-# End time: 14:06:17 on Oct 24,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:06:17 on Oct 24,2017
-# vlog -reportprogress 300 ./nor_16x1.sv 
-# -- Compiling module nor_16x1
-# -- Compiling module nor_16x1_testbench
-# 
-# Top level modules:
-# 	nor_16x1_testbench
-# End time: 14:06:18 on Oct 24,2017, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:06:18 on Oct 24,2017
-# vlog -reportprogress 300 ./fullAdder_1bit.sv 
-# -- Compiling module fullAdder_1bit
-# -- Compiling module fullAdder_1bit_testbench
-# 
-# Top level modules:
-# 	fullAdder_1bit_testbench
-# End time: 14:06:20 on Oct 24,2017, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:06:20 on Oct 24,2017
-# vlog -reportprogress 300 ./mux8_1.sv 
-# -- Compiling module mux8_1
-# -- Compiling module mux8_1_testbench
-# 
-# Top level modules:
-# 	mux8_1_testbench
-# End time: 14:06:21 on Oct 24,2017, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:06:21 on Oct 24,2017
-# vlog -reportprogress 300 ./mux2_1.sv 
-# -- Compiling module mux2_1
-# -- Compiling module mux2_1_testbench
-# 
-# Top level modules:
-# 	mux2_1_testbench
-# End time: 14:06:21 on Oct 24,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:06:21 on Oct 24,2017
-# vlog -reportprogress 300 ./mux_4_1.sv 
-# -- Compiling module mux_4_1
-# -- Compiling module mux_4_1_testbench
-# 
-# Top level modules:
-# 	mux_4_1_testbench
-# End time: 14:06:22 on Oct 24,2017, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
-# Start time: 14:06:22 on Oct 24,2017
-# Loading sv_std.std
-# Loading work.alustim
-# Loading work.alu
-# Loading work.alu_1bit
-# Loading work.fullAdder_1bit
-# Loading work.mux2_1
-# Loading work.mux8_1
-# Loading work.mux_4_1
-# Loading work.zero_flag
-# Loading work.nor_16x1
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-#    0.00 ns testing PASS_A operations
-# 10000000.00 ns testing addition
-# 10600000.00 ns testing Subtraction
 do runlab_alu_1bit.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:07:24 on Oct 24,2017
+# Start time: 18:11:42 on Oct 24,2017
 # vlog -reportprogress 300 ./alu_1bit.sv 
 # -- Compiling module alu_1bit
 # -- Compiling module alu_1bit_testbench
 # 
 # Top level modules:
 # 	alu_1bit_testbench
-# End time: 14:07:24 on Oct 24,2017, Elapsed time: 0:00:00
+# End time: 18:11:43 on Oct 24,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:07:24 on Oct 24,2017
+# Start time: 18:11:43 on Oct 24,2017
 # vlog -reportprogress 300 ./fullAdder_1bit.sv 
 # -- Compiling module fullAdder_1bit
 # -- Compiling module fullAdder_1bit_testbench
 # 
 # Top level modules:
 # 	fullAdder_1bit_testbench
-# End time: 14:07:25 on Oct 24,2017, Elapsed time: 0:00:01
+# End time: 18:11:44 on Oct 24,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:07:25 on Oct 24,2017
+# Start time: 18:11:44 on Oct 24,2017
 # vlog -reportprogress 300 ./mux8_1.sv 
 # -- Compiling module mux8_1
 # -- Compiling module mux8_1_testbench
 # 
 # Top level modules:
 # 	mux8_1_testbench
-# End time: 14:07:26 on Oct 24,2017, Elapsed time: 0:00:01
+# End time: 18:11:44 on Oct 24,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:07:26 on Oct 24,2017
+# Start time: 18:11:44 on Oct 24,2017
 # vlog -reportprogress 300 ./mux2_1.sv 
 # -- Compiling module mux2_1
 # -- Compiling module mux2_1_testbench
 # 
 # Top level modules:
 # 	mux2_1_testbench
-# End time: 14:07:26 on Oct 24,2017, Elapsed time: 0:00:00
+# End time: 18:11:45 on Oct 24,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:07:26 on Oct 24,2017
+# Start time: 18:11:45 on Oct 24,2017
 # vlog -reportprogress 300 ./mux_4_1.sv 
 # -- Compiling module mux_4_1
 # -- Compiling module mux_4_1_testbench
 # 
 # Top level modules:
 # 	mux_4_1_testbench
-# End time: 14:07:28 on Oct 24,2017, Elapsed time: 0:00:02
+# End time: 18:11:45 on Oct 24,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs=""+acc"" -t 1ps -lib work alu_1bit_testbench 
-# Start time: 14:07:28 on Oct 24,2017
+# Start time: 18:11:45 on Oct 24,2017
 # Loading sv_std.std
 # Loading work.alu_1bit_testbench
 # Loading work.alu_1bit
@@ -179,57 +71,366 @@ do runlab_alu_1bit.do
 do runlab_alu_1bit.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:08:40 on Oct 24,2017
+# Start time: 18:36:07 on Oct 24,2017
+# vlog -reportprogress 300 ./alu_1bit.sv 
+# -- Compiling module alu_1bit
+# -- Compiling module alu_1bit_testbench
+# ** Error: (vlog-13069) ./alu_1bit.sv(66): near "=": syntax error, unexpected '='.
+# ** Error: ./alu_1bit.sv(66): (vlog-13205) Syntax error found in the scope following 'bBar'. Is there a missing '::'?
+# End time: 18:36:08 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab_alu_1bit.do line 7
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./alu_1bit.sv""
+do runlab_alu_1bit.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:36:26 on Oct 24,2017
 # vlog -reportprogress 300 ./alu_1bit.sv 
 # -- Compiling module alu_1bit
 # -- Compiling module alu_1bit_testbench
 # 
 # Top level modules:
 # 	alu_1bit_testbench
-# End time: 14:08:41 on Oct 24,2017, Elapsed time: 0:00:01
+# End time: 18:36:27 on Oct 24,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:08:41 on Oct 24,2017
+# Start time: 18:36:27 on Oct 24,2017
 # vlog -reportprogress 300 ./fullAdder_1bit.sv 
 # -- Compiling module fullAdder_1bit
 # -- Compiling module fullAdder_1bit_testbench
 # 
 # Top level modules:
 # 	fullAdder_1bit_testbench
-# End time: 14:08:42 on Oct 24,2017, Elapsed time: 0:00:01
+# End time: 18:36:27 on Oct 24,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:08:42 on Oct 24,2017
+# Start time: 18:36:27 on Oct 24,2017
 # vlog -reportprogress 300 ./mux8_1.sv 
 # -- Compiling module mux8_1
 # -- Compiling module mux8_1_testbench
 # 
 # Top level modules:
 # 	mux8_1_testbench
-# End time: 14:08:44 on Oct 24,2017, Elapsed time: 0:00:02
+# End time: 18:36:28 on Oct 24,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:08:44 on Oct 24,2017
+# Start time: 18:36:28 on Oct 24,2017
 # vlog -reportprogress 300 ./mux2_1.sv 
 # -- Compiling module mux2_1
 # -- Compiling module mux2_1_testbench
 # 
 # Top level modules:
 # 	mux2_1_testbench
-# End time: 14:08:44 on Oct 24,2017, Elapsed time: 0:00:00
+# End time: 18:36:28 on Oct 24,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:08:44 on Oct 24,2017
+# Start time: 18:36:29 on Oct 24,2017
 # vlog -reportprogress 300 ./mux_4_1.sv 
 # -- Compiling module mux_4_1
 # -- Compiling module mux_4_1_testbench
 # 
 # Top level modules:
 # 	mux_4_1_testbench
-# End time: 14:08:45 on Oct 24,2017, Elapsed time: 0:00:01
+# End time: 18:36:29 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:36:31 on Oct 24,2017, Elapsed time: 0:24:46
+# Errors: 5, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work alu_1bit_testbench 
+# Start time: 18:36:31 on Oct 24,2017
+# Loading sv_std.std
+# Loading work.alu_1bit_testbench
+# Loading work.alu_1bit
+# Loading work.fullAdder_1bit
+# Loading work.mux2_1
+# Loading work.mux8_1
+# Loading work.mux_4_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#                 1000 testing addition
+#                10000 testing subtraction
+#                20000 testing and
+#                30000 testing or
+#                40000 testing xor
+add wave -position 2  sim:/alu_1bit_testbench/bBar
+add wave -position 2  sim:/alu_1bit_testbench/bBar
+add wave -position 2  sim:/alu_1bit_testbench/bBar
+do runlab_alu_1bit.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:39:37 on Oct 24,2017
+# vlog -reportprogress 300 ./alu_1bit.sv 
+# -- Compiling module alu_1bit
+# -- Compiling module alu_1bit_testbench
+# 
+# Top level modules:
+# 	alu_1bit_testbench
+# End time: 18:39:38 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:39:38 on Oct 24,2017
+# vlog -reportprogress 300 ./fullAdder_1bit.sv 
+# -- Compiling module fullAdder_1bit
+# -- Compiling module fullAdder_1bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_1bit_testbench
+# End time: 18:39:38 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:39:38 on Oct 24,2017
+# vlog -reportprogress 300 ./mux8_1.sv 
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# 
+# Top level modules:
+# 	mux8_1_testbench
+# End time: 18:39:39 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:39:39 on Oct 24,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 18:39:39 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:39:39 on Oct 24,2017
+# vlog -reportprogress 300 ./mux_4_1.sv 
+# -- Compiling module mux_4_1
+# -- Compiling module mux_4_1_testbench
+# 
+# Top level modules:
+# 	mux_4_1_testbench
+# End time: 18:39:40 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 18:39:41 on Oct 24,2017, Elapsed time: 0:03:10
 # Errors: 0, Warnings: 0
 # vsim -voptargs=""+acc"" -t 1ps -lib work alu_1bit_testbench 
-# Start time: 14:08:46 on Oct 24,2017
+# Start time: 18:39:41 on Oct 24,2017
+# Loading sv_std.std
+# Loading work.alu_1bit_testbench
+# Loading work.alu_1bit
+# Loading work.fullAdder_1bit
+# Loading work.mux2_1
+# Loading work.mux8_1
+# Loading work.mux_4_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#                 1000 testing addition
+#                10000 testing subtraction
+#                20000 testing and
+#                30000 testing or
+#                40000 testing xor
+add wave -position 2  sim:/alu_1bit_testbench/bBar
+add wave -position 3  sim:/alu_1bit_testbench/bBar
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/EE-469/Lab_2/alu_1bit_wave.do
+do runlab_alu_1bit.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:40:31 on Oct 24,2017
+# vlog -reportprogress 300 ./alu_1bit.sv 
+# -- Compiling module alu_1bit
+# -- Compiling module alu_1bit_testbench
+# 
+# Top level modules:
+# 	alu_1bit_testbench
+# End time: 18:40:31 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:40:31 on Oct 24,2017
+# vlog -reportprogress 300 ./fullAdder_1bit.sv 
+# -- Compiling module fullAdder_1bit
+# -- Compiling module fullAdder_1bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_1bit_testbench
+# End time: 18:40:32 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:40:32 on Oct 24,2017
+# vlog -reportprogress 300 ./mux8_1.sv 
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# 
+# Top level modules:
+# 	mux8_1_testbench
+# End time: 18:40:33 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:40:33 on Oct 24,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 18:40:33 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:40:33 on Oct 24,2017
+# vlog -reportprogress 300 ./mux_4_1.sv 
+# -- Compiling module mux_4_1
+# -- Compiling module mux_4_1_testbench
+# 
+# Top level modules:
+# 	mux_4_1_testbench
+# End time: 18:40:34 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 18:40:35 on Oct 24,2017, Elapsed time: 0:00:54
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work alu_1bit_testbench 
+# Start time: 18:40:35 on Oct 24,2017
+# Loading sv_std.std
+# Loading work.alu_1bit_testbench
+# Loading work.alu_1bit
+# Loading work.fullAdder_1bit
+# Loading work.mux2_1
+# Loading work.mux8_1
+# Loading work.mux_4_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#                 1000 testing addition
+#                10000 testing subtraction
+#                20000 testing and
+#                30000 testing or
+#                40000 testing xor
+do runlab_alu_1bit.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:41:39 on Oct 24,2017
+# vlog -reportprogress 300 ./alu_1bit.sv 
+# -- Compiling module alu_1bit
+# -- Compiling module alu_1bit_testbench
+# 
+# Top level modules:
+# 	alu_1bit_testbench
+# End time: 18:41:40 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:41:40 on Oct 24,2017
+# vlog -reportprogress 300 ./fullAdder_1bit.sv 
+# -- Compiling module fullAdder_1bit
+# -- Compiling module fullAdder_1bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_1bit_testbench
+# End time: 18:41:41 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:41:41 on Oct 24,2017
+# vlog -reportprogress 300 ./mux8_1.sv 
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# 
+# Top level modules:
+# 	mux8_1_testbench
+# End time: 18:41:41 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:41:41 on Oct 24,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 18:41:42 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:41:42 on Oct 24,2017
+# vlog -reportprogress 300 ./mux_4_1.sv 
+# -- Compiling module mux_4_1
+# -- Compiling module mux_4_1_testbench
+# 
+# Top level modules:
+# 	mux_4_1_testbench
+# End time: 18:41:42 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:41:44 on Oct 24,2017, Elapsed time: 0:01:09
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work alu_1bit_testbench 
+# Start time: 18:41:44 on Oct 24,2017
+# Loading sv_std.std
+# Loading work.alu_1bit_testbench
+# Loading work.alu_1bit
+# Loading work.fullAdder_1bit
+# Loading work.mux2_1
+# Loading work.mux8_1
+# Loading work.mux_4_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#                 1000 testing addition
+#                18000 testing subtraction
+#                36000 testing and
+#                46000 testing or
+#                56000 testing xor
+add wave -position 2  sim:/alu_1bit_testbench/bBar
+do runlab_alu_1bit.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:43:03 on Oct 24,2017
+# vlog -reportprogress 300 ./alu_1bit.sv 
+# -- Compiling module alu_1bit
+# -- Compiling module alu_1bit_testbench
+# 
+# Top level modules:
+# 	alu_1bit_testbench
+# End time: 18:43:03 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:43:03 on Oct 24,2017
+# vlog -reportprogress 300 ./fullAdder_1bit.sv 
+# -- Compiling module fullAdder_1bit
+# -- Compiling module fullAdder_1bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_1bit_testbench
+# End time: 18:43:04 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:43:04 on Oct 24,2017
+# vlog -reportprogress 300 ./mux8_1.sv 
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# 
+# Top level modules:
+# 	mux8_1_testbench
+# End time: 18:43:04 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:43:04 on Oct 24,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 18:43:05 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:43:05 on Oct 24,2017
+# vlog -reportprogress 300 ./mux_4_1.sv 
+# -- Compiling module mux_4_1
+# -- Compiling module mux_4_1_testbench
+# 
+# Top level modules:
+# 	mux_4_1_testbench
+# End time: 18:43:06 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 18:43:07 on Oct 24,2017, Elapsed time: 0:01:23
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work alu_1bit_testbench 
+# Start time: 18:43:07 on Oct 24,2017
 # Loading sv_std.std
 # Loading work.alu_1bit_testbench
 # Loading work.alu_1bit
@@ -248,95 +449,97 @@ do runlab_alu_1bit.do
 do runlab_alustim.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:09:02 on Oct 24,2017
+# Start time: 18:54:56 on Oct 24,2017
 # vlog -reportprogress 300 ./alustim.sv 
 # -- Compiling module alustim
 # 
 # Top level modules:
 # 	alustim
-# End time: 14:09:03 on Oct 24,2017, Elapsed time: 0:00:01
+# End time: 18:54:56 on Oct 24,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:09:03 on Oct 24,2017
+# Start time: 18:54:56 on Oct 24,2017
 # vlog -reportprogress 300 ./alu.sv 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 14:09:04 on Oct 24,2017, Elapsed time: 0:00:01
+# End time: 18:54:57 on Oct 24,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:09:04 on Oct 24,2017
+# Start time: 18:54:57 on Oct 24,2017
 # vlog -reportprogress 300 ./alu_1bit.sv 
 # -- Compiling module alu_1bit
 # -- Compiling module alu_1bit_testbench
 # 
 # Top level modules:
 # 	alu_1bit_testbench
-# End time: 14:09:05 on Oct 24,2017, Elapsed time: 0:00:01
+# End time: 18:55:03 on Oct 24,2017, Elapsed time: 0:00:06
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:09:05 on Oct 24,2017
+# Start time: 18:55:03 on Oct 24,2017
 # vlog -reportprogress 300 ./zero_flag.sv 
 # -- Compiling module zero_flag
 # -- Compiling module zero_flag_testbench
 # 
 # Top level modules:
 # 	zero_flag_testbench
-# End time: 14:09:05 on Oct 24,2017, Elapsed time: 0:00:00
+# End time: 18:55:03 on Oct 24,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:09:05 on Oct 24,2017
+# Start time: 18:55:04 on Oct 24,2017
 # vlog -reportprogress 300 ./nor_16x1.sv 
 # -- Compiling module nor_16x1
 # -- Compiling module nor_16x1_testbench
 # 
 # Top level modules:
 # 	nor_16x1_testbench
-# End time: 14:09:06 on Oct 24,2017, Elapsed time: 0:00:01
+# End time: 18:55:04 on Oct 24,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:09:06 on Oct 24,2017
+# Start time: 18:55:04 on Oct 24,2017
 # vlog -reportprogress 300 ./fullAdder_1bit.sv 
 # -- Compiling module fullAdder_1bit
 # -- Compiling module fullAdder_1bit_testbench
 # 
 # Top level modules:
 # 	fullAdder_1bit_testbench
-# End time: 14:09:07 on Oct 24,2017, Elapsed time: 0:00:01
+# End time: 18:55:04 on Oct 24,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:09:07 on Oct 24,2017
+# Start time: 18:55:05 on Oct 24,2017
 # vlog -reportprogress 300 ./mux8_1.sv 
 # -- Compiling module mux8_1
 # -- Compiling module mux8_1_testbench
 # 
 # Top level modules:
 # 	mux8_1_testbench
-# End time: 14:09:08 on Oct 24,2017, Elapsed time: 0:00:01
+# End time: 18:55:05 on Oct 24,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:09:08 on Oct 24,2017
+# Start time: 18:55:05 on Oct 24,2017
 # vlog -reportprogress 300 ./mux2_1.sv 
 # -- Compiling module mux2_1
 # -- Compiling module mux2_1_testbench
 # 
 # Top level modules:
 # 	mux2_1_testbench
-# End time: 14:09:09 on Oct 24,2017, Elapsed time: 0:00:01
+# End time: 18:55:06 on Oct 24,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:09:09 on Oct 24,2017
+# Start time: 18:55:06 on Oct 24,2017
 # vlog -reportprogress 300 ./mux_4_1.sv 
 # -- Compiling module mux_4_1
 # -- Compiling module mux_4_1_testbench
 # 
 # Top level modules:
 # 	mux_4_1_testbench
-# End time: 14:09:15 on Oct 24,2017, Elapsed time: 0:00:06
+# End time: 18:55:06 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:55:08 on Oct 24,2017, Elapsed time: 0:12:01
 # Errors: 0, Warnings: 0
 # vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
-# Start time: 14:09:16 on Oct 24,2017
+# Start time: 18:55:08 on Oct 24,2017
 # Loading sv_std.std
 # Loading work.alustim
 # Loading work.alu
@@ -360,5 +563,233 @@ do runlab_alustim.do
 # 11200000.00 ns testing AND
 # 11600000.00 ns testing OR
 # 12300000.00 ns testing XOR
-# End time: 14:12:38 on Oct 24,2017, Elapsed time: 0:03:22
+do runlab_alustim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:59:02 on Oct 24,2017
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 18:59:02 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:59:02 on Oct 24,2017
+# vlog -reportprogress 300 ./alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 18:59:03 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:59:03 on Oct 24,2017
+# vlog -reportprogress 300 ./alu_1bit.sv 
+# -- Compiling module alu_1bit
+# -- Compiling module alu_1bit_testbench
+# 
+# Top level modules:
+# 	alu_1bit_testbench
+# End time: 18:59:04 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:59:04 on Oct 24,2017
+# vlog -reportprogress 300 ./zero_flag.sv 
+# -- Compiling module zero_flag
+# -- Compiling module zero_flag_testbench
+# 
+# Top level modules:
+# 	zero_flag_testbench
+# End time: 18:59:04 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:59:04 on Oct 24,2017
+# vlog -reportprogress 300 ./nor_16x1.sv 
+# -- Compiling module nor_16x1
+# -- Compiling module nor_16x1_testbench
+# 
+# Top level modules:
+# 	nor_16x1_testbench
+# End time: 18:59:05 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:59:05 on Oct 24,2017
+# vlog -reportprogress 300 ./fullAdder_1bit.sv 
+# -- Compiling module fullAdder_1bit
+# -- Compiling module fullAdder_1bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_1bit_testbench
+# End time: 18:59:06 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:59:06 on Oct 24,2017
+# vlog -reportprogress 300 ./mux8_1.sv 
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# 
+# Top level modules:
+# 	mux8_1_testbench
+# End time: 18:59:06 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:59:06 on Oct 24,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 18:59:07 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:59:07 on Oct 24,2017
+# vlog -reportprogress 300 ./mux_4_1.sv 
+# -- Compiling module mux_4_1
+# -- Compiling module mux_4_1_testbench
+# 
+# Top level modules:
+# 	mux_4_1_testbench
+# End time: 18:59:07 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:59:09 on Oct 24,2017, Elapsed time: 0:04:01
 # Errors: 2, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 18:59:09 on Oct 24,2017
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.alu_1bit
+# Loading work.fullAdder_1bit
+# Loading work.mux2_1
+# Loading work.mux8_1
+# Loading work.mux_4_1
+# Loading work.zero_flag
+# Loading work.nor_16x1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+# 10000000.00 ns testing addition
+# 10600000.00 ns testing Subtraction
+# ** Error: Assertion error.
+#    Time: 11200 us  Scope: alustim File: ./alustim.sv Line: 101
+# 11200000.00 ns testing AND
+# 11600000.00 ns testing OR
+# 12300000.00 ns testing XOR
+do runlab_alustim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:02:53 on Oct 24,2017
+# vlog -reportprogress 300 ./alustim.sv 
+# -- Compiling module alustim
+# 
+# Top level modules:
+# 	alustim
+# End time: 19:02:53 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:02:53 on Oct 24,2017
+# vlog -reportprogress 300 ./alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 19:02:54 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:02:54 on Oct 24,2017
+# vlog -reportprogress 300 ./alu_1bit.sv 
+# -- Compiling module alu_1bit
+# -- Compiling module alu_1bit_testbench
+# 
+# Top level modules:
+# 	alu_1bit_testbench
+# End time: 19:02:54 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:02:54 on Oct 24,2017
+# vlog -reportprogress 300 ./zero_flag.sv 
+# -- Compiling module zero_flag
+# -- Compiling module zero_flag_testbench
+# 
+# Top level modules:
+# 	zero_flag_testbench
+# End time: 19:02:55 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:02:55 on Oct 24,2017
+# vlog -reportprogress 300 ./nor_16x1.sv 
+# -- Compiling module nor_16x1
+# -- Compiling module nor_16x1_testbench
+# 
+# Top level modules:
+# 	nor_16x1_testbench
+# End time: 19:02:55 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:02:55 on Oct 24,2017
+# vlog -reportprogress 300 ./fullAdder_1bit.sv 
+# -- Compiling module fullAdder_1bit
+# -- Compiling module fullAdder_1bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_1bit_testbench
+# End time: 19:02:56 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:02:56 on Oct 24,2017
+# vlog -reportprogress 300 ./mux8_1.sv 
+# -- Compiling module mux8_1
+# -- Compiling module mux8_1_testbench
+# 
+# Top level modules:
+# 	mux8_1_testbench
+# End time: 19:02:57 on Oct 24,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:02:57 on Oct 24,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 19:02:57 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:02:57 on Oct 24,2017
+# vlog -reportprogress 300 ./mux_4_1.sv 
+# -- Compiling module mux_4_1
+# -- Compiling module mux_4_1_testbench
+# 
+# Top level modules:
+# 	mux_4_1_testbench
+# End time: 19:02:57 on Oct 24,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 19:02:59 on Oct 24,2017, Elapsed time: 0:03:50
+# Errors: 1, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work alustim 
+# Start time: 19:02:59 on Oct 24,2017
+# Loading sv_std.std
+# Loading work.alustim
+# Loading work.alu
+# Loading work.alu_1bit
+# Loading work.fullAdder_1bit
+# Loading work.mux2_1
+# Loading work.mux8_1
+# Loading work.mux_4_1
+# Loading work.zero_flag
+# Loading work.nor_16x1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing PASS_A operations
+# 10000000.00 ns testing addition
+# 10600000.00 ns testing Subtraction
+# 11200000.00 ns testing AND
+# 11600000.00 ns testing OR
+# 12300000.00 ns testing XOR
+# End time: 19:04:43 on Oct 24,2017, Elapsed time: 0:01:44
+# Errors: 0, Warnings: 0

@@ -61,6 +61,7 @@ module alu_1bit_testbench();
 	logic a, b, Cin;
 	logic out, Cout;
 	logic [2:0] en;
+	logic bBar;
 	 
 	alu_1bit dut (.a, .b, .out, .Cin, .Cout, .en);
 	 
@@ -68,14 +69,14 @@ module alu_1bit_testbench();
 	 
 	initial begin
 		//Set important inputs to zero
-		a = 1'b0; b = 1'b0; Cin = 1'b0; #100;
+		a = 1'b0; b = 1'b0; Cin = 1'b0; bBar = ~b; #100;
 		
 		$display("%t testing addition", $time);
 				
 			en = 3'b010; #100;
 		 
 			for(i=0; i<8; i++) begin
-					{a, b, Cin} = i; #100;
+					{a, b, Cin} = i; bBar = ~b; #100;
 			end
 		 
 		$display("%t testing subtraction", $time);
@@ -84,7 +85,7 @@ module alu_1bit_testbench();
 			en = 3'b011; #100;
 	 
 			for(i=0; i<8; i++) begin
-				{a, b, Cin} = i; #100;
+				{a, b, Cin} = i; bBar = ~b; #100;
 			end
 		 
 		$display("%t testing and", $time);

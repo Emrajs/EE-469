@@ -82,7 +82,7 @@ module alustim();
 		
 		A = 64'h0000000000000000; B = 64'h0000000000000000;
 		#(delay);
-		assert(result == 64'h0000000000000000 && carry_out == 0 && overflow == 0 && negative == 0 && zero == 1);
+		assert(result == 64'h0000000000000000 && carry_out == 1 && overflow == 0 && negative == 0 && zero == 1);
 		
 		A = 64'hFFFFFFFFFFFFFFFF; B = 64'hFFFFFFFFFFFFFFFF;
 		#(delay);
@@ -98,7 +98,7 @@ module alustim();
 		
 		A = 64'hFFFFFFFFFFFFFFFF; B = 64'h0000000000000001;
 		#(delay);
-		assert(result == 64'hE000000000000000 && carry_out == 1 && overflow == 0 && negative == 1 && zero == 0);
+		assert(result == 64'hFFFFFFFFFFFFFFFE && carry_out == 1 && overflow == 0 && negative == 1 && zero == 0);
 		
 		
 		
