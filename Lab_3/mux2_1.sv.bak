@@ -1,0 +1,13 @@
+module mux2_1 (in, sel, out);
+	logic input [1:0] in;
+	logic input sel;
+	output logic out;
+	
+	wire [2:0] w;
+	
+	not not1 (w[0], sel);
+	and and1 (w[1], w[0], in[0]);
+	and and2 (w[2], sel, in[1]);
+	or  or1  (out, w[1], w[2]);
+endmodule
+
