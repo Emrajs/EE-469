@@ -1,25 +1,18 @@
-Analysis & Synthesis report for DE1_SoC
-Tue Oct 24 14:05:41 2017
-Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
+Analysis & Elaboration report for DE1_SoC
+Sun Nov 05 21:39:31 2017
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Logic Cells Representing Combinational Loops
-  9. General Register Statistics
- 10. Port Connectivity Checks: "alu_1bit:firstAlu|mux8_1:submodule2"
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
- 14. Analysis & Synthesis Suppressed Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "alu_1bit:firstAlu|mux8_1:submodule2"
+  6. Analysis & Elaboration Messages
+  7. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -43,31 +36,42 @@ agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Oct 24 14:05:40 2017           ;
-; Quartus Prime Version           ; 17.0.2 Build 602 07/19/2017 SJ Standard Edition ;
-; Revision Name                   ; DE1_SoC                                         ;
-; Top-level Entity Name           ; alu                                             ;
-; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 0                                               ;
-; Total pins                      ; 199                                             ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0                                               ;
-; Total DSP Blocks                ; 0                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sun Nov 05 21:39:31 2017       ;
+; Quartus Prime Version         ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                 ; DE1_SoC                                     ;
+; Top-level Entity Name         ; alu                                         ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -153,480 +157,6 @@ agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                          ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path      ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------+---------+
-; mux2_1.sv                        ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_2/mux2_1.sv         ;         ;
-; fullAdder_1bit.sv                ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_2/fullAdder_1bit.sv ;         ;
-; alu_1bit.sv                      ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_2/alu_1bit.sv       ;         ;
-; mux_4_1.sv                       ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_2/mux_4_1.sv        ;         ;
-; alu.sv                           ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_2/alu.sv            ;         ;
-; mux8_1.sv                        ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_2/mux8_1.sv         ;         ;
-; zero_flag.sv                     ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_2/zero_flag.sv      ;         ;
-; nor_16x1.sv                      ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_2/nor_16x1.sv       ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------+---------+
-
-
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 187            ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 270            ;
-;     -- 7 input functions                    ; 1              ;
-;     -- 6 input functions                    ; 103            ;
-;     -- 5 input functions                    ; 32             ;
-;     -- 4 input functions                    ; 26             ;
-;     -- <=3 input functions                  ; 108            ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 199            ;
-;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; cntrl[0]~input ;
-; Maximum fan-out                             ; 138            ;
-; Total fan-out                               ; 1459           ;
-; Average fan-out                             ; 2.18           ;
-+---------------------------------------------+----------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                            ;
-+------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------+----------------+--------------+
-; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Entity Name    ; Library Name ;
-+------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------+----------------+--------------+
-; |alu                               ; 270 (1)             ; 0 (0)                     ; 0                 ; 0          ; 199  ; 0            ; |alu                                                             ; alu            ; work         ;
-;    |alu_1bit:firstAlu|             ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:firstAlu                                           ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:firstAlu|fullAdder_1bit:submodule1                 ; fullAdder_1bit ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:firstAlu|mux8_1:submodule2                         ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:firstAlu|mux8_1:submodule2|mux2_1:mux3             ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[10].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[10].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[10].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[10].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[10].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[10].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[11].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[11].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[11].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[11].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[11].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[11].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[12].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[12].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[12].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[12].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[12].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[12].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[13].largeAlu| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[13].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[13].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[13].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[13].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[14].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[14].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[14].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[14].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[14].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[14].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[15].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[15].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[15].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[15].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[15].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[15].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[16].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[16].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[16].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[16].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[16].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[16].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[17].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[17].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[17].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[17].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[17].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[17].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[18].largeAlu| ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[18].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[18].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[18].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[18].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[18].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[19].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[19].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[19].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[19].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[19].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[19].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[1].largeAlu|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[1].largeAlu                                ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[1].largeAlu|fullAdder_1bit:submodule1      ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[1].largeAlu|mux2_1:mux1                    ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[1].largeAlu|mux8_1:submodule2              ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[1].largeAlu|mux8_1:submodule2|mux2_1:mux3  ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[20].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[20].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[20].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[20].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[20].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[20].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[21].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[21].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[21].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[21].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[21].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[21].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[22].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[22].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[22].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[22].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[22].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[22].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[23].largeAlu| ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[23].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[23].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[23].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[23].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[23].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[24].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[24].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[24].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[24].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[24].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[24].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[25].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[25].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[25].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[25].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[25].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[25].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[26].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[26].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[26].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[26].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[26].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[26].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[27].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[27].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[27].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[27].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[27].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[27].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[28].largeAlu| ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[28].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[28].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[28].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[28].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[28].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[29].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[29].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[29].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[29].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[29].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[29].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[2].largeAlu|  ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[2].largeAlu                                ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[2].largeAlu|fullAdder_1bit:submodule1      ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[2].largeAlu|mux2_1:mux1                    ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[2].largeAlu|mux8_1:submodule2              ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[2].largeAlu|mux8_1:submodule2|mux2_1:mux3  ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[30].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[30].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[30].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[30].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[30].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[30].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[31].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[31].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[31].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[31].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[31].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[31].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[32].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[32].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[32].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[32].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[32].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[32].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[33].largeAlu| ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[33].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[33].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[33].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[33].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[33].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[34].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[34].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[34].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[34].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[34].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[34].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[35].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[35].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[35].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[35].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[35].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[35].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[36].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[36].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[36].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[36].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[36].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[36].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[37].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[37].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[37].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[37].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[37].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[37].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[38].largeAlu| ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[38].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[38].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[38].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[38].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[38].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[39].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[39].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[39].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[39].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[39].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[39].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[3].largeAlu|  ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[3].largeAlu                                ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[3].largeAlu|fullAdder_1bit:submodule1      ; fullAdder_1bit ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[3].largeAlu|mux8_1:submodule2              ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[3].largeAlu|mux8_1:submodule2|mux2_1:mux3  ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[40].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[40].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[40].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[40].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[40].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[40].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[41].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[41].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[41].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[41].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[41].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[41].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[42].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[42].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[42].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[42].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[42].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[42].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[43].largeAlu| ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[43].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[43].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[43].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[43].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[43].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[44].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[44].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[44].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[44].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[44].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[44].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[45].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[45].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[45].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[45].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[45].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[45].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[46].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[46].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[46].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[46].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[46].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[46].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[47].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[47].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[47].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[47].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[47].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[47].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[48].largeAlu| ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[48].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[48].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[48].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[48].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[48].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[49].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[49].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[49].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[49].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[49].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[49].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[4].largeAlu|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[4].largeAlu                                ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[4].largeAlu|fullAdder_1bit:submodule1      ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[4].largeAlu|mux2_1:mux1                    ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[4].largeAlu|mux8_1:submodule2              ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[4].largeAlu|mux8_1:submodule2|mux2_1:mux3  ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[50].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[50].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[50].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[50].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[50].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[50].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[51].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[51].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[51].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[51].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[51].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[51].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[52].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[52].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[52].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[52].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[52].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[52].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[53].largeAlu| ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[53].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[53].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[53].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[53].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[53].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[54].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[54].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[54].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[54].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[54].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[54].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[55].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[55].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[55].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[55].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[55].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[55].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[56].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[56].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[56].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[56].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[56].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[56].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[57].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[57].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[57].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[57].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[57].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[57].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[58].largeAlu| ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[58].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[58].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[58].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[58].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[58].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[59].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[59].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[59].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[59].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[59].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[59].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[5].largeAlu|  ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[5].largeAlu                                ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[5].largeAlu|fullAdder_1bit:submodule1      ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[5].largeAlu|mux2_1:mux1                    ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[5].largeAlu|mux8_1:submodule2              ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[5].largeAlu|mux8_1:submodule2|mux2_1:mux3  ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[60].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[60].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[60].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[60].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[60].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[60].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[61].largeAlu| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[61].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[61].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[61].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[61].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[61].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[62].largeAlu| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[62].largeAlu                               ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[62].largeAlu|fullAdder_1bit:submodule1     ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[62].largeAlu|mux2_1:mux1                   ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[62].largeAlu|mux8_1:submodule2             ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[62].largeAlu|mux8_1:submodule2|mux2_1:mux3 ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[6].largeAlu|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[6].largeAlu                                ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[6].largeAlu|fullAdder_1bit:submodule1      ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[6].largeAlu|mux2_1:mux1                    ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[6].largeAlu|mux8_1:submodule2              ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[6].largeAlu|mux8_1:submodule2|mux2_1:mux3  ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[7].largeAlu|  ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[7].largeAlu                                ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[7].largeAlu|fullAdder_1bit:submodule1      ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[7].largeAlu|mux2_1:mux1                    ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[7].largeAlu|mux8_1:submodule2              ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[7].largeAlu|mux8_1:submodule2|mux2_1:mux3  ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[8].largeAlu|  ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[8].largeAlu                                ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[8].largeAlu|fullAdder_1bit:submodule1      ; fullAdder_1bit ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[8].largeAlu|mux8_1:submodule2              ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[8].largeAlu|mux8_1:submodule2|mux2_1:mux3  ; mux2_1         ; work         ;
-;    |alu_1bit:makeAlu[9].largeAlu|  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[9].largeAlu                                ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[9].largeAlu|fullAdder_1bit:submodule1      ; fullAdder_1bit ; work         ;
-;       |mux2_1:mux1|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[9].largeAlu|mux2_1:mux1                    ; mux2_1         ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[9].largeAlu|mux8_1:submodule2              ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:makeAlu[9].largeAlu|mux8_1:submodule2|mux2_1:mux3  ; mux2_1         ; work         ;
-;    |alu_1bit:sixtyFourthAlu|       ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:sixtyFourthAlu                                     ; alu_1bit       ; work         ;
-;       |fullAdder_1bit:submodule1|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:sixtyFourthAlu|fullAdder_1bit:submodule1           ; fullAdder_1bit ; work         ;
-;       |mux8_1:submodule2|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:sixtyFourthAlu|mux8_1:submodule2                   ; mux8_1         ; work         ;
-;          |mux2_1:mux3|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|alu_1bit:sixtyFourthAlu|mux8_1:submodule2|mux2_1:mux3       ; mux2_1         ; work         ;
-;    |zero_flag:check|               ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |alu|zero_flag:check                                             ; zero_flag      ; work         ;
-+------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------+----------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops                        ;
-+----------------------------------------------------------------+----+
-; Logic Cell Name                                                ;    ;
-+----------------------------------------------------------------+----+
-; alu_1bit:firstAlu|fullAdder_1bit:submodule1|xor1~0             ;    ;
-; alu_1bit:makeAlu[1].largeAlu|fullAdder_1bit:submodule1|xor1~0  ;    ;
-; alu_1bit:makeAlu[2].largeAlu|fullAdder_1bit:submodule1|xor1~0  ;    ;
-; alu_1bit:makeAlu[3].largeAlu|fullAdder_1bit:submodule1|xor1~0  ;    ;
-; alu_1bit:makeAlu[4].largeAlu|fullAdder_1bit:submodule1|xor1~0  ;    ;
-; alu_1bit:makeAlu[5].largeAlu|fullAdder_1bit:submodule1|xor1~0  ;    ;
-; alu_1bit:makeAlu[6].largeAlu|fullAdder_1bit:submodule1|xor1~0  ;    ;
-; alu_1bit:makeAlu[7].largeAlu|fullAdder_1bit:submodule1|xor1~0  ;    ;
-; alu_1bit:makeAlu[8].largeAlu|fullAdder_1bit:submodule1|xor1~0  ;    ;
-; alu_1bit:makeAlu[9].largeAlu|fullAdder_1bit:submodule1|xor1~0  ;    ;
-; alu_1bit:makeAlu[10].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[11].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[12].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[13].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[14].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[15].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[16].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[17].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[18].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[19].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[20].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[21].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[22].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[23].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[24].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[25].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[26].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[27].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[28].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[29].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[30].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[31].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[32].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[33].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[34].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[35].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[36].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[37].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[38].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[39].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[40].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[41].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[42].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[43].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[44].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[45].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[46].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[47].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[48].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[49].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[50].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[51].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[52].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[53].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[54].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[55].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[56].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[57].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[58].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[59].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[60].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[61].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:makeAlu[62].largeAlu|fullAdder_1bit:submodule1|xor1~0 ;    ;
-; alu_1bit:sixtyFourthAlu|fullAdder_1bit:submodule1|xor1~0       ;    ;
-; Number of logic cells representing combinational loops         ; 64 ;
-+----------------------------------------------------------------+----+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
 +-----------------------------------------------------------------+
 ; Port Connectivity Checks: "alu_1bit:firstAlu|mux8_1:submodule2" ;
 +-------+-------+----------+--------------------------------------+
@@ -637,99 +167,76 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +-------+-------+----------+--------------------------------------+
 
 
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 270                         ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 269                         ;
-;         2 data inputs ; 21                          ;
-;         3 data inputs ; 87                          ;
-;         4 data inputs ; 26                          ;
-;         5 data inputs ; 32                          ;
-;         6 data inputs ; 103                         ;
-; boundary_port         ; 199                         ;
-;                       ;                             ;
-; Max LUT depth         ; 27.00                       ;
-; Average LUT depth     ; 13.05                       ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:02     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
-    Info: Processing started: Tue Oct 24 14:05:22 2017
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Sun Nov 05 21:39:14 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC --analysis_and_elaboration
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Warning (12019): Can't analyze file -- file DE1_SoC.sv is missing
 Info (12021): Found 2 design units, including 2 entities, in source file mux2_1.sv
-    Info (12023): Found entity 1: mux2_1 File: U:/EE-469/Lab_2/mux2_1.sv Line: 18
-    Info (12023): Found entity 2: mux2_1_testbench File: U:/EE-469/Lab_2/mux2_1.sv Line: 31
+    Info (12023): Found entity 1: mux2_1 File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux2_1.sv Line: 18
+    Info (12023): Found entity 2: mux2_1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux2_1.sv Line: 31
 Info (12021): Found 2 design units, including 2 entities, in source file fulladder_1bit.sv
-    Info (12023): Found entity 1: fullAdder_1bit File: U:/EE-469/Lab_2/fullAdder_1bit.sv Line: 23
-    Info (12023): Found entity 2: fullAdder_1bit_testbench File: U:/EE-469/Lab_2/fullAdder_1bit.sv Line: 51
+    Info (12023): Found entity 1: fullAdder_1bit File: C:/Users/Emraj/Desktop/EE-469/Lab_3/fullAdder_1bit.sv Line: 23
+    Info (12023): Found entity 2: fullAdder_1bit_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/fullAdder_1bit.sv Line: 51
 Info (12021): Found 2 design units, including 2 entities, in source file alu_1bit.sv
-    Info (12023): Found entity 1: alu_1bit File: U:/EE-469/Lab_2/alu_1bit.sv Line: 37
-    Info (12023): Found entity 2: alu_1bit_testbench File: U:/EE-469/Lab_2/alu_1bit.sv Line: 60
+    Info (12023): Found entity 1: alu_1bit File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu_1bit.sv Line: 37
+    Info (12023): Found entity 2: alu_1bit_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu_1bit.sv Line: 60
 Info (12021): Found 2 design units, including 2 entities, in source file mux_4_1.sv
-    Info (12023): Found entity 1: mux_4_1 File: U:/EE-469/Lab_2/mux_4_1.sv Line: 24
-    Info (12023): Found entity 2: mux_4_1_testbench File: U:/EE-469/Lab_2/mux_4_1.sv Line: 40
+    Info (12023): Found entity 1: mux_4_1 File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux_4_1.sv Line: 24
+    Info (12023): Found entity 2: mux_4_1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux_4_1.sv Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file alustim.sv
-    Info (12023): Found entity 1: alustim File: U:/EE-469/Lab_2/alustim.sv Line: 20
+    Info (12023): Found entity 1: alustim File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alustim.sv Line: 201
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
-    Info (12023): Found entity 1: alu File: U:/EE-469/Lab_2/alu.sv Line: 32
+    Info (12023): Found entity 1: alu File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu.sv Line: 32
 Info (12021): Found 2 design units, including 2 entities, in source file mux8_1.sv
-    Info (12023): Found entity 1: mux8_1 File: U:/EE-469/Lab_2/mux8_1.sv Line: 28
-    Info (12023): Found entity 2: mux8_1_testbench File: U:/EE-469/Lab_2/mux8_1.sv Line: 41
+    Info (12023): Found entity 1: mux8_1 File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux8_1.sv Line: 28
+    Info (12023): Found entity 2: mux8_1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux8_1.sv Line: 41
 Info (12021): Found 1 design units, including 1 entities, in source file alu_64bit.sv
-    Info (12023): Found entity 1: alu_64bit File: U:/EE-469/Lab_2/alu_64bit.sv Line: 10
+    Info (12023): Found entity 1: alu_64bit File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu_64bit.sv Line: 10
 Info (12021): Found 2 design units, including 2 entities, in source file zero_flag.sv
-    Info (12023): Found entity 1: zero_flag File: U:/EE-469/Lab_2/zero_flag.sv Line: 21
-    Info (12023): Found entity 2: zero_flag_testbench File: U:/EE-469/Lab_2/zero_flag.sv Line: 37
+    Info (12023): Found entity 1: zero_flag File: C:/Users/Emraj/Desktop/EE-469/Lab_3/zero_flag.sv Line: 21
+    Info (12023): Found entity 2: zero_flag_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/zero_flag.sv Line: 37
 Info (12021): Found 2 design units, including 2 entities, in source file nor_16x1.sv
-    Info (12023): Found entity 1: nor_16x1 File: U:/EE-469/Lab_2/nor_16x1.sv Line: 19
-    Info (12023): Found entity 2: nor_16x1_testbench File: U:/EE-469/Lab_2/nor_16x1.sv Line: 35
+    Info (12023): Found entity 1: nor_16x1 File: C:/Users/Emraj/Desktop/EE-469/Lab_3/nor_16x1.sv Line: 19
+    Info (12023): Found entity 2: nor_16x1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/nor_16x1.sv Line: 35
+Info (12021): Found 2 design units, including 2 entities, in source file datamem.sv
+    Info (12023): Found entity 1: datamem File: C:/Users/Emraj/Desktop/EE-469/Lab_3/datamem.sv Line: 12
+    Info (12023): Found entity 2: datamem_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/datamem.sv Line: 70
+Info (12021): Found 2 design units, including 2 entities, in source file instructmem.sv
+    Info (12023): Found entity 1: instructmem File: C:/Users/Emraj/Desktop/EE-469/Lab_3/instructmem.sv Line: 17
+    Info (12023): Found entity 2: instructmem_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/instructmem.sv Line: 57
+Info (12021): Found 4 design units, including 4 entities, in source file math.sv
+    Info (12023): Found entity 1: mult File: C:/Users/Emraj/Desktop/EE-469/Lab_3/math.sv Line: 3
+    Info (12023): Found entity 2: shifter File: C:/Users/Emraj/Desktop/EE-469/Lab_3/math.sv Line: 33
+    Info (12023): Found entity 3: shifter_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/math.sv Line: 48
+    Info (12023): Found entity 4: mult_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/math.sv Line: 68
+Info (12021): Found 2 design units, including 2 entities, in source file controllogic.sv
+    Info (12023): Found entity 1: controlLogic File: C:/Users/Emraj/Desktop/EE-469/Lab_3/controlLogic.sv Line: 16
+    Info (12023): Found entity 2: controlLogic_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/controlLogic.sv Line: 158
 Info (12127): Elaborating entity "alu" for the top level hierarchy
-Info (12128): Elaborating entity "alu_1bit" for hierarchy "alu_1bit:firstAlu" File: U:/EE-469/Lab_2/alu.sv Line: 40
-Info (12128): Elaborating entity "fullAdder_1bit" for hierarchy "alu_1bit:firstAlu|fullAdder_1bit:submodule1" File: U:/EE-469/Lab_2/alu_1bit.sv Line: 51
-Info (12128): Elaborating entity "mux2_1" for hierarchy "alu_1bit:firstAlu|mux2_1:mux1" File: U:/EE-469/Lab_2/alu_1bit.sv Line: 54
-Info (12128): Elaborating entity "mux8_1" for hierarchy "alu_1bit:firstAlu|mux8_1:submodule2" File: U:/EE-469/Lab_2/alu_1bit.sv Line: 57
-Info (12128): Elaborating entity "mux_4_1" for hierarchy "alu_1bit:firstAlu|mux8_1:submodule2|mux_4_1:mux1" File: U:/EE-469/Lab_2/mux8_1.sv Line: 35
-Info (12128): Elaborating entity "zero_flag" for hierarchy "zero_flag:check" File: U:/EE-469/Lab_2/alu.sv Line: 55
-Info (12128): Elaborating entity "nor_16x1" for hierarchy "zero_flag:check|nor_16x1:nor1" File: U:/EE-469/Lab_2/zero_flag.sv Line: 27
-Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file U:/EE-469/Lab_2/output_files/DE1_SoC.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 469 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 131 input pins
-    Info (21059): Implemented 68 output pins
-    Info (21061): Implemented 270 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 719 megabytes
-    Info: Processing ended: Tue Oct 24 14:05:41 2017
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:26
+Info (12128): Elaborating entity "alu_1bit" for hierarchy "alu_1bit:firstAlu" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu.sv Line: 40
+Info (12128): Elaborating entity "fullAdder_1bit" for hierarchy "alu_1bit:firstAlu|fullAdder_1bit:submodule1" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu_1bit.sv Line: 51
+Info (12128): Elaborating entity "mux2_1" for hierarchy "alu_1bit:firstAlu|mux2_1:mux1" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu_1bit.sv Line: 54
+Info (12128): Elaborating entity "mux8_1" for hierarchy "alu_1bit:firstAlu|mux8_1:submodule2" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu_1bit.sv Line: 57
+Info (12128): Elaborating entity "mux_4_1" for hierarchy "alu_1bit:firstAlu|mux8_1:submodule2|mux_4_1:mux1" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux8_1.sv Line: 35
+Info (12128): Elaborating entity "zero_flag" for hierarchy "zero_flag:check" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu.sv Line: 55
+Info (12128): Elaborating entity "nor_16x1" for hierarchy "zero_flag:check|nor_16x1:nor1" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/zero_flag.sv Line: 27
+Info (144001): Generated suppressed messages file C:/Users/Emraj/Desktop/EE-469/Lab_3/output_files/DE1_SoC.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 666 megabytes
+    Info: Processing ended: Sun Nov 05 21:39:31 2017
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:33
 
 
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in U:/EE-469/Lab_2/output_files/DE1_SoC.map.smsg.
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Users/Emraj/Desktop/EE-469/Lab_3/output_files/DE1_SoC.map.smsg.
 
 

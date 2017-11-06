@@ -1,6 +1,6 @@
 Flow report for DE1_SoC
-Tue Oct 24 14:05:41 2017
-Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
+Sun Nov 05 21:39:31 2017
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
 ---------------------
@@ -38,29 +38,24 @@ agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Flow Summary                                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Tue Oct 24 14:05:40 2017           ;
-; Quartus Prime Version           ; 17.0.2 Build 602 07/19/2017 SJ Standard Edition ;
-; Revision Name                   ; DE1_SoC                                         ;
-; Top-level Entity Name           ; alu                                             ;
-; Family                          ; Cyclone V                                       ;
-; Device                          ; 5CSEMA5F31C6                                    ;
-; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 0                                               ;
-; Total pins                      ; 199                                             ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0                                               ;
-; Total DSP Blocks                ; 0                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------+
+; Flow Summary                                                              ;
++-----------------------------+---------------------------------------------+
+; Flow Status                 ; Successful - Sun Nov 05 21:39:31 2017       ;
+; Quartus Prime Version       ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name               ; DE1_SoC                                     ;
+; Top-level Entity Name       ; alu                                         ;
+; Family                      ; Cyclone V                                   ;
+; Device                      ; 5CSEMA5F31C6                                ;
+; Timing Models               ; Final                                       ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -68,7 +63,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/24/2017 14:05:23 ;
+; Start date & time ; 11/05/2017 21:39:15 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_SoC             ;
 +-------------------+---------------------+
@@ -79,7 +74,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 233963777953455.150887912208096        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 44748152855403.150994675440772         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -96,29 +91,29 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 719 MB              ; 00:00:25                           ;
-; Total                ; 00:00:16     ; --                      ; --                  ; 00:00:25                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                          ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Elaboration ; 00:00:16     ; 1.0                     ; 666 MB              ; 00:00:33                           ;
+; Total                  ; 00:00:16     ; --                      ; --                  ; 00:00:33                           ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; EE-365PC02       ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++------------------------+------------------+------------+------------+----------------+
+; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++------------------------+------------------+------------+------------+----------------+
+; Analysis & Elaboration ; Emrajs-PC        ; Windows 10 ; 10.0       ; x86_64         ;
++------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
+quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC --analysis_and_elaboration
 
 
 

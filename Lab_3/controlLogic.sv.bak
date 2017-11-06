@@ -1,0 +1,4 @@
+module controlLogic (in, sel, RegWrite, Reg2Loc, ALUSrc, ALUOp, MemWrite,MemToReg, UncondBrm, BrTaken);
+
+
+endmodule 
