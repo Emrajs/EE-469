@@ -1,132 +1,150 @@
 # Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
-do runlab_controlLogic.do
+do runlab_regstim.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:55:59 on Nov 05,2017
-# vlog -reportprogress 300 ./controlLogic.sv 
-# -- Compiling module controlLogic
-# -- Compiling module controlLogic_testbench
+# Start time: 18:36:36 on Nov 06,2017
+# vlog -reportprogress 300 ./regstim.sv 
+# -- Compiling module regstim
 # 
 # Top level modules:
-# 	controlLogic_testbench
-# End time: 20:55:59 on Nov 05,2017, Elapsed time: 0:00:00
+# 	regstim
+# End time: 18:36:36 on Nov 06,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work controlLogic_testbench 
-# Start time: 20:56:00 on Nov 05,2017
-# Loading sv_std.std
-# Loading work.controlLogic_testbench
-# Loading work.controlLogic
-# ** Warning: (vsim-3017) ./controlLogic.sv(160): [TFMPC] - Too few port connections. Expected 14, found 13.
-#    Time: 0 ps  Iteration: 0  Instance: /controlLogic_testbench/dut File: ./controlLogic.sv
-# ** Warning: (vsim-3722) ./controlLogic.sv(160): [TFMPC] - Missing connection for port 'ALUOp'.
-# ** Error: Cannot open macro file: controlLogic.do
-# Error in macro ./runlab_controlLogic.do line 18
-# Cannot open macro file: controlLogic.do
-#     while executing
-# "do controlLogic.do"
-add wave -position end  sim:/controlLogic_testbench/OpCode
-add wave -position end  sim:/controlLogic_testbench/zero
-add wave -position end  sim:/controlLogic_testbench/negative
-add wave -position end  sim:/controlLogic_testbench/carryout
-add wave -position end  sim:/controlLogic_testbench/overflow
-add wave -position end  sim:/controlLogic_testbench/RegWrite
-add wave -position end  sim:/controlLogic_testbench/Reg2Loc
-add wave -position end  sim:/controlLogic_testbench/ALUSrc
-add wave -position end  sim:/controlLogic_testbench/MemWrite
-add wave -position end  sim:/controlLogic_testbench/MemToReg
-add wave -position end  sim:/controlLogic_testbench/UncondBr
-add wave -position end  sim:/controlLogic_testbench/BrTaken
-add wave -position end  sim:/controlLogic_testbench/Imm_12
-add wave -position end  sim:/controlLogic_testbench/ALUOp
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Emraj/Desktop/EE-469/Lab_3/controlLogic_wave.do
-do runlab_controlLogic.do
-# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:59:18 on Nov 05,2017
-# vlog -reportprogress 300 ./controlLogic.sv 
-# -- Compiling module controlLogic
-# -- Compiling module controlLogic_testbench
+# Start time: 18:36:36 on Nov 06,2017
+# vlog -reportprogress 300 ./regfile.sv 
+# -- Compiling module regfile
 # 
 # Top level modules:
-# 	controlLogic_testbench
-# End time: 20:59:18 on Nov 05,2017, Elapsed time: 0:00:00
+# 	regfile
+# End time: 18:36:37 on Nov 06,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work controlLogic_testbench 
-# Start time: 20:59:19 on Nov 05,2017
-# Loading sv_std.std
-# Loading work.controlLogic_testbench
-# Loading work.controlLogic
-# ** Warning: (vsim-3017) ./controlLogic.sv(160): [TFMPC] - Too few port connections. Expected 14, found 13.
-#    Time: 0 ps  Iteration: 0  Instance: /controlLogic_testbench/dut File: ./controlLogic.sv
-# ** Warning: (vsim-3722) ./controlLogic.sv(160): [TFMPC] - Missing connection for port 'ALUOp'.
-# ** Error: Cannot open macro file: controlLogic.do
-# Error in macro ./runlab_controlLogic.do line 18
-# Cannot open macro file: controlLogic.do
-#     while executing
-# "do controlLogic.do"
-do runlab_controlLogic.do
-# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:59:52 on Nov 05,2017
-# vlog -reportprogress 300 ./controlLogic.sv 
-# -- Compiling module controlLogic
-# -- Compiling module controlLogic_testbench
+# Start time: 18:36:37 on Nov 06,2017
+# vlog -reportprogress 300 ./decode_1_2.sv 
+# -- Compiling module decode_1_2
+# -- Compiling module decode_1_2_testbench
 # 
 # Top level modules:
-# 	controlLogic_testbench
-# End time: 20:59:52 on Nov 05,2017, Elapsed time: 0:00:00
+# 	decode_1_2_testbench
+# End time: 18:36:37 on Nov 06,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work controlLogic_testbench 
-# Start time: 20:59:53 on Nov 05,2017
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:36:37 on Nov 06,2017
+# vlog -reportprogress 300 ./decode_2_4.sv 
+# -- Compiling module decode_2_4
+# -- Compiling module decode_2_4_testbench
+# 
+# Top level modules:
+# 	decode_2_4_testbench
+# End time: 18:36:37 on Nov 06,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:36:37 on Nov 06,2017
+# vlog -reportprogress 300 ./decode_3_8.sv 
+# -- Compiling module decode_3_8
+# -- Compiling module decode_3_8_testbench
+# 
+# Top level modules:
+# 	decode_3_8_testbench
+# End time: 18:36:37 on Nov 06,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:36:37 on Nov 06,2017
+# vlog -reportprogress 300 ./decode_5_32.sv 
+# -- Compiling module decode_5_32
+# -- Compiling module decode_5_32_testbench
+# 
+# Top level modules:
+# 	decode_5_32_testbench
+# End time: 18:36:37 on Nov 06,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:36:37 on Nov 06,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 18:36:37 on Nov 06,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:36:37 on Nov 06,2017
+# vlog -reportprogress 300 ./mux_4_1.sv 
+# -- Compiling module mux_4_1
+# -- Compiling module mux_4_1_testbench
+# 
+# Top level modules:
+# 	mux_4_1_testbench
+# End time: 18:36:37 on Nov 06,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:36:37 on Nov 06,2017
+# vlog -reportprogress 300 ./mux16_1.sv 
+# -- Compiling module mux16_1
+# -- Compiling module mux16_1_testbench
+# 
+# Top level modules:
+# 	mux16_1_testbench
+# End time: 18:36:37 on Nov 06,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:36:37 on Nov 06,2017
+# vlog -reportprogress 300 ./mux32_1.sv 
+# -- Compiling module mux32_1
+# 
+# Top level modules:
+# 	mux32_1
+# End time: 18:36:37 on Nov 06,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:36:37 on Nov 06,2017
+# vlog -reportprogress 300 ./D_FF.sv 
+# -- Compiling module D_FF
+# 
+# Top level modules:
+# 	D_FF
+# End time: 18:36:38 on Nov 06,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:36:38 on Nov 06,2017
+# vlog -reportprogress 300 ./D_FF_enable.sv 
+# -- Compiling module D_FF_enable
+# -- Compiling module D_FF_enable_testbench
+# 
+# Top level modules:
+# 	D_FF_enable_testbench
+# End time: 18:36:38 on Nov 06,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work regstim 
+# Start time: 18:36:38 on Nov 06,2017
 # Loading sv_std.std
-# Loading work.controlLogic_testbench
-# Loading work.controlLogic
-# ** Warning: (vsim-3017) ./controlLogic.sv(160): [TFMPC] - Too few port connections. Expected 14, found 13.
-#    Time: 0 ps  Iteration: 0  Instance: /controlLogic_testbench/dut File: ./controlLogic.sv
-# ** Warning: (vsim-3722) ./controlLogic.sv(160): [TFMPC] - Missing connection for port 'ALUOp'.
+# Loading work.regstim
+# Loading work.regfile
+# Loading work.decode_5_32
+# Loading work.decode_2_4
+# Loading work.decode_3_8
+# Loading work.decode_1_2
+# Loading work.mux32_1
+# Loading work.mux16_1
+# Loading work.mux_4_1
+# Loading work.mux2_1
+# Loading work.D_FF_enable
+# Loading work.D_FF
+# ** Warning: (vsim-3839) ./regfile.sv(68): Variable '/regstim/dut/ffout', driven via a port connection, is multiply driven. See ./regfile.sv(58).
+#    Time: 0 ps  Iteration: 0  Instance: /regstim/dut File: ./regfile.sv
+# ** Warning: Design size of 7764 instances exceeds ModelSim - Intel FPGA Starter Edition recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim - Intel FPGA Edition. Expect performance to be adversely affected.
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
-do runlab_controlLogic.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:09:53 on Nov 05,2017
-# vlog -reportprogress 300 ./controlLogic.sv 
-# -- Compiling module controlLogic
-# -- Compiling module controlLogic_testbench
-# 
-# Top level modules:
-# 	controlLogic_testbench
-# End time: 21:09:53 on Nov 05,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work controlLogic_testbench 
-# Start time: 21:09:55 on Nov 05,2017
-# Loading sv_std.std
-# Loading work.controlLogic_testbench
-# Loading work.controlLogic
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-do runlab_controlLogic.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:26:05 on Nov 05,2017
-# vlog -reportprogress 300 ./controlLogic.sv 
-# -- Compiling module controlLogic
-# -- Compiling module controlLogic_testbench
-# 
-# Top level modules:
-# 	controlLogic_testbench
-# End time: 21:26:05 on Nov 05,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -voptargs=""+acc"" -t 1ps -lib work controlLogic_testbench 
-# Start time: 21:26:07 on Nov 05,2017
-# Loading sv_std.std
-# Loading work.controlLogic_testbench
-# Loading work.controlLogic
-# .main_pane.wave.interior.cs.body.pw.wf
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# WARNING: No extended dataflow license exists
-# End time: 21:42:09 on Nov 05,2017, Elapsed time: 0:16:02
-# Errors: 0, Warnings: 1
+# 2500.00 ns Attempting overwrite of register 31, which should always be 0
+# 7500.00 ns Writing pattern to all registers.
+# 317500.00 ns Checking pattern.
+# ** Note: $stop    : ./regstim.sv(69)
+#    Time: 477500 ns  Iteration: 1  Instance: /regstim
+# Break in Module regstim at ./regstim.sv line 69
+# End time: 18:37:51 on Nov 06,2017, Elapsed time: 0:01:13
+# Errors: 0, Warnings: 2

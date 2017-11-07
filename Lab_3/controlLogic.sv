@@ -13,11 +13,12 @@ I am not too sure about. STURB and LDURB require bytes. B_LT I'm also not sure o
 */
 
 
-module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2Loc, ALUSrc, ALUOp, MemWrite,MemToReg, UncondBr, BrTaken, Imm_12);
+module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2Loc, ALUSrc, ALUOp, MemWrite,MemToReg, UncondBr, BrTaken, Imm_12,ldur_B, read_en);
 	input logic [10:0] OpCode;
 	input logic zero, negative, carryout, overflow;
-	output logic RegWrite, Reg2Loc, ALUSrc, MemWrite, MemToReg, UncondBr, BrTaken, Imm_12;
+	output logic RegWrite, Reg2Loc, ALUSrc, MemWrite, MemToReg, UncondBr, BrTaken, Imm_12, read_en;
 	output logic [2:0] ALUOp;
+	output logic [3:0] ldur_B;
 	
 	parameter [10:0] ADDI = 11'b1001000100x, ADDS = 11'b10101011000, B = 11'b000101xxxxx,
 						  CBZ = 11'b10110100xxx, LDUR = 11'b11111000010, STUR = 11'b11111000000,
@@ -40,6 +41,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										BrTaken = 1'b0;
 										UncondBr = 1'bx;
 										Imm_12 = 1'b1;    // ADDI requires adding Imm_12 to Reg[Rn]. So this will be set to 1 in this instruction
+										ldur_B = 4'b0;
+										read_en = 1'b0;
 									  end
 				ADDS:            begin   // Need to add flags
 										RegWrite = 1'b1;
@@ -51,6 +54,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										BrTaken = 1'b0;
 										UncondBr = 1'bx;
 										Imm_12 = 1'bx;  
+										ldur_B = 4'b0;
+										read_en = 1'b0;
 									  end
 				B: 				  begin   
 									   RegWrite = 1'b0;
@@ -62,6 +67,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										BrTaken = 1'b1;
 										UncondBr = 1'b1;
 										Imm_12 = 1'bx;
+										ldur_B = 4'b0;
+										read_en = 1'b0;
 									  end
 				B_LT:            begin
 									   RegWrite = 1'b0;
@@ -73,6 +80,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										BrTaken = zero ^ overflow; //XOR the zero and overflow flag. If both are not equal to one another, then make BrTaken = 1 so BrAddr19<<2 goes through.
 										UncondBr = 1'b0;
 										Imm_12 = 1'bx;
+										ldur_B = 4'b0;
+										read_en = 1'b0;
 									  end
 				CBZ: 				  begin  
 										RegWrite = 1'b0;
@@ -84,6 +93,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										BrTaken = zero; // Checks zero flag to see if it is true (one) or not.
 										UncondBr = 1'b0;
 										Imm_12 = 1'bx;
+										ldur_B = 4'b0;
+										read_en = 1'b0;
 									  end
 				LDUR:            begin  
 										RegWrite = 1'b1;
@@ -95,6 +106,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										BrTaken = 1'b0;
 										UncondBr = 1'bx;
 										Imm_12 = 1'b0;
+										ldur_B = 0100;
+										read_en = 1'b1;
 									  end
 			   LDURB:           begin             // Not sure as to how to do the byte part
 										RegWrite = 1'b1;
@@ -106,28 +119,34 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										BrTaken = 1'b0;
 										UncondBr = 1'bx;
 										Imm_12 = 1'b0;
+										ldur_B = 4'b1;
+										read_en = 1'b1;
 									  end
 				STUR:            begin 
 										RegWrite = 1'b0;
 										Reg2Loc = 1'b0;
 										ALUSrc = 1'b1;
 										ALUOp = 3'b010;
-										MemWrite = 1'b0;
+										MemWrite = 1'b1;
 										MemToReg = 1'bx;
 										BrTaken = 1'b0;
 										UncondBr = 1'bx;
 										Imm_12 = 1'b0;
+										ldur_B = 4'b0;
+										read_en = 1'b0;
 									  end
 				STURB:           begin       // How to include bytes?
 										RegWrite = 1'b0;
 										Reg2Loc = 1'b0;
 										ALUSrc = 1'b1;
 										ALUOp = 3'b010;
-										MemWrite = 1'b0;
+										MemWrite = 1'b1;
 										MemToReg = 1'bx;
 										BrTaken = 1'b0;
 										UncondBr = 1'bx;
 										Imm_12 = 1'b0;
+										ldur_B = 4'b0;
+										read_en = 1'b0;
 									  end
 				SUBS:            begin // Need to add flags
 										RegWrite = 1'b1;
@@ -139,6 +158,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										BrTaken = 1'b0;
 										UncondBr = 1'bx;
 										Imm_12 = 1'bx;
+										ldur_B = 4'b0;
+										read_en = 1'b0;
 									  end
 				default          begin
 									   RegWrite = 1'b0;
@@ -150,6 +171,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										BrTaken = 1'bx;
 										UncondBr = 1'bx;
 										Imm_12 = 1'bx;
+										ldur_B = 4'bx;
+										read_en = 1'b0;
 									  end
 			endcase																				
 		end	
@@ -158,10 +181,11 @@ endmodule
 module controlLogic_testbench();
 	logic [31:21] OpCode;
 	logic zero, negative, carryout, overflow;
-   logic RegWrite, Reg2Loc, ALUSrc, MemWrite, MemToReg, UncondBr, BrTaken, Imm_12;
+   logic RegWrite, Reg2Loc, ALUSrc, MemWrite, MemToReg, UncondBr, BrTaken, Imm_12, read_en;
 	logic [2:0] ALUOp;
+	logic [3:0] ldur_B;
 	
-	controlLogic dut (.OpCode, .zero, .negative, .carryout, .overflow, .RegWrite, .Reg2Loc, .ALUSrc, .ALUOp,.MemWrite, .MemToReg, .UncondBr, .BrTaken,.Imm_12);
+	controlLogic dut (.OpCode, .zero, .negative, .carryout, .overflow, .RegWrite, .Reg2Loc, .ALUSrc, .ALUOp,.MemWrite, .MemToReg, .UncondBr, .BrTaken, .Imm_12, .ldur_B, .read_en);
 	
 	initial begin
 		OpCode = 11'b00000000000; #100;             // should go to default
@@ -174,5 +198,7 @@ module controlLogic_testbench();
 		OpCode = 11'b11111000010; #100;             // Testing LDUR
 		OpCode = 11'b11111000000; #100;             // Testing STUR
 		OpCode = 11'b11101011000; #100;             // Testing SUBS
+		OpCode = 11'b111000010xx; #100;             // Testing LDURB
+		OpCode = 11'b111000000xx; #100;             // Testing STURB
 	end
 endmodule

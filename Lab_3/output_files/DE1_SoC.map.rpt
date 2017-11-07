@@ -1,5 +1,5 @@
 Analysis & Elaboration report for DE1_SoC
-Sun Nov 05 21:39:31 2017
+Mon Nov 06 18:35:17 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -10,9 +10,74 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
   4. Analysis & Elaboration Settings
-  5. Port Connectivity Checks: "alu_1bit:firstAlu|mux8_1:submodule2"
-  6. Analysis & Elaboration Messages
-  7. Analysis & Elaboration Suppressed Messages
+  5. Port Connectivity Checks: "D_FF_enable:eachReg[0].eachDff[0].theReg|D_FF:d0"
+  6. Port Connectivity Checks: "mux32_1:eachMux[63].largeMux1"
+  7. Port Connectivity Checks: "mux32_1:eachMux[62].largeMux1"
+  8. Port Connectivity Checks: "mux32_1:eachMux[61].largeMux1"
+  9. Port Connectivity Checks: "mux32_1:eachMux[60].largeMux1"
+ 10. Port Connectivity Checks: "mux32_1:eachMux[59].largeMux1"
+ 11. Port Connectivity Checks: "mux32_1:eachMux[58].largeMux1"
+ 12. Port Connectivity Checks: "mux32_1:eachMux[57].largeMux1"
+ 13. Port Connectivity Checks: "mux32_1:eachMux[56].largeMux1"
+ 14. Port Connectivity Checks: "mux32_1:eachMux[55].largeMux1"
+ 15. Port Connectivity Checks: "mux32_1:eachMux[54].largeMux1"
+ 16. Port Connectivity Checks: "mux32_1:eachMux[53].largeMux1"
+ 17. Port Connectivity Checks: "mux32_1:eachMux[52].largeMux1"
+ 18. Port Connectivity Checks: "mux32_1:eachMux[51].largeMux1"
+ 19. Port Connectivity Checks: "mux32_1:eachMux[50].largeMux1"
+ 20. Port Connectivity Checks: "mux32_1:eachMux[49].largeMux1"
+ 21. Port Connectivity Checks: "mux32_1:eachMux[48].largeMux1"
+ 22. Port Connectivity Checks: "mux32_1:eachMux[47].largeMux1"
+ 23. Port Connectivity Checks: "mux32_1:eachMux[46].largeMux1"
+ 24. Port Connectivity Checks: "mux32_1:eachMux[45].largeMux1"
+ 25. Port Connectivity Checks: "mux32_1:eachMux[44].largeMux1"
+ 26. Port Connectivity Checks: "mux32_1:eachMux[43].largeMux1"
+ 27. Port Connectivity Checks: "mux32_1:eachMux[42].largeMux1"
+ 28. Port Connectivity Checks: "mux32_1:eachMux[41].largeMux1"
+ 29. Port Connectivity Checks: "mux32_1:eachMux[40].largeMux1"
+ 30. Port Connectivity Checks: "mux32_1:eachMux[39].largeMux1"
+ 31. Port Connectivity Checks: "mux32_1:eachMux[38].largeMux1"
+ 32. Port Connectivity Checks: "mux32_1:eachMux[37].largeMux1"
+ 33. Port Connectivity Checks: "mux32_1:eachMux[36].largeMux1"
+ 34. Port Connectivity Checks: "mux32_1:eachMux[35].largeMux1"
+ 35. Port Connectivity Checks: "mux32_1:eachMux[34].largeMux1"
+ 36. Port Connectivity Checks: "mux32_1:eachMux[33].largeMux1"
+ 37. Port Connectivity Checks: "mux32_1:eachMux[32].largeMux1"
+ 38. Port Connectivity Checks: "mux32_1:eachMux[31].largeMux1"
+ 39. Port Connectivity Checks: "mux32_1:eachMux[30].largeMux1"
+ 40. Port Connectivity Checks: "mux32_1:eachMux[29].largeMux1"
+ 41. Port Connectivity Checks: "mux32_1:eachMux[28].largeMux1"
+ 42. Port Connectivity Checks: "mux32_1:eachMux[27].largeMux1"
+ 43. Port Connectivity Checks: "mux32_1:eachMux[26].largeMux1"
+ 44. Port Connectivity Checks: "mux32_1:eachMux[25].largeMux1"
+ 45. Port Connectivity Checks: "mux32_1:eachMux[24].largeMux1"
+ 46. Port Connectivity Checks: "mux32_1:eachMux[23].largeMux1"
+ 47. Port Connectivity Checks: "mux32_1:eachMux[22].largeMux1"
+ 48. Port Connectivity Checks: "mux32_1:eachMux[21].largeMux1"
+ 49. Port Connectivity Checks: "mux32_1:eachMux[20].largeMux1"
+ 50. Port Connectivity Checks: "mux32_1:eachMux[19].largeMux1"
+ 51. Port Connectivity Checks: "mux32_1:eachMux[18].largeMux1"
+ 52. Port Connectivity Checks: "mux32_1:eachMux[17].largeMux1"
+ 53. Port Connectivity Checks: "mux32_1:eachMux[16].largeMux1"
+ 54. Port Connectivity Checks: "mux32_1:eachMux[15].largeMux1"
+ 55. Port Connectivity Checks: "mux32_1:eachMux[14].largeMux1"
+ 56. Port Connectivity Checks: "mux32_1:eachMux[13].largeMux1"
+ 57. Port Connectivity Checks: "mux32_1:eachMux[12].largeMux1"
+ 58. Port Connectivity Checks: "mux32_1:eachMux[11].largeMux1"
+ 59. Port Connectivity Checks: "mux32_1:eachMux[10].largeMux1"
+ 60. Port Connectivity Checks: "mux32_1:eachMux[9].largeMux1"
+ 61. Port Connectivity Checks: "mux32_1:eachMux[8].largeMux1"
+ 62. Port Connectivity Checks: "mux32_1:eachMux[7].largeMux1"
+ 63. Port Connectivity Checks: "mux32_1:eachMux[6].largeMux1"
+ 64. Port Connectivity Checks: "mux32_1:eachMux[5].largeMux1"
+ 65. Port Connectivity Checks: "mux32_1:eachMux[4].largeMux1"
+ 66. Port Connectivity Checks: "mux32_1:eachMux[3].largeMux1"
+ 67. Port Connectivity Checks: "mux32_1:eachMux[2].largeMux1"
+ 68. Port Connectivity Checks: "mux32_1:eachMux[1].largeMux1"
+ 69. Port Connectivity Checks: "mux32_1:eachMux[0].largeMux1"
+ 70. Port Connectivity Checks: "decode_5_32:Decoder"
+ 71. Analysis & Elaboration Messages
+ 72. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -39,10 +104,10 @@ agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Sun Nov 05 21:39:31 2017       ;
+; Analysis & Elaboration Status ; Successful - Mon Nov 06 18:35:17 2017       ;
 ; Quartus Prime Version         ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                 ; DE1_SoC                                     ;
-; Top-level Entity Name         ; alu                                         ;
+; Top-level Entity Name         ; regfile                                     ;
 ; Family                        ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
 ; Total registers               ; N/A until Partition Merge                   ;
@@ -76,7 +141,7 @@ agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; alu                ; DE1_SoC            ;
+; Top-level entity name                                                           ; regfile            ; DE1_SoC            ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; State Machine Processing                                                        ; User-Encoded       ; Auto               ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -157,14 +222,598 @@ agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "alu_1bit:firstAlu|mux8_1:submodule2" ;
-+-------+-------+----------+--------------------------------------+
-; Port  ; Type  ; Severity ; Details                              ;
-+-------+-------+----------+--------------------------------------+
-; in[7] ; Input ; Info     ; Stuck at GND                         ;
-; in[1] ; Input ; Info     ; Stuck at GND                         ;
-+-------+-------+----------+--------------------------------------+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "D_FF_enable:eachReg[0].eachDff[0].theReg|D_FF:d0" ;
++-------+-------+----------+---------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                           ;
++-------+-------+----------+---------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                      ;
++-------+-------+----------+---------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[63].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[62].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[61].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[60].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[59].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[58].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[57].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[56].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[55].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[54].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[53].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[52].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[51].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[50].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[49].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[48].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[47].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[46].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[45].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[44].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[43].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[42].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[41].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[40].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[39].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[38].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[37].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[36].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[35].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[34].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[33].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[32].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[31].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[30].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[29].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[28].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[27].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[26].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[25].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[24].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[23].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[22].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[21].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[20].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[19].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[18].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[17].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[16].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[15].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[14].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[13].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[12].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[11].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[10].largeMux1" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[9].largeMux1" ;
++--------+-------+----------+------------------------------+
+; Port   ; Type  ; Severity ; Details                      ;
++--------+-------+----------+------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                 ;
++--------+-------+----------+------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[8].largeMux1" ;
++--------+-------+----------+------------------------------+
+; Port   ; Type  ; Severity ; Details                      ;
++--------+-------+----------+------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                 ;
++--------+-------+----------+------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[7].largeMux1" ;
++--------+-------+----------+------------------------------+
+; Port   ; Type  ; Severity ; Details                      ;
++--------+-------+----------+------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                 ;
++--------+-------+----------+------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[6].largeMux1" ;
++--------+-------+----------+------------------------------+
+; Port   ; Type  ; Severity ; Details                      ;
++--------+-------+----------+------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                 ;
++--------+-------+----------+------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[5].largeMux1" ;
++--------+-------+----------+------------------------------+
+; Port   ; Type  ; Severity ; Details                      ;
++--------+-------+----------+------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                 ;
++--------+-------+----------+------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[4].largeMux1" ;
++--------+-------+----------+------------------------------+
+; Port   ; Type  ; Severity ; Details                      ;
++--------+-------+----------+------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                 ;
++--------+-------+----------+------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[3].largeMux1" ;
++--------+-------+----------+------------------------------+
+; Port   ; Type  ; Severity ; Details                      ;
++--------+-------+----------+------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                 ;
++--------+-------+----------+------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[2].largeMux1" ;
++--------+-------+----------+------------------------------+
+; Port   ; Type  ; Severity ; Details                      ;
++--------+-------+----------+------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                 ;
++--------+-------+----------+------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[1].largeMux1" ;
++--------+-------+----------+------------------------------+
+; Port   ; Type  ; Severity ; Details                      ;
++--------+-------+----------+------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                 ;
++--------+-------+----------+------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "mux32_1:eachMux[0].largeMux1" ;
++--------+-------+----------+------------------------------+
+; Port   ; Type  ; Severity ; Details                      ;
++--------+-------+----------+------------------------------+
+; in[31] ; Input ; Info     ; Stuck at GND                 ;
++--------+-------+----------+------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decode_5_32:Decoder"                                                                   ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; out[31] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------+
@@ -173,7 +822,7 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Nov 05 21:39:14 2017
+    Info: Processing started: Mon Nov 06 18:34:56 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC --analysis_and_elaboration
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Warning (12019): Can't analyze file -- file DE1_SoC.sv is missing
@@ -217,21 +866,50 @@ Info (12021): Found 4 design units, including 4 entities, in source file math.sv
     Info (12023): Found entity 4: mult_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/math.sv Line: 68
 Info (12021): Found 2 design units, including 2 entities, in source file controllogic.sv
     Info (12023): Found entity 1: controlLogic File: C:/Users/Emraj/Desktop/EE-469/Lab_3/controlLogic.sv Line: 16
-    Info (12023): Found entity 2: controlLogic_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/controlLogic.sv Line: 158
-Info (12127): Elaborating entity "alu" for the top level hierarchy
-Info (12128): Elaborating entity "alu_1bit" for hierarchy "alu_1bit:firstAlu" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu.sv Line: 40
-Info (12128): Elaborating entity "fullAdder_1bit" for hierarchy "alu_1bit:firstAlu|fullAdder_1bit:submodule1" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu_1bit.sv Line: 51
-Info (12128): Elaborating entity "mux2_1" for hierarchy "alu_1bit:firstAlu|mux2_1:mux1" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu_1bit.sv Line: 54
-Info (12128): Elaborating entity "mux8_1" for hierarchy "alu_1bit:firstAlu|mux8_1:submodule2" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu_1bit.sv Line: 57
-Info (12128): Elaborating entity "mux_4_1" for hierarchy "alu_1bit:firstAlu|mux8_1:submodule2|mux_4_1:mux1" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux8_1.sv Line: 35
-Info (12128): Elaborating entity "zero_flag" for hierarchy "zero_flag:check" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/alu.sv Line: 55
-Info (12128): Elaborating entity "nor_16x1" for hierarchy "zero_flag:check|nor_16x1:nor1" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/zero_flag.sv Line: 27
+    Info (12023): Found entity 2: controlLogic_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/controlLogic.sv Line: 181
+Info (12021): Found 1 design units, including 1 entities, in source file cpu_64bit.sv
+    Info (12023): Found entity 1: CPU_64bit File: C:/Users/Emraj/Desktop/EE-469/Lab_3/CPU_64bit.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
+    Info (12023): Found entity 1: regfile File: C:/Users/Emraj/Desktop/EE-469/Lab_3/regfile.sv Line: 27
+Info (12021): Found 2 design units, including 2 entities, in source file d_ff_enable.sv
+    Info (12023): Found entity 1: D_FF_enable File: C:/Users/Emraj/Desktop/EE-469/Lab_3/D_FF_enable.sv Line: 18
+    Info (12023): Found entity 2: D_FF_enable_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/D_FF_enable.sv Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file d_ff.sv
+    Info (12023): Found entity 1: D_FF File: C:/Users/Emraj/Desktop/EE-469/Lab_3/D_FF.sv Line: 1
+Info (12127): Elaborating entity "regfile" for the top level hierarchy
+Warning (12125): Using design file decode_5_32.sv, which is not specified as a design file for the current project, but contains definitions for 2 design units and 2 entities in project
+    Info (12023): Found entity 1: decode_5_32 File: C:/Users/Emraj/Desktop/EE-469/Lab_3/decode_5_32.sv Line: 14
+    Info (12023): Found entity 2: decode_5_32_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/decode_5_32.sv Line: 28
+Info (12128): Elaborating entity "decode_5_32" for hierarchy "decode_5_32:Decoder" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/regfile.sv Line: 39
+Warning (12125): Using design file decode_2_4.sv, which is not specified as a design file for the current project, but contains definitions for 2 design units and 2 entities in project
+    Info (12023): Found entity 1: decode_2_4 File: C:/Users/Emraj/Desktop/EE-469/Lab_3/decode_2_4.sv Line: 10
+    Info (12023): Found entity 2: decode_2_4_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/decode_2_4.sv Line: 26
+Info (12128): Elaborating entity "decode_2_4" for hierarchy "decode_5_32:Decoder|decode_2_4:submodule1" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/decode_5_32.sv Line: 21
+Warning (12125): Using design file decode_3_8.sv, which is not specified as a design file for the current project, but contains definitions for 2 design units and 2 entities in project
+    Info (12023): Found entity 1: decode_3_8 File: C:/Users/Emraj/Desktop/EE-469/Lab_3/decode_3_8.sv Line: 14
+    Info (12023): Found entity 2: decode_3_8_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/decode_3_8.sv Line: 26
+Info (12128): Elaborating entity "decode_3_8" for hierarchy "decode_5_32:Decoder|decode_3_8:submodule2" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/decode_5_32.sv Line: 22
+Warning (12125): Using design file decode_1_2.sv, which is not specified as a design file for the current project, but contains definitions for 2 design units and 2 entities in project
+    Info (12023): Found entity 1: decode_1_2 File: C:/Users/Emraj/Desktop/EE-469/Lab_3/decode_1_2.sv Line: 10
+    Info (12023): Found entity 2: decode_1_2_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/decode_1_2.sv Line: 22
+Info (12128): Elaborating entity "decode_1_2" for hierarchy "decode_5_32:Decoder|decode_3_8:submodule2|decode_1_2:submodule1" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/decode_3_8.sv Line: 21
+Warning (12125): Using design file mux32_1.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: mux32_1 File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux32_1.sv Line: 11
+Info (12128): Elaborating entity "mux32_1" for hierarchy "mux32_1:eachMux[0].largeMux1" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/regfile.sv Line: 46
+Warning (12125): Using design file mux16_1.sv, which is not specified as a design file for the current project, but contains definitions for 2 design units and 2 entities in project
+    Info (12023): Found entity 1: mux16_1 File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux16_1.sv Line: 11
+    Info (12023): Found entity 2: mux16_1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux16_1.sv Line: 25
+Info (12128): Elaborating entity "mux16_1" for hierarchy "mux32_1:eachMux[0].largeMux1|mux16_1:submodule_1" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux32_1.sv Line: 17
+Info (12128): Elaborating entity "mux_4_1" for hierarchy "mux32_1:eachMux[0].largeMux1|mux16_1:submodule_1|mux_4_1:submodule1" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux16_1.sv Line: 18
+Info (12128): Elaborating entity "mux2_1" for hierarchy "mux32_1:eachMux[0].largeMux1|mux2_1:submodule_3" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/mux32_1.sv Line: 19
+Info (12128): Elaborating entity "D_FF_enable" for hierarchy "D_FF_enable:eachReg[0].eachDff[0].theReg" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/regfile.sv Line: 58
+Info (12128): Elaborating entity "D_FF" for hierarchy "D_FF_enable:eachReg[0].eachDff[0].theReg|D_FF:d0" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/D_FF_enable.sv Line: 28
 Info (144001): Generated suppressed messages file C:/Users/Emraj/Desktop/EE-469/Lab_3/output_files/DE1_SoC.map.smsg
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 666 megabytes
-    Info: Processing ended: Sun Nov 05 21:39:31 2017
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:33
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 736 megabytes
+    Info: Processing ended: Mon Nov 06 18:35:18 2017
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:42
 
 
 +--------------------------------------------+
