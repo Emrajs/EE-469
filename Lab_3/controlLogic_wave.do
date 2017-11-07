@@ -13,6 +13,8 @@ add wave -noupdate -label MemToReg /controlLogic_testbench/MemToReg
 add wave -noupdate -label UncondBr /controlLogic_testbench/UncondBr
 add wave -noupdate -label BrTaken /controlLogic_testbench/BrTaken
 add wave -noupdate -label Imm_12 /controlLogic_testbench/Imm_12
+add wave -noupdate -label read_en /controlLogic_testbench/read_en
+add wave -noupdate -label ldur_B /controlLogic_testbench/ldur_B
 add wave -noupdate -label ALUOp /controlLogic_testbench/ALUOp
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 ps} 0}

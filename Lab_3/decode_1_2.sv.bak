@@ -1,0 +1,11 @@
+module decode_1_2 (in, out, en);
+	input logic in, en;
+	output logic [1:0] out;
+	
+	wire w;
+	
+	not not1(w, in);
+	and and1(out[0], en, in);
+	and and2(out[1], en, w);
+
+endmodule
