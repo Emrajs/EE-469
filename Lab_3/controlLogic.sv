@@ -13,7 +13,7 @@ I am not too sure about. STURB and LDURB require bytes. B_LT I'm also not sure o
 */
 
 
-module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2Loc, ALUSrc, ALUOp, MemWrite,MemToReg, UncondBr, BrTaken, Imm_12,ldur_B, read_en);
+module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2Loc, ALUSrc, ALUOp, MemWrite,MemToReg, UncondBr, BrTaken, Imm_12, ldur_B, read_en);
 	input logic [10:0] OpCode;
 	input logic zero, negative, carryout, overflow;
 	output logic RegWrite, Reg2Loc, ALUSrc, MemWrite, MemToReg, UncondBr, BrTaken, Imm_12, read_en;
@@ -185,7 +185,9 @@ module controlLogic_testbench();
 	logic [2:0] ALUOp;
 	logic [3:0] ldur_B;
 	
-	controlLogic dut (.OpCode, .zero, .negative, .carryout, .overflow, .RegWrite, .Reg2Loc, .ALUSrc, .ALUOp,.MemWrite, .MemToReg, .UncondBr, .BrTaken, .Imm_12, .ldur_B, .read_en);
+	controlLogic dut (.OpCode, .zero, .negative, .carryout, .overflow, .RegWrite, .Reg2Loc, 
+	                  .ALUSrc, .ALUOp,.MemWrite, .MemToReg, .UncondBr, .BrTaken, 
+							.Imm_12, .ldur_B, .read_en);
 	
 	initial begin
 		OpCode = 11'b00000000000; #100;             // should go to default
