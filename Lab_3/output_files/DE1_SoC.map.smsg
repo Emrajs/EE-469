@@ -1,6 +1,2 @@
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Warning (10273): Verilog HDL warning at controlLogic.sv(174): extended using "x" or "z" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/controlLogic.sv Line: 174
-Warning (10030): Net "Rd" at CPU_64bit.sv(7) has no driver or initial value, using a default initial value '0' File: C:/Users/Emraj/Desktop/EE-469/Lab_3/CPU_64bit.sv Line: 7
-Warning (10030): Net "Rm" at CPU_64bit.sv(7) has no driver or initial value, using a default initial value '0' File: C:/Users/Emraj/Desktop/EE-469/Lab_3/CPU_64bit.sv Line: 7
-Warning (10030): Net "Rn" at CPU_64bit.sv(7) has no driver or initial value, using a default initial value '0' File: C:/Users/Emraj/Desktop/EE-469/Lab_3/CPU_64bit.sv Line: 7
-Warning (10030): Net "RegWrite" at CPU_64bit.sv(8) has no driver or initial value, using a default initial value '0' File: C:/Users/Emraj/Desktop/EE-469/Lab_3/CPU_64bit.sv Line: 8
+Warning (10273): Verilog HDL warning at controlLogic.sv(174): extended using "x" or "z" File: U:/EE-469/Lab_3/controlLogic.sv Line: 174

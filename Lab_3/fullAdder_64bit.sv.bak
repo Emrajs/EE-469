@@ -1,0 +1,37 @@
+/*******************************************************************************
+*	Authors:
+*		Emraj Sidhu and Nesta Isakovic	
+*
+*	Description:
+*		A full 64 bit adder.
+*
+*	Inputs:
+*		A: The first 64 bit input
+*     B: The
+*			
+*	Outputs:
+*		result: The 64 bit output result.
+*
+*******************************************************************************/
+`timescale 10ps/1fs
+
+module alu (A, B, result);
+	input logic [63:0] A, B;
+	output logic [63:0] result;
+   logic [62:0] aluConnect;
+	
+	//Sets up the first 1 bit Adder outside the loop to change Cin
+	fullAdder_1bit firstAdder (.a(A[0]), .b(B[0]), .out(result[0]), .Cin(cntrl[0]), .Cout(aluConnect[0]));
+	
+	//Generates the Adders for bits 63-2 of the result
+	genvar i;
+	generate 
+		for (i = 1; i < 63; i++) begin: makeAdder
+			fullAdder_1bit largeAdder (.a(A[i]), .b(B[i]), .out(result[i]), .Cin(aluConnect[i - 1]), .Cout(aluConnect[i]));
+		end
+	endgenerate
+	
+	//Sets up the last 1 bit Adder outside the loop to set the carry_out flag
+	fullAdder_1bit sixtyFourthAdder (.a(A[63]), .b(B[63]), .out(result[63]), .Cin(aluConnect[62]), .Cout(carry_out));
+	
+endmodule
