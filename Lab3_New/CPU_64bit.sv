@@ -47,7 +47,7 @@ module CPU_64bit (clk, reset);
 	assign forDirection = 1'b0;
 	assign forDistance = 6'b000010;
    logic negative, zero, overflow, carry_out;
-	logic [3:0] ALUOp;
+	logic [2:0] ALUOp;
 	logic RegWrite;
 	logic sel;
 	logic MemWrite;

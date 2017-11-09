@@ -1,5 +1,5 @@
 Analysis & Elaboration report for DE1_SoC
-Thu Nov 09 15:15:58 2017
+Thu Nov 09 15:38:43 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -52,7 +52,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Thu Nov 09 15:15:58 2017       ;
+; Analysis & Elaboration Status ; Successful - Thu Nov 09 15:38:43 2017       ;
 ; Quartus Prime Version         ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                 ; DE1_SoC                                     ;
 ; Top-level Entity Name         ; CPU_64bit                                   ;
@@ -315,132 +315,132 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Nov 09 15:15:37 2017
+    Info: Processing started: Thu Nov 09 15:38:24 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC --analysis_and_elaboration
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 2 entities, in source file zero_flag.sv
-    Info (12023): Found entity 1: zero_flag File: C:/Users/Emraj/Desktop/EE469/Lab3_New/zero_flag.sv Line: 21
-    Info (12023): Found entity 2: zero_flag_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/zero_flag.sv Line: 37
+    Info (12023): Found entity 1: zero_flag File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/zero_flag.sv Line: 21
+    Info (12023): Found entity 2: zero_flag_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/zero_flag.sv Line: 37
 Info (12021): Found 1 design units, including 1 entities, in source file regstim.sv
-    Info (12023): Found entity 1: regstim File: C:/Users/Emraj/Desktop/EE469/Lab3_New/regstim.sv Line: 4
+    Info (12023): Found entity 1: regstim File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/regstim.sv Line: 4
 Info (12021): Found 2 design units, including 2 entities, in source file pcunit.sv
-    Info (12023): Found entity 1: pcUnit File: C:/Users/Emraj/Desktop/EE469/Lab3_New/pcUnit.sv Line: 21
-    Info (12023): Found entity 2: pcUnit_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/pcUnit.sv Line: 36
+    Info (12023): Found entity 1: pcUnit File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/pcUnit.sv Line: 21
+    Info (12023): Found entity 2: pcUnit_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/pcUnit.sv Line: 36
 Info (12021): Found 2 design units, including 2 entities, in source file nor_16x1.sv
-    Info (12023): Found entity 1: nor_16x1 File: C:/Users/Emraj/Desktop/EE469/Lab3_New/nor_16x1.sv Line: 19
-    Info (12023): Found entity 2: nor_16x1_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/nor_16x1.sv Line: 35
+    Info (12023): Found entity 1: nor_16x1 File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/nor_16x1.sv Line: 19
+    Info (12023): Found entity 2: nor_16x1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/nor_16x1.sv Line: 35
 Info (12021): Found 2 design units, including 2 entities, in source file mux128_64.sv
-    Info (12023): Found entity 1: mux128_64 File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux128_64.sv Line: 19
-    Info (12023): Found entity 2: mux128_64_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux128_64.sv Line: 34
+    Info (12023): Found entity 1: mux128_64 File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux128_64.sv Line: 19
+    Info (12023): Found entity 2: mux128_64_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux128_64.sv Line: 34
 Info (12021): Found 1 design units, including 1 entities, in source file mux32_1.sv
-    Info (12023): Found entity 1: mux32_1 File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux32_1.sv Line: 11
+    Info (12023): Found entity 1: mux32_1 File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux32_1.sv Line: 11
 Info (12021): Found 2 design units, including 2 entities, in source file mux16_1.sv
-    Info (12023): Found entity 1: mux16_1 File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux16_1.sv Line: 11
-    Info (12023): Found entity 2: mux16_1_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux16_1.sv Line: 25
+    Info (12023): Found entity 1: mux16_1 File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux16_1.sv Line: 11
+    Info (12023): Found entity 2: mux16_1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux16_1.sv Line: 25
 Info (12021): Found 2 design units, including 2 entities, in source file mux10_5.sv
-    Info (12023): Found entity 1: mux10_5 File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux10_5.sv Line: 19
-    Info (12023): Found entity 2: mux10_5_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux10_5.sv Line: 34
+    Info (12023): Found entity 1: mux10_5 File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux10_5.sv Line: 19
+    Info (12023): Found entity 2: mux10_5_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux10_5.sv Line: 34
 Info (12021): Found 2 design units, including 2 entities, in source file mux8_1.sv
-    Info (12023): Found entity 1: mux8_1 File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux8_1.sv Line: 28
-    Info (12023): Found entity 2: mux8_1_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux8_1.sv Line: 41
+    Info (12023): Found entity 1: mux8_1 File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux8_1.sv Line: 28
+    Info (12023): Found entity 2: mux8_1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux8_1.sv Line: 41
 Info (12021): Found 2 design units, including 2 entities, in source file mux_4_1.sv
-    Info (12023): Found entity 1: mux_4_1 File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux_4_1.sv Line: 24
-    Info (12023): Found entity 2: mux_4_1_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux_4_1.sv Line: 40
+    Info (12023): Found entity 1: mux_4_1 File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux_4_1.sv Line: 24
+    Info (12023): Found entity 2: mux_4_1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux_4_1.sv Line: 40
 Info (12021): Found 4 design units, including 4 entities, in source file math.sv
-    Info (12023): Found entity 1: mult File: C:/Users/Emraj/Desktop/EE469/Lab3_New/math.sv Line: 3
-    Info (12023): Found entity 2: shifter File: C:/Users/Emraj/Desktop/EE469/Lab3_New/math.sv Line: 33
-    Info (12023): Found entity 3: shifter_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/math.sv Line: 48
-    Info (12023): Found entity 4: mult_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/math.sv Line: 68
+    Info (12023): Found entity 1: mult File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/math.sv Line: 3
+    Info (12023): Found entity 2: shifter File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/math.sv Line: 33
+    Info (12023): Found entity 3: shifter_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/math.sv Line: 48
+    Info (12023): Found entity 4: mult_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/math.sv Line: 68
 Info (12021): Found 2 design units, including 2 entities, in source file instructmem.sv
-    Info (12023): Found entity 1: instructmem File: C:/Users/Emraj/Desktop/EE469/Lab3_New/instructmem.sv Line: 17
-    Info (12023): Found entity 2: instructmem_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/instructmem.sv Line: 57
+    Info (12023): Found entity 1: instructmem File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/instructmem.sv Line: 17
+    Info (12023): Found entity 2: instructmem_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/instructmem.sv Line: 57
 Info (12021): Found 2 design units, including 2 entities, in source file fulladder_64bit.sv
-    Info (12023): Found entity 1: fullAdder_64bit File: C:/Users/Emraj/Desktop/EE469/Lab3_New/fullAdder_64bit.sv Line: 18
-    Info (12023): Found entity 2: adderstim File: C:/Users/Emraj/Desktop/EE469/Lab3_New/fullAdder_64bit.sv Line: 39
+    Info (12023): Found entity 1: fullAdder_64bit File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/fullAdder_64bit.sv Line: 18
+    Info (12023): Found entity 2: adderstim File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/fullAdder_64bit.sv Line: 39
 Info (12021): Found 2 design units, including 2 entities, in source file fulladder_1bit.sv
-    Info (12023): Found entity 1: fullAdder_1bit File: C:/Users/Emraj/Desktop/EE469/Lab3_New/fullAdder_1bit.sv Line: 23
-    Info (12023): Found entity 2: fullAdder_1bit_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/fullAdder_1bit.sv Line: 51
+    Info (12023): Found entity 1: fullAdder_1bit File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/fullAdder_1bit.sv Line: 23
+    Info (12023): Found entity 2: fullAdder_1bit_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/fullAdder_1bit.sv Line: 51
 Info (12021): Found 2 design units, including 2 entities, in source file decode_5_32.sv
-    Info (12023): Found entity 1: decode_5_32 File: C:/Users/Emraj/Desktop/EE469/Lab3_New/decode_5_32.sv Line: 14
-    Info (12023): Found entity 2: decode_5_32_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/decode_5_32.sv Line: 28
+    Info (12023): Found entity 1: decode_5_32 File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/decode_5_32.sv Line: 14
+    Info (12023): Found entity 2: decode_5_32_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/decode_5_32.sv Line: 28
 Info (12021): Found 2 design units, including 2 entities, in source file decode_3_8.sv
-    Info (12023): Found entity 1: decode_3_8 File: C:/Users/Emraj/Desktop/EE469/Lab3_New/decode_3_8.sv Line: 14
-    Info (12023): Found entity 2: decode_3_8_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/decode_3_8.sv Line: 26
+    Info (12023): Found entity 1: decode_3_8 File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/decode_3_8.sv Line: 14
+    Info (12023): Found entity 2: decode_3_8_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/decode_3_8.sv Line: 26
 Info (12021): Found 2 design units, including 2 entities, in source file decode_2_4.sv
-    Info (12023): Found entity 1: decode_2_4 File: C:/Users/Emraj/Desktop/EE469/Lab3_New/decode_2_4.sv Line: 10
-    Info (12023): Found entity 2: decode_2_4_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/decode_2_4.sv Line: 26
+    Info (12023): Found entity 1: decode_2_4 File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/decode_2_4.sv Line: 10
+    Info (12023): Found entity 2: decode_2_4_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/decode_2_4.sv Line: 26
 Info (12021): Found 2 design units, including 2 entities, in source file decode_1_2.sv
-    Info (12023): Found entity 1: decode_1_2 File: C:/Users/Emraj/Desktop/EE469/Lab3_New/decode_1_2.sv Line: 10
-    Info (12023): Found entity 2: decode_1_2_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/decode_1_2.sv Line: 22
+    Info (12023): Found entity 1: decode_1_2 File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/decode_1_2.sv Line: 10
+    Info (12023): Found entity 2: decode_1_2_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/decode_1_2.sv Line: 22
 Info (12021): Found 2 design units, including 2 entities, in source file datamem.sv
-    Info (12023): Found entity 1: datamem File: C:/Users/Emraj/Desktop/EE469/Lab3_New/datamem.sv Line: 12
-    Info (12023): Found entity 2: datamem_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/datamem.sv Line: 70
+    Info (12023): Found entity 1: datamem File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/datamem.sv Line: 12
+    Info (12023): Found entity 2: datamem_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/datamem.sv Line: 70
 Info (12021): Found 2 design units, including 2 entities, in source file d_ff_enable.sv
-    Info (12023): Found entity 1: D_FF_enable File: C:/Users/Emraj/Desktop/EE469/Lab3_New/D_FF_enable.sv Line: 18
-    Info (12023): Found entity 2: D_FF_enable_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/D_FF_enable.sv Line: 35
+    Info (12023): Found entity 1: D_FF_enable File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/D_FF_enable.sv Line: 18
+    Info (12023): Found entity 2: D_FF_enable_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/D_FF_enable.sv Line: 35
 Info (12021): Found 1 design units, including 1 entities, in source file d_ff.sv
-    Info (12023): Found entity 1: D_FF File: C:/Users/Emraj/Desktop/EE469/Lab3_New/D_FF.sv Line: 1
+    Info (12023): Found entity 1: D_FF File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/D_FF.sv Line: 1
 Info (12021): Found 2 design units, including 2 entities, in source file controllogic.sv
-    Info (12023): Found entity 1: controlLogic File: C:/Users/Emraj/Desktop/EE469/Lab3_New/controlLogic.sv Line: 16
-    Info (12023): Found entity 2: controlLogic_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/controlLogic.sv Line: 181
+    Info (12023): Found entity 1: controlLogic File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/controlLogic.sv Line: 16
+    Info (12023): Found entity 2: controlLogic_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/controlLogic.sv Line: 181
 Info (12021): Found 1 design units, including 1 entities, in source file alustim.sv
-    Info (12023): Found entity 1: alustim File: C:/Users/Emraj/Desktop/EE469/Lab3_New/alustim.sv Line: 201
+    Info (12023): Found entity 1: alustim File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/alustim.sv Line: 201
 Info (12021): Found 1 design units, including 1 entities, in source file alu_64bit.sv
-    Info (12023): Found entity 1: alu_64bit File: C:/Users/Emraj/Desktop/EE469/Lab3_New/alu_64bit.sv Line: 10
+    Info (12023): Found entity 1: alu_64bit File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/alu_64bit.sv Line: 10
 Info (12021): Found 2 design units, including 2 entities, in source file alu_1bit.sv
-    Info (12023): Found entity 1: alu_1bit File: C:/Users/Emraj/Desktop/EE469/Lab3_New/alu_1bit.sv Line: 37
-    Info (12023): Found entity 2: alu_1bit_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/alu_1bit.sv Line: 60
+    Info (12023): Found entity 1: alu_1bit File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/alu_1bit.sv Line: 37
+    Info (12023): Found entity 2: alu_1bit_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/alu_1bit.sv Line: 60
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
-    Info (12023): Found entity 1: alu File: C:/Users/Emraj/Desktop/EE469/Lab3_New/alu.sv Line: 32
+    Info (12023): Found entity 1: alu File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/alu.sv Line: 32
 Warning (12019): Can't analyze file -- file DE1_SoC.sv is missing
 Info (12021): Found 2 design units, including 2 entities, in source file mux2_1.sv
-    Info (12023): Found entity 1: mux2_1 File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux2_1.sv Line: 18
-    Info (12023): Found entity 2: mux2_1_testbench File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux2_1.sv Line: 31
-Warning (10229): Verilog HDL Expression warning at CPU_64bit.sv(83): truncated literal to match 1 bits File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 83
+    Info (12023): Found entity 1: mux2_1 File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux2_1.sv Line: 18
+    Info (12023): Found entity 2: mux2_1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux2_1.sv Line: 31
+Warning (10229): Verilog HDL Expression warning at CPU_64bit.sv(83): truncated literal to match 1 bits File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 83
 Info (12021): Found 1 design units, including 1 entities, in source file cpu_64bit.sv
-    Info (12023): Found entity 1: CPU_64bit File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 17
+    Info (12023): Found entity 1: CPU_64bit File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
-    Info (12023): Found entity 1: regfile File: C:/Users/Emraj/Desktop/EE469/Lab3_New/regfile.sv Line: 27
-Warning (10236): Verilog HDL Implicit Net warning at CPU_64bit.sv(47): created implicit net for "forDirection" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 47
-Warning (10236): Verilog HDL Implicit Net warning at CPU_64bit.sv(48): created implicit net for "forDistance" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 48
+    Info (12023): Found entity 1: regfile File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/regfile.sv Line: 27
+Warning (10236): Verilog HDL Implicit Net warning at CPU_64bit.sv(47): created implicit net for "forDirection" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 47
+Warning (10236): Verilog HDL Implicit Net warning at CPU_64bit.sv(48): created implicit net for "forDistance" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 48
 Info (12127): Elaborating entity "CPU_64bit" for the top level hierarchy
-Warning (10858): Verilog HDL warning at CPU_64bit.sv(23): object instruction used but never assigned File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 23
-Warning (10036): Verilog HDL or VHDL warning at CPU_64bit.sv(28): object "opcode" assigned a value but never read File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 28
-Warning (10230): Verilog HDL assignment warning at CPU_64bit.sv(48): truncated value with size 6 to match size of target (1) File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 48
-Info (12128): Elaborating entity "mux128_64" for hierarchy "mux128_64:brSelect" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 74
-Info (12128): Elaborating entity "mux2_1" for hierarchy "mux128_64:brSelect|mux2_1:eachRouteMux[0].routeMux1" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux128_64.sv Line: 28
-Info (12128): Elaborating entity "shifter" for hierarchy "shifter:movzShifter" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 77
-Info (12128): Elaborating entity "pcUnit" for hierarchy "pcUnit:theProgramCounter" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 80
-Info (12128): Elaborating entity "D_FF" for hierarchy "pcUnit:theProgramCounter|D_FF:holdingDFF[0].holdingDFF1" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/pcUnit.sv Line: 30
-Info (12128): Elaborating entity "fullAdder_64bit" for hierarchy "fullAdder_64bit:normalCounter" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 83
-Info (12128): Elaborating entity "fullAdder_1bit" for hierarchy "fullAdder_64bit:normalCounter|fullAdder_1bit:firstAdder" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/fullAdder_64bit.sv Line: 24
-Info (12128): Elaborating entity "mux10_5" for hierarchy "mux10_5:regMux" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 102
-Info (12128): Elaborating entity "regfile" for hierarchy "regfile:registerFile" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 108
-Info (12128): Elaborating entity "decode_5_32" for hierarchy "regfile:registerFile|decode_5_32:Decoder" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/regfile.sv Line: 39
-Info (12128): Elaborating entity "decode_2_4" for hierarchy "regfile:registerFile|decode_5_32:Decoder|decode_2_4:submodule1" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/decode_5_32.sv Line: 21
-Info (12128): Elaborating entity "decode_3_8" for hierarchy "regfile:registerFile|decode_5_32:Decoder|decode_3_8:submodule2" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/decode_5_32.sv Line: 22
-Info (12128): Elaborating entity "decode_1_2" for hierarchy "regfile:registerFile|decode_5_32:Decoder|decode_3_8:submodule2|decode_1_2:submodule1" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/decode_3_8.sv Line: 21
-Info (12128): Elaborating entity "mux32_1" for hierarchy "regfile:registerFile|mux32_1:eachMux[0].largeMux1" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/regfile.sv Line: 46
-Info (12128): Elaborating entity "mux16_1" for hierarchy "regfile:registerFile|mux32_1:eachMux[0].largeMux1|mux16_1:submodule_1" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux32_1.sv Line: 17
-Info (12128): Elaborating entity "mux_4_1" for hierarchy "regfile:registerFile|mux32_1:eachMux[0].largeMux1|mux16_1:submodule_1|mux_4_1:submodule1" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/mux16_1.sv Line: 18
-Info (12128): Elaborating entity "D_FF_enable" for hierarchy "regfile:registerFile|D_FF_enable:eachReg[0].eachDff[0].theReg" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/regfile.sv Line: 58
-Info (12128): Elaborating entity "alu" for hierarchy "alu:mainALU" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/CPU_64bit.sv Line: 124
-Info (12128): Elaborating entity "alu_1bit" for hierarchy "alu:mainALU|alu_1bit:firstAlu" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/alu.sv Line: 40
-Info (12128): Elaborating entity "mux8_1" for hierarchy "alu:mainALU|alu_1bit:firstAlu|mux8_1:submodule2" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/alu_1bit.sv Line: 57
-Info (12128): Elaborating entity "zero_flag" for hierarchy "alu:mainALU|zero_flag:check" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/alu.sv Line: 55
-Info (12128): Elaborating entity "nor_16x1" for hierarchy "alu:mainALU|zero_flag:check|nor_16x1:nor1" File: C:/Users/Emraj/Desktop/EE469/Lab3_New/zero_flag.sv Line: 27
+Warning (10858): Verilog HDL warning at CPU_64bit.sv(23): object instruction used but never assigned File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 23
+Warning (10036): Verilog HDL or VHDL warning at CPU_64bit.sv(28): object "opcode" assigned a value but never read File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 28
+Warning (10230): Verilog HDL assignment warning at CPU_64bit.sv(48): truncated value with size 6 to match size of target (1) File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 48
+Info (12128): Elaborating entity "mux128_64" for hierarchy "mux128_64:brSelect" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 74
+Info (12128): Elaborating entity "mux2_1" for hierarchy "mux128_64:brSelect|mux2_1:eachRouteMux[0].routeMux1" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux128_64.sv Line: 28
+Info (12128): Elaborating entity "shifter" for hierarchy "shifter:movzShifter" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 77
+Info (12128): Elaborating entity "pcUnit" for hierarchy "pcUnit:theProgramCounter" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 80
+Info (12128): Elaborating entity "D_FF" for hierarchy "pcUnit:theProgramCounter|D_FF:holdingDFF[0].holdingDFF1" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/pcUnit.sv Line: 30
+Info (12128): Elaborating entity "fullAdder_64bit" for hierarchy "fullAdder_64bit:normalCounter" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 83
+Info (12128): Elaborating entity "fullAdder_1bit" for hierarchy "fullAdder_64bit:normalCounter|fullAdder_1bit:firstAdder" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/fullAdder_64bit.sv Line: 24
+Info (12128): Elaborating entity "mux10_5" for hierarchy "mux10_5:regMux" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 102
+Info (12128): Elaborating entity "regfile" for hierarchy "regfile:registerFile" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 108
+Info (12128): Elaborating entity "decode_5_32" for hierarchy "regfile:registerFile|decode_5_32:Decoder" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/regfile.sv Line: 39
+Info (12128): Elaborating entity "decode_2_4" for hierarchy "regfile:registerFile|decode_5_32:Decoder|decode_2_4:submodule1" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/decode_5_32.sv Line: 21
+Info (12128): Elaborating entity "decode_3_8" for hierarchy "regfile:registerFile|decode_5_32:Decoder|decode_3_8:submodule2" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/decode_5_32.sv Line: 22
+Info (12128): Elaborating entity "decode_1_2" for hierarchy "regfile:registerFile|decode_5_32:Decoder|decode_3_8:submodule2|decode_1_2:submodule1" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/decode_3_8.sv Line: 21
+Info (12128): Elaborating entity "mux32_1" for hierarchy "regfile:registerFile|mux32_1:eachMux[0].largeMux1" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/regfile.sv Line: 46
+Info (12128): Elaborating entity "mux16_1" for hierarchy "regfile:registerFile|mux32_1:eachMux[0].largeMux1|mux16_1:submodule_1" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux32_1.sv Line: 17
+Info (12128): Elaborating entity "mux_4_1" for hierarchy "regfile:registerFile|mux32_1:eachMux[0].largeMux1|mux16_1:submodule_1|mux_4_1:submodule1" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/mux16_1.sv Line: 18
+Info (12128): Elaborating entity "D_FF_enable" for hierarchy "regfile:registerFile|D_FF_enable:eachReg[0].eachDff[0].theReg" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/regfile.sv Line: 58
+Info (12128): Elaborating entity "alu" for hierarchy "alu:mainALU" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/CPU_64bit.sv Line: 124
+Info (12128): Elaborating entity "alu_1bit" for hierarchy "alu:mainALU|alu_1bit:firstAlu" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/alu.sv Line: 40
+Info (12128): Elaborating entity "mux8_1" for hierarchy "alu:mainALU|alu_1bit:firstAlu|mux8_1:submodule2" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/alu_1bit.sv Line: 57
+Info (12128): Elaborating entity "zero_flag" for hierarchy "alu:mainALU|zero_flag:check" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/alu.sv Line: 55
+Info (12128): Elaborating entity "nor_16x1" for hierarchy "alu:mainALU|zero_flag:check|nor_16x1:nor1" File: C:/Users/Emraj/Desktop/EE-469/Lab3_New/zero_flag.sv Line: 27
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (144001): Generated suppressed messages file C:/Users/Emraj/Desktop/EE469/Lab3_New/output_files/DE1_SoC.map.smsg
+Info (144001): Generated suppressed messages file C:/Users/Emraj/Desktop/EE-469/Lab3_New/output_files/DE1_SoC.map.smsg
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 761 megabytes
-    Info: Processing ended: Thu Nov 09 15:15:58 2017
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:39
+    Info: Peak virtual memory: 772 megabytes
+    Info: Processing ended: Thu Nov 09 15:38:43 2017
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:37
 
 
 +--------------------------------------------+
 ; Analysis & Elaboration Suppressed Messages ;
 +--------------------------------------------+
-The suppressed messages can be found in C:/Users/Emraj/Desktop/EE469/Lab3_New/output_files/DE1_SoC.map.smsg.
+The suppressed messages can be found in C:/Users/Emraj/Desktop/EE-469/Lab3_New/output_files/DE1_SoC.map.smsg.
 
 
