@@ -1,0 +1,11 @@
+module decode_3_8 (in, out, en);
+	input logic [2:0] in;
+	input logic en;
+	output logic [7:0] out;
+	
+	wire [1:0] w;
+	
+	decode_1_2 submodule1 (.in(in[2]), .out(w[1:0]), .en(en));
+	
+	
+endmodule

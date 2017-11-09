@@ -1,0 +1,14 @@
+module decode_5_32 (in, out, en);
+	input logic [4:0] in;
+	input logic en;
+	output logic [31:0] out;
+	
+	wire [3:0] w;
+	
+	decode_2_4 submodule1 (.in(in[4:3]), .out(w[3:0]), .en(en));
+	decode_3_8 submodule2 (.in(in[2:0]), .out(out[7:0]), en(w[0]);
+	decode_3_8 submodule2 (.in(in[2:0]), .out(out[15:8]), en(w[1]);
+	decode_3_8 submodule3 (.in(in[2:0]), .out(out[23:16]), en(w[2]);
+	decode_3_8 submodule4 (.in(in[2:0]), .out(out[31:24]), en(w[3]);
+endmodule
+
