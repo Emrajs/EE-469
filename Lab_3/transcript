@@ -1,0 +1,544 @@
+# Reading C:/intelFPGA/17.0/modelsim_ase/tcl/vsim/pref.tcl
+do runlab_mux128_64.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:42:06 on Nov 07,2017
+# vlog -reportprogress 300 ./mux128_64.sv 
+# -- Compiling module mux128_64
+# -- Compiling module mux128_64_testbench
+# 
+# Top level modules:
+# 	mux128_64_testbench
+# End time: 16:42:07 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:42:07 on Nov 07,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 16:42:08 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux128_64_testbench 
+# Start time: 16:42:08 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.mux128_64_testbench
+# Loading work.mux128_64
+# Loading work.mux2_1
+# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'mux128_64_testbench' does not have a timeunit/timeprecision specification in effect, but other modules do.
+#    Time: 0 ps  Iteration: 0  Instance: /mux128_64_testbench/dut/eachRouteMux[0]/routeMux1 File: ./mux2_1.sv
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runlab_mux128_64.do PAUSED at line 13
+do runlab_mux128_64.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:42:35 on Nov 07,2017
+# vlog -reportprogress 300 ./mux128_64.sv 
+# -- Compiling module mux128_64
+# -- Compiling module mux128_64_testbench
+# 
+# Top level modules:
+# 	mux128_64_testbench
+# End time: 16:42:35 on Nov 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:42:35 on Nov 07,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 16:42:36 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux128_64_testbench 
+# Start time: 16:42:08 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.mux128_64_testbench
+# Loading work.mux128_64
+# Loading work.mux2_1
+# ** Error: Cannot open macro file: mux128_64_wave.do
+# Error in macro ./runlab_mux128_64.do line 18
+# Cannot open macro file: mux128_64_wave.do
+#     while executing
+# "do mux128_64_wave.do"
+# BKMARK_ERROR: Unknown client: .main_pane.source
+add wave -position insertpoint  \
+sim:/mux128_64_testbench/inOne
+add wave -position end  sim:/mux128_64_testbench/inZero
+add wave -position end  sim:/mux128_64_testbench/out
+add wave -position end  sim:/mux128_64_testbench/sel
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/EE-469/Lab_3/mux128_64_wave.do
+do runlab_mux128_64.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:44:07 on Nov 07,2017
+# vlog -reportprogress 300 ./mux128_64.sv 
+# -- Compiling module mux128_64
+# -- Compiling module mux128_64_testbench
+# 
+# Top level modules:
+# 	mux128_64_testbench
+# End time: 16:44:08 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:44:08 on Nov 07,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 16:44:08 on Nov 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:44:10 on Nov 07,2017, Elapsed time: 0:02:02
+# Errors: 5, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux128_64_testbench 
+# Start time: 16:44:10 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.mux128_64_testbench
+# Loading work.mux128_64
+# Loading work.mux2_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+do runlab_mux128_64.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:44:58 on Nov 07,2017
+# vlog -reportprogress 300 ./mux128_64.sv 
+# -- Compiling module mux128_64
+# -- Compiling module mux128_64_testbench
+# 
+# Top level modules:
+# 	mux128_64_testbench
+# End time: 16:45:00 on Nov 07,2017, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:45:00 on Nov 07,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 16:45:01 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 16:45:02 on Nov 07,2017, Elapsed time: 0:00:52
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux128_64_testbench 
+# Start time: 16:45:02 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.mux128_64_testbench
+# Loading work.mux128_64
+# Loading work.mux2_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/EE-469/Lab_3/mux128_64_wave.do
+do runlab_mux128_64.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:47:43 on Nov 07,2017
+# vlog -reportprogress 300 ./mux128_64.sv 
+# -- Compiling module mux128_64
+# -- Compiling module mux128_64_testbench
+# 
+# Top level modules:
+# 	mux128_64_testbench
+# End time: 16:47:44 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:47:44 on Nov 07,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 16:47:45 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 16:47:46 on Nov 07,2017, Elapsed time: 0:02:44
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux128_64_testbench 
+# Start time: 16:47:46 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.mux128_64_testbench
+# Loading work.mux128_64
+# Loading work.mux2_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+do runlab_mux10_5.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:53:11 on Nov 07,2017
+# vlog -reportprogress 300 ./mux10_5.sv 
+# -- Compiling module mux10_5
+# -- Compiling module mux10_5_testbench
+# 
+# Top level modules:
+# 	mux10_5_testbench
+# End time: 16:53:12 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:53:12 on Nov 07,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 16:53:12 on Nov 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:53:13 on Nov 07,2017, Elapsed time: 0:05:27
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux10_5_testbench 
+# Start time: 16:53:13 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.mux10_5_testbench
+# Loading work.mux10_5
+# Loading work.mux2_1
+# ** Error: Cannot open macro file: mux10_5_wave.do
+# Error in macro ./runlab_mux10_5.do line 18
+# Cannot open macro file: mux10_5_wave.do
+#     while executing
+# "do mux10_5_wave.do"
+add wave -position end  sim:/mux10_5_testbench/inOne
+add wave -position end  sim:/mux10_5_testbench/inZero
+add wave -position end  sim:/mux10_5_testbench/out
+add wave -position end  sim:/mux10_5_testbench/sel
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/EE-469/Lab_3/mux10_5_wave.do
+do runlab_mux10_5.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:53:43 on Nov 07,2017
+# vlog -reportprogress 300 ./mux10_5.sv 
+# -- Compiling module mux10_5
+# -- Compiling module mux10_5_testbench
+# 
+# Top level modules:
+# 	mux10_5_testbench
+# End time: 16:53:44 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:53:44 on Nov 07,2017
+# vlog -reportprogress 300 ./mux2_1.sv 
+# -- Compiling module mux2_1
+# -- Compiling module mux2_1_testbench
+# 
+# Top level modules:
+# 	mux2_1_testbench
+# End time: 16:53:44 on Nov 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:53:45 on Nov 07,2017, Elapsed time: 0:00:32
+# Errors: 3, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work mux10_5_testbench 
+# Start time: 16:53:46 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.mux10_5_testbench
+# Loading work.mux10_5
+# Loading work.mux2_1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/EE-469/Lab_3/mux10_5_wave.do
+do runlab_pcUnit.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:35:00 on Nov 07,2017
+# vlog -reportprogress 300 ./pcUnit.sv 
+# -- Compiling module pcUnit
+# -- Compiling module pcUnit_testbench
+# ** Error: ./pcUnit.sv(43): (vlog-2730) Undefined variable: 'sel'.
+# End time: 18:35:01 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab_pcUnit.do line 7
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./pcUnit.sv""
+do runlab_pcUnit.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:38:07 on Nov 07,2017
+# vlog -reportprogress 300 ./pcUnit.sv 
+# -- Compiling module pcUnit
+# -- Compiling module pcUnit_testbench
+# 
+# Top level modules:
+# 	pcUnit_testbench
+# End time: 18:38:07 on Nov 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:38:07 on Nov 07,2017
+# vlog -reportprogress 300 ./D_FF.sv 
+# -- Compiling module D_FF
+# 
+# Top level modules:
+# 	D_FF
+# End time: 18:38:08 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 18:38:09 on Nov 07,2017, Elapsed time: 1:44:23
+# Errors: 4, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work pcUnit_testbench 
+# Start time: 18:38:09 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.pcUnit_testbench
+# Loading work.pcUnit
+# Loading work.D_FF
+# ** Error: Cannot open macro file: pcUnit_wave.do
+# Error in macro ./runlab_pcUnit.do line 18
+# Cannot open macro file: pcUnit_wave.do
+#     while executing
+# "do pcUnit_wave.do"
+add wave -position end  sim:/pcUnit_testbench/in
+add wave -position end  sim:/pcUnit_testbench/out
+add wave -position end  sim:/pcUnit_testbench/clk
+add wave -position end  sim:/pcUnit_testbench/reset
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/EE-469/Lab_3/pcUnit_wave.do
+do runlab_pcUnit.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:38:33 on Nov 07,2017
+# vlog -reportprogress 300 ./pcUnit.sv 
+# -- Compiling module pcUnit
+# -- Compiling module pcUnit_testbench
+# 
+# Top level modules:
+# 	pcUnit_testbench
+# End time: 18:38:33 on Nov 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:38:33 on Nov 07,2017
+# vlog -reportprogress 300 ./D_FF.sv 
+# -- Compiling module D_FF
+# 
+# Top level modules:
+# 	D_FF
+# End time: 18:38:34 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 18:38:35 on Nov 07,2017, Elapsed time: 0:00:26
+# Errors: 3, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work pcUnit_testbench 
+# Start time: 18:38:35 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.pcUnit_testbench
+# Loading work.pcUnit
+# Loading work.D_FF
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+do runlab_adderstim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:00:11 on Nov 07,2017
+# vlog -reportprogress 300 ./fullAdder_64bit.sv 
+# -- Compiling module fullAdder_64bit
+# -- Compiling module adderstim
+# 
+# Top level modules:
+# 	adderstim
+# End time: 19:00:11 on Nov 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:00:11 on Nov 07,2017
+# vlog -reportprogress 300 ./fullAdder_1bit.sv 
+# -- Compiling module fullAdder_1bit
+# -- Compiling module fullAdder_1bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_1bit_testbench
+# End time: 19:00:12 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 19:00:13 on Nov 07,2017, Elapsed time: 0:21:38
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work adderstim 
+# Start time: 19:00:13 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.adderstim
+# Loading work.fullAdder_64bit
+# Loading work.fullAdder_1bit
+# ** Error (suppressible): (vsim-3053) ./fullAdder_64bit.sv(35): Illegal output or inout port connection for port 'Cout'.
+#    Time: 0 ps  Iteration: 0  Instance: /adderstim/dut/sixtyFourthAdder File: ./fullAdder_1bit.sv
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runlab_adderstim.do PAUSED at line 13
+do runlab_adderstim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:01:21 on Nov 07,2017
+# vlog -reportprogress 300 ./fullAdder_64bit.sv 
+# -- Compiling module fullAdder_64bit
+# -- Compiling module adderstim
+# 
+# Top level modules:
+# 	adderstim
+# End time: 19:01:22 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:01:22 on Nov 07,2017
+# vlog -reportprogress 300 ./fullAdder_1bit.sv 
+# -- Compiling module fullAdder_1bit
+# -- Compiling module fullAdder_1bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_1bit_testbench
+# End time: 19:01:24 on Nov 07,2017, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work adderstim 
+# Start time: 19:00:13 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.adderstim
+# Loading work.fullAdder_64bit
+# Loading work.fullAdder_1bit
+# ** Error (suppressible): (vsim-3053) ./fullAdder_64bit.sv(35): Illegal output or inout port connection for port 'Cout'.
+#    Time: 0 ps  Iteration: 0  Instance: /adderstim/dut/sixtyFourthAdder File: ./fullAdder_1bit.sv
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runlab_adderstim.do PAUSED at line 13
+do runlab_pcUnit.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:01:50 on Nov 07,2017
+# vlog -reportprogress 300 ./pcUnit.sv 
+# -- Compiling module pcUnit
+# -- Compiling module pcUnit_testbench
+# 
+# Top level modules:
+# 	pcUnit_testbench
+# End time: 19:01:51 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:01:51 on Nov 07,2017
+# vlog -reportprogress 300 ./D_FF.sv 
+# -- Compiling module D_FF
+# 
+# Top level modules:
+# 	D_FF
+# End time: 19:01:52 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work pcUnit_testbench 
+# Start time: 19:00:13 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.pcUnit_testbench
+# Loading work.pcUnit
+# Loading work.D_FF
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+do runlab_adderstim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:02:16 on Nov 07,2017
+# vlog -reportprogress 300 ./fullAdder_64bit.sv 
+# -- Compiling module fullAdder_64bit
+# -- Compiling module adderstim
+# 
+# Top level modules:
+# 	adderstim
+# End time: 19:02:17 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:02:17 on Nov 07,2017
+# vlog -reportprogress 300 ./fullAdder_1bit.sv 
+# -- Compiling module fullAdder_1bit
+# -- Compiling module fullAdder_1bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_1bit_testbench
+# End time: 19:02:18 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 19:02:19 on Nov 07,2017, Elapsed time: 0:02:06
+# Errors: 2, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work adderstim 
+# Start time: 19:02:19 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.adderstim
+# Loading work.fullAdder_64bit
+# Loading work.fullAdder_1bit
+# ** Error: Cannot open macro file: adderstim_wave.do
+# Error in macro ./runlab_adderstim.do line 18
+# Cannot open macro file: adderstim_wave.do
+#     while executing
+# "do adderstim_wave.do"
+do runlab_adderstim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:04:56 on Nov 07,2017
+# vlog -reportprogress 300 ./fullAdder_64bit.sv 
+# -- Compiling module fullAdder_64bit
+# -- Compiling module adderstim
+# 
+# Top level modules:
+# 	adderstim
+# End time: 19:04:56 on Nov 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:04:56 on Nov 07,2017
+# vlog -reportprogress 300 ./fullAdder_1bit.sv 
+# -- Compiling module fullAdder_1bit
+# -- Compiling module fullAdder_1bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_1bit_testbench
+# End time: 19:04:57 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 19:04:58 on Nov 07,2017, Elapsed time: 0:02:39
+# Errors: 3, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work adderstim 
+# Start time: 19:04:58 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.adderstim
+# Loading work.fullAdder_64bit
+# Loading work.fullAdder_1bit
+# ** Error: Cannot open macro file: adderstim_wave.do
+# Error in macro ./runlab_adderstim.do line 18
+# Cannot open macro file: adderstim_wave.do
+#     while executing
+# "do adderstim_wave.do"
+add wave -position end  sim:/adderstim/delay
+add wave -position end  sim:/adderstim/A
+add wave -position end  sim:/adderstim/B
+add wave -position end  sim:/adderstim/result
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/EE-469/Lab_3/adderstim_wave.do
+do runlab_adderstim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:05:34 on Nov 07,2017
+# vlog -reportprogress 300 ./fullAdder_64bit.sv 
+# -- Compiling module fullAdder_64bit
+# -- Compiling module adderstim
+# 
+# Top level modules:
+# 	adderstim
+# End time: 19:05:35 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:05:35 on Nov 07,2017
+# vlog -reportprogress 300 ./fullAdder_1bit.sv 
+# -- Compiling module fullAdder_1bit
+# -- Compiling module fullAdder_1bit_testbench
+# 
+# Top level modules:
+# 	fullAdder_1bit_testbench
+# End time: 19:05:36 on Nov 07,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 19:05:37 on Nov 07,2017, Elapsed time: 0:00:39
+# Errors: 3, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work adderstim 
+# Start time: 19:05:37 on Nov 07,2017
+# Loading sv_std.std
+# Loading work.adderstim
+# Loading work.fullAdder_64bit
+# Loading work.fullAdder_1bit
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#    0.00 ns testing addition

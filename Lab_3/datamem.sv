@@ -54,7 +54,11 @@ module datamem (
 	always_comb begin
 		read_data = 'x;
 		if (read_enable == 1)
+<<<<<<< HEAD
 			for(i=0; i< xfer_size; i++)
+=======
+			for(i=0; i<xfer_size; i++)
+>>>>>>> 062c59e944383489987e8d68b077996f5b06a5fb
 				read_data[8*i+7 -: 8] = mem[aligned_address + i]; // 8*i+7 -: 8 means "start at 8*i+7, for 8 bits total"
 	end
 	

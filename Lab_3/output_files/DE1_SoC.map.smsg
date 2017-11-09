@@ -1,6 +1,10 @@
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+<<<<<<< HEAD
 Warning (10273): Verilog HDL warning at controlLogic.sv(174): extended using "x" or "z" File: C:/Users/Emraj/Desktop/EE-469/Lab_3/controlLogic.sv Line: 174
 Warning (10030): Net "instruction[25..0]" at CPU_64bit.sv(23) has no driver or initial value, using a default initial value '0' File: C:/Users/Emraj/Desktop/EE-469/Lab_3/CPU_64bit.sv Line: 23
 Warning (10030): Net "ALUOp[2..0]" at CPU_64bit.sv(49) has no driver or initial value, using a default initial value '0' File: C:/Users/Emraj/Desktop/EE-469/Lab_3/CPU_64bit.sv Line: 49
 Warning (10030): Net "RegWrite" at CPU_64bit.sv(50) has no driver or initial value, using a default initial value '0' File: C:/Users/Emraj/Desktop/EE-469/Lab_3/CPU_64bit.sv Line: 50
 Warning (10030): Net "sel" at CPU_64bit.sv(51) has no driver or initial value, using a default initial value '0' File: C:/Users/Emraj/Desktop/EE-469/Lab_3/CPU_64bit.sv Line: 51
+=======
+Warning (10273): Verilog HDL warning at controlLogic.sv(174): extended using "x" or "z" File: U:/EE-469/Lab_3/controlLogic.sv Line: 174
+>>>>>>> 062c59e944383489987e8d68b077996f5b06a5fb
