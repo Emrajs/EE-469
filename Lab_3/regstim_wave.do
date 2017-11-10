@@ -10,9 +10,12 @@ add wave -noupdate /regstim/clk
 add wave -noupdate /regstim/ReadData1
 add wave -noupdate /regstim/ReadData2
 add wave -noupdate /regstim/i
+add wave -noupdate /regstim/dut/ffout
+add wave -noupdate /regstim/dut/fromDecoder
+add wave -noupdate /regstim/dut/m
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {0 ps} 0}
-quietly wave cursor active 0
+WaveRestoreCursors {{Cursor 1} {367310571 ps} 0}
+quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
@@ -27,4 +30,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {1 ns}
+WaveRestoreZoom {239346875 ps} {490034375 ps}
