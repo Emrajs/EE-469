@@ -30,7 +30,7 @@ module CPU_64bit (clk, reset);
 	logic [1:0] shamt;
 	
    //Control signals
-   logic negative, zero, overflow, carry_out;
+   logic negative, zero, overflow, carry_out, nTrue, zTrue, oTrue, cTrue;
 	logic [2:0] ALUOp;
 	logic RegWrite;
 	logic movk;
@@ -42,6 +42,7 @@ module CPU_64bit (clk, reset);
 	logic UncondBr;
 	logic BrTaken;
 	logic read_enable;
+	logic flagSet;
 	logic [3:0] xfer_size;	// xfer_size should either send 1000 (for 8 bytes) or 0001 (for 1 byte) to datamem.
 	
    //Assign statements for readability
@@ -58,10 +59,16 @@ module CPU_64bit (clk, reset);
 
 //Control Logic Call
 	
-   controlLogic theBrain (.OpCode(opcode), .zero, .negative, .carryout(carry_out), .overflow, .RegWrite, .Reg2Loc, 
-   	                    .ALUSrc, .ALUOp, .MemWrite, .MemToReg, .UncondBr, .BrTaken,   
-   						     .Imm_12, .xfer_size, .read_en(read_enable), .movk(movk)); 
+   controlLogic theBrain (.OpCode(opcode), .zero(zTrue), .negative(nTrue), .carryout(cTrue), .overflow(oTrue), .RegWrite, .Reg2Loc, 
+   	                    .ALUSrc, .ALUOp, .MemWrite, .MemToReg, .UncondBr, .BrTaken,  
+   						     .Imm_12, .xfer_size, .read_en(read_enable), .movk(movk), .flagSet); 
 
+//D_FF_enable the flags so they don't change until certain operations.
+
+	D_FF_enable forZero (.q(zTrue), .d(zero), .en(flagSet), .clk);
+	D_FF_enable forNegative (.q(nTrue), .d(negative), .en(flagSet), .clk);
+	D_FF_enable forCarryout (.q(cTrue), .d(carry_out), .en(flagSet), .clk);
+	D_FF_enable forOverflow (.q(oTrue), .d(overflow), .en(flagSet), .clk);
 	
 //Program counter logic 
 	

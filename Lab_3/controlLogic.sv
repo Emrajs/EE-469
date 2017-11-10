@@ -13,17 +13,18 @@ I am not too sure about. STURB and LDURB require bytes. B_LT I'm also not sure o
 */
 
 
-module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2Loc, ALUSrc, ALUOp, MemWrite,MemToReg, UncondBr, BrTaken, Imm_12, xfer_size, read_en, movk);
+module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2Loc, ALUSrc, ALUOp, MemWrite,
+                     MemToReg, UncondBr, BrTaken, Imm_12, xfer_size, read_en, movk, flagSet);
 	input logic [10:0] OpCode;
 	input logic zero, negative, carryout, overflow;
-	output logic RegWrite, Reg2Loc, ALUSrc, MemWrite, MemToReg, UncondBr, BrTaken, Imm_12, read_en, movk;
+	output logic RegWrite, Reg2Loc, ALUSrc, MemWrite, MemToReg, UncondBr, BrTaken, Imm_12, read_en, movk, flagSet;
 	output logic [2:0] ALUOp;
 	output logic [3:0] xfer_size;
 	
 	parameter [10:0] ADDI = 11'b1001000100x, ADDS = 11'b10101011000, B = 11'b000101xxxxx,
 						  CBZ = 11'b10110100xxx, LDUR = 11'b11111000010, STUR = 11'b11111000000,
-						  SUBS = 11'b11101011000, B_LT = 11'b01010100xxx, LDURB = 11'b111000010xx, 
-						  STURB = 11'b111000000xx;
+						  SUBS = 11'b11101011000, B_LT = 11'b01010100xxx, LDURB = 11'b00111000010, 
+						  STURB = 11'b00111000000;
 						  
 	
 	always_comb 
@@ -44,6 +45,7 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										xfer_size = 4'bxxxx;
 										read_en   = 1'b0;
 										movk      = 1'b0;
+										flagSet   = 1'b0;
 									  end
 				ADDS:            begin   // Need to add flags
 										RegWrite  = 1'b1;
@@ -58,6 +60,7 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										xfer_size = 4'bxxxx;
 										read_en   = 1'b0;
 										movk      = 1'b0;
+										flagSet   = 1'b1;
 									  end
 				B: 				  begin   
 									   RegWrite  = 1'b0;
@@ -72,6 +75,7 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										xfer_size = 4'bxxxx;
 										read_en   = 1'b0;
 										movk      = 1'b0;
+										flagSet   = 1'b0;
 									  end
 				B_LT:            begin
 									   RegWrite  = 1'b0;
@@ -80,12 +84,13 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										ALUOp     = 3'bxxx;
 										MemWrite  = 1'b0;
 										MemToReg  = 1'bx;
-										BrTaken   = zero ^ overflow; //XOR the zero and overflow flag. If both are not equal to one another, then make BrTaken = 1 so BrAddr19<<2 goes through.
+										BrTaken   = negative ^ overflow; //XOR the zero and overflow flag. If both are not equal to one another, then make BrTaken = 1 so BrAddr19<<2 goes through.
 										UncondBr  = 1'b0;
 										Imm_12    = 1'bx;
 										xfer_size = 4'bxxxx;
 										read_en   = 1'b0;
 										movk      = 1'b0;
+										flagSet   = 1'b0;
 									  end
 				CBZ: 				  begin  
 										RegWrite  = 1'b0;
@@ -99,7 +104,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										Imm_12    = 1'bx;
 										xfer_size = 4'bxxxx;
 										read_en   = 1'b0;
-										movk      = 1'b0;									  
+										movk      = 1'b0;
+										flagSet   = 1'b0;
 									  end
 				LDUR:            begin  
 										RegWrite  = 1'b1;
@@ -113,7 +119,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										Imm_12    = 1'b0;
 										xfer_size = 4'b1000;
 										read_en   = 1'b1;
-										movk      = 1'b0;									  
+										movk      = 1'b0;
+										flagSet   = 1'b0;
 									  end
 			   LDURB:           begin             // Not sure as to how to do the byte part
 										RegWrite  = 1'b1;
@@ -127,7 +134,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										Imm_12    = 1'b0;
 										xfer_size = 4'b0001;
 										read_en   = 1'b1;
-										movk      = 1'b0;									  
+										movk      = 1'b0;
+										flagSet   = 1'b0;										
 									  end
 				STUR:            begin 
 										RegWrite  = 1'b0;
@@ -141,7 +149,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										Imm_12    = 1'b0;
 										xfer_size = 4'b1000;
 										read_en   = 1'b0;
-										movk      = 1'b0;									  
+										movk      = 1'b0;
+										flagSet   = 1'b0;										
 									  end
 				STURB:           begin       // How to include bytes?
 										RegWrite  = 1'b0;
@@ -155,7 +164,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										Imm_12    = 1'b0;
 										xfer_size = 4'b0001;
 										read_en   = 1'b0;
-										movk      = 1'b0;									  
+										movk      = 1'b0;
+										flagSet   = 1'b0;										
 									  end
 				SUBS:            begin // Need to add flags
 										RegWrite  = 1'b1;
@@ -169,7 +179,8 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										Imm_12    = 1'bx;
 										xfer_size = 4'bxxxx;
 										read_en   = 1'b0;
-										movk      = 1'b0;									  
+										movk      = 1'b0;
+										flagSet   = 1'b1;										
 									  end 
 				default          begin
 									   RegWrite  = 1'b0;
@@ -184,6 +195,7 @@ module controlLogic (OpCode, zero, negative, carryout, overflow, RegWrite, Reg2L
 										xfer_size = 4'bxxxx;
 										read_en   = 1'b0;
 										movk      = 1'b0;
+										flagSet   = 1'b0;
 										end
 			endcase																				
 		end	
@@ -192,13 +204,13 @@ endmodule
 module controlLogic_testbench();
 	logic [31:21] OpCode;
 	logic zero, negative, carryout, overflow;
-   logic RegWrite, Reg2Loc, ALUSrc, MemWrite, MemToReg, UncondBr, BrTaken, Imm_12, read_en, movk;
+   logic RegWrite, Reg2Loc, ALUSrc, MemWrite, MemToReg, UncondBr, BrTaken, Imm_12, read_en, movk, flagSet;
 	logic [2:0] ALUOp;
 	logic [3:0] xfer_size;
 	
 	controlLogic dut (.OpCode, .zero, .negative, .carryout, .overflow, .RegWrite, .Reg2Loc, 
 	                  .ALUSrc, .ALUOp,.MemWrite, .MemToReg, .UncondBr, .BrTaken, 
-							.Imm_12, .xfer_size, .read_en, .movk);
+							.Imm_12, .xfer_size, .read_en, .movk, .flagSet);
 	
 	initial begin
 		OpCode = 11'b00000000000; #100;             // should go to default
