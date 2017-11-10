@@ -18,7 +18,8 @@ module CPU_64bit (clk, reset);
 	input logic clk, reset;
 	logic [63:0] Da, Db, WriteData, aluB, aluResult, dataMemOut, 
 	             fullImm16, addIMuxOut, immSelector, newPC, oldPC, 
-					 normalIncPC, branchIncPC, bToAdder, postShiftB;
+					 normalIncPC, branchIncPC, bToAdder, postShiftB,
+					 altBInput, movzMux;
 	logic [31:0] instruction;
 	logic [25:0] brAddr26;
 	logic [18:0] condAddr19;
@@ -33,7 +34,7 @@ module CPU_64bit (clk, reset);
    logic negative, zero, overflow, carry_out, nTrue, zTrue, oTrue, cTrue;
 	logic [2:0] ALUOp;
 	logic RegWrite;
-	logic movk;
+	logic movz, movk;
 	logic MemWrite;
 	logic Reg2Loc;
 	logic Imm_12;
@@ -61,7 +62,7 @@ module CPU_64bit (clk, reset);
 	
    controlLogic theBrain (.OpCode(opcode), .zero(zTrue), .negative(nTrue), .carryout(cTrue), .overflow(oTrue), .RegWrite, .Reg2Loc, 
    	                    .ALUSrc, .ALUOp, .MemWrite, .MemToReg, .UncondBr, .BrTaken,  
-   						     .Imm_12, .xfer_size, .read_en(read_enable), .movk(movk), .flagSet); 
+   						     .Imm_12, .xfer_size, .read_en(read_enable), .movz(movz), .flagSet, .movk(movk)); 
 
 //D_FF_enable the flags so they don't change until certain operations.
 
@@ -122,13 +123,21 @@ module CPU_64bit (clk, reset);
 	// This mux decides whether to send Imm12 (for the ADDI instruction) or Daddr9 to the ALUSrc mux.
 	mux128_64 immOrAddrMux (.inOne({{52{1'b0}}, imm12}), .inZero({{55{dAddr9[8]}}, dAddr9}), .sel(Imm_12), .out(addIMuxOut));
 	
-	mux128_64 movInstMux (.inOne(fullImm16), .inZero(addIMuxOut), .sel(movk), .out(immSelector));
+	mux128_64 movInstMux (.inOne(fullImm16), .inZero(addIMuxOut), .sel(movz), .out(immSelector));
+	
+	
+	//MOVK Hookup
+	
+	mux256_64 movKMux (.inThree({imm16, Db[47:0]}), .inTwo({Db[63:48], imm16, Db[31:0]}), .inOne({Db[63:32], imm16, Db[15:0]}), 
+	                   .inZero({Db[63:16], imm16}), .sel(shamt), .out(movzMux));
+	
+	mux128_64 finalImmMux (.inOne(movzMux), .inZero(immSelector), .sel(movk), .out(altBInput));
 	
 	
 	//ALU Hookups
 		
 	//Sends either ReadData2 (register Db) or the choice between Imm_12 and Daddr9
-	mux128_64 alusrcMUX (.inOne(immSelector), .inZero(Db), .sel(ALUSrc), .out(aluB));
+	mux128_64 alusrcMUX (.inOne(altBInput), .inZero(Db), .sel(ALUSrc), .out(aluB));
 	
 	// The final 64 bit ALU hookup
 	alu mainALU (.A(Da), .B(aluB), .cntrl(ALUOp), .result(aluResult), .negative, .zero, .overflow, .carry_out);
