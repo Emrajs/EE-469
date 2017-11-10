@@ -120,7 +120,8 @@ OpCode[10] => WideNor3.IN7
 OpCode[10] => WideNor0.IN9
 OpCode[10] => WideNor4.IN8
 OpCode[10] => WideNor5.IN8
-zero => Selector6.IN9
+zero => ~NO_FANOUT~
+notFlagZero => Selector6.IN9
 negative => BrTaken.IN0
 carryout => ~NO_FANOUT~
 overflow => BrTaken.IN1
@@ -143,6 +144,7 @@ read_en <= MemToReg.DB_MAX_OUTPUT_PORT_TYPE
 movz <= WideNor5.DB_MAX_OUTPUT_PORT_TYPE
 flagSet <= Reg2Loc.DB_MAX_OUTPUT_PORT_TYPE
 movk <= WideNor4.DB_MAX_OUTPUT_PORT_TYPE
+ctlLDURB <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |CPU_64bit|D_FF_enable:forZero
@@ -96333,6 +96335,714 @@ result[13] => or4.IN1
 result[14] => or4.IN2
 result[15] => or4.IN3
 checkZero <= nor1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB
+inOne[0] => inOne[0].IN1
+inOne[1] => inOne[1].IN1
+inOne[2] => inOne[2].IN1
+inOne[3] => inOne[3].IN1
+inOne[4] => inOne[4].IN1
+inOne[5] => inOne[5].IN1
+inOne[6] => inOne[6].IN1
+inOne[7] => inOne[7].IN1
+inOne[8] => inOne[8].IN1
+inOne[9] => inOne[9].IN1
+inOne[10] => inOne[10].IN1
+inOne[11] => inOne[11].IN1
+inOne[12] => inOne[12].IN1
+inOne[13] => inOne[13].IN1
+inOne[14] => inOne[14].IN1
+inOne[15] => inOne[15].IN1
+inOne[16] => inOne[16].IN1
+inOne[17] => inOne[17].IN1
+inOne[18] => inOne[18].IN1
+inOne[19] => inOne[19].IN1
+inOne[20] => inOne[20].IN1
+inOne[21] => inOne[21].IN1
+inOne[22] => inOne[22].IN1
+inOne[23] => inOne[23].IN1
+inOne[24] => inOne[24].IN1
+inOne[25] => inOne[25].IN1
+inOne[26] => inOne[26].IN1
+inOne[27] => inOne[27].IN1
+inOne[28] => inOne[28].IN1
+inOne[29] => inOne[29].IN1
+inOne[30] => inOne[30].IN1
+inOne[31] => inOne[31].IN1
+inOne[32] => inOne[32].IN1
+inOne[33] => inOne[33].IN1
+inOne[34] => inOne[34].IN1
+inOne[35] => inOne[35].IN1
+inOne[36] => inOne[36].IN1
+inOne[37] => inOne[37].IN1
+inOne[38] => inOne[38].IN1
+inOne[39] => inOne[39].IN1
+inOne[40] => inOne[40].IN1
+inOne[41] => inOne[41].IN1
+inOne[42] => inOne[42].IN1
+inOne[43] => inOne[43].IN1
+inOne[44] => inOne[44].IN1
+inOne[45] => inOne[45].IN1
+inOne[46] => inOne[46].IN1
+inOne[47] => inOne[47].IN1
+inOne[48] => inOne[48].IN1
+inOne[49] => inOne[49].IN1
+inOne[50] => inOne[50].IN1
+inOne[51] => inOne[51].IN1
+inOne[52] => inOne[52].IN1
+inOne[53] => inOne[53].IN1
+inOne[54] => inOne[54].IN1
+inOne[55] => inOne[55].IN1
+inOne[56] => inOne[56].IN1
+inOne[57] => inOne[57].IN1
+inOne[58] => inOne[58].IN1
+inOne[59] => inOne[59].IN1
+inOne[60] => inOne[60].IN1
+inOne[61] => inOne[61].IN1
+inOne[62] => inOne[62].IN1
+inOne[63] => inOne[63].IN1
+inZero[0] => inZero[0].IN1
+inZero[1] => inZero[1].IN1
+inZero[2] => inZero[2].IN1
+inZero[3] => inZero[3].IN1
+inZero[4] => inZero[4].IN1
+inZero[5] => inZero[5].IN1
+inZero[6] => inZero[6].IN1
+inZero[7] => inZero[7].IN1
+inZero[8] => inZero[8].IN1
+inZero[9] => inZero[9].IN1
+inZero[10] => inZero[10].IN1
+inZero[11] => inZero[11].IN1
+inZero[12] => inZero[12].IN1
+inZero[13] => inZero[13].IN1
+inZero[14] => inZero[14].IN1
+inZero[15] => inZero[15].IN1
+inZero[16] => inZero[16].IN1
+inZero[17] => inZero[17].IN1
+inZero[18] => inZero[18].IN1
+inZero[19] => inZero[19].IN1
+inZero[20] => inZero[20].IN1
+inZero[21] => inZero[21].IN1
+inZero[22] => inZero[22].IN1
+inZero[23] => inZero[23].IN1
+inZero[24] => inZero[24].IN1
+inZero[25] => inZero[25].IN1
+inZero[26] => inZero[26].IN1
+inZero[27] => inZero[27].IN1
+inZero[28] => inZero[28].IN1
+inZero[29] => inZero[29].IN1
+inZero[30] => inZero[30].IN1
+inZero[31] => inZero[31].IN1
+inZero[32] => inZero[32].IN1
+inZero[33] => inZero[33].IN1
+inZero[34] => inZero[34].IN1
+inZero[35] => inZero[35].IN1
+inZero[36] => inZero[36].IN1
+inZero[37] => inZero[37].IN1
+inZero[38] => inZero[38].IN1
+inZero[39] => inZero[39].IN1
+inZero[40] => inZero[40].IN1
+inZero[41] => inZero[41].IN1
+inZero[42] => inZero[42].IN1
+inZero[43] => inZero[43].IN1
+inZero[44] => inZero[44].IN1
+inZero[45] => inZero[45].IN1
+inZero[46] => inZero[46].IN1
+inZero[47] => inZero[47].IN1
+inZero[48] => inZero[48].IN1
+inZero[49] => inZero[49].IN1
+inZero[50] => inZero[50].IN1
+inZero[51] => inZero[51].IN1
+inZero[52] => inZero[52].IN1
+inZero[53] => inZero[53].IN1
+inZero[54] => inZero[54].IN1
+inZero[55] => inZero[55].IN1
+inZero[56] => inZero[56].IN1
+inZero[57] => inZero[57].IN1
+inZero[58] => inZero[58].IN1
+inZero[59] => inZero[59].IN1
+inZero[60] => inZero[60].IN1
+inZero[61] => inZero[61].IN1
+inZero[62] => inZero[62].IN1
+inZero[63] => inZero[63].IN1
+sel => sel.IN64
+out[0] <= mux2_1:eachRouteMux[0].routeMux1.out
+out[1] <= mux2_1:eachRouteMux[1].routeMux1.out
+out[2] <= mux2_1:eachRouteMux[2].routeMux1.out
+out[3] <= mux2_1:eachRouteMux[3].routeMux1.out
+out[4] <= mux2_1:eachRouteMux[4].routeMux1.out
+out[5] <= mux2_1:eachRouteMux[5].routeMux1.out
+out[6] <= mux2_1:eachRouteMux[6].routeMux1.out
+out[7] <= mux2_1:eachRouteMux[7].routeMux1.out
+out[8] <= mux2_1:eachRouteMux[8].routeMux1.out
+out[9] <= mux2_1:eachRouteMux[9].routeMux1.out
+out[10] <= mux2_1:eachRouteMux[10].routeMux1.out
+out[11] <= mux2_1:eachRouteMux[11].routeMux1.out
+out[12] <= mux2_1:eachRouteMux[12].routeMux1.out
+out[13] <= mux2_1:eachRouteMux[13].routeMux1.out
+out[14] <= mux2_1:eachRouteMux[14].routeMux1.out
+out[15] <= mux2_1:eachRouteMux[15].routeMux1.out
+out[16] <= mux2_1:eachRouteMux[16].routeMux1.out
+out[17] <= mux2_1:eachRouteMux[17].routeMux1.out
+out[18] <= mux2_1:eachRouteMux[18].routeMux1.out
+out[19] <= mux2_1:eachRouteMux[19].routeMux1.out
+out[20] <= mux2_1:eachRouteMux[20].routeMux1.out
+out[21] <= mux2_1:eachRouteMux[21].routeMux1.out
+out[22] <= mux2_1:eachRouteMux[22].routeMux1.out
+out[23] <= mux2_1:eachRouteMux[23].routeMux1.out
+out[24] <= mux2_1:eachRouteMux[24].routeMux1.out
+out[25] <= mux2_1:eachRouteMux[25].routeMux1.out
+out[26] <= mux2_1:eachRouteMux[26].routeMux1.out
+out[27] <= mux2_1:eachRouteMux[27].routeMux1.out
+out[28] <= mux2_1:eachRouteMux[28].routeMux1.out
+out[29] <= mux2_1:eachRouteMux[29].routeMux1.out
+out[30] <= mux2_1:eachRouteMux[30].routeMux1.out
+out[31] <= mux2_1:eachRouteMux[31].routeMux1.out
+out[32] <= mux2_1:eachRouteMux[32].routeMux1.out
+out[33] <= mux2_1:eachRouteMux[33].routeMux1.out
+out[34] <= mux2_1:eachRouteMux[34].routeMux1.out
+out[35] <= mux2_1:eachRouteMux[35].routeMux1.out
+out[36] <= mux2_1:eachRouteMux[36].routeMux1.out
+out[37] <= mux2_1:eachRouteMux[37].routeMux1.out
+out[38] <= mux2_1:eachRouteMux[38].routeMux1.out
+out[39] <= mux2_1:eachRouteMux[39].routeMux1.out
+out[40] <= mux2_1:eachRouteMux[40].routeMux1.out
+out[41] <= mux2_1:eachRouteMux[41].routeMux1.out
+out[42] <= mux2_1:eachRouteMux[42].routeMux1.out
+out[43] <= mux2_1:eachRouteMux[43].routeMux1.out
+out[44] <= mux2_1:eachRouteMux[44].routeMux1.out
+out[45] <= mux2_1:eachRouteMux[45].routeMux1.out
+out[46] <= mux2_1:eachRouteMux[46].routeMux1.out
+out[47] <= mux2_1:eachRouteMux[47].routeMux1.out
+out[48] <= mux2_1:eachRouteMux[48].routeMux1.out
+out[49] <= mux2_1:eachRouteMux[49].routeMux1.out
+out[50] <= mux2_1:eachRouteMux[50].routeMux1.out
+out[51] <= mux2_1:eachRouteMux[51].routeMux1.out
+out[52] <= mux2_1:eachRouteMux[52].routeMux1.out
+out[53] <= mux2_1:eachRouteMux[53].routeMux1.out
+out[54] <= mux2_1:eachRouteMux[54].routeMux1.out
+out[55] <= mux2_1:eachRouteMux[55].routeMux1.out
+out[56] <= mux2_1:eachRouteMux[56].routeMux1.out
+out[57] <= mux2_1:eachRouteMux[57].routeMux1.out
+out[58] <= mux2_1:eachRouteMux[58].routeMux1.out
+out[59] <= mux2_1:eachRouteMux[59].routeMux1.out
+out[60] <= mux2_1:eachRouteMux[60].routeMux1.out
+out[61] <= mux2_1:eachRouteMux[61].routeMux1.out
+out[62] <= mux2_1:eachRouteMux[62].routeMux1.out
+out[63] <= mux2_1:eachRouteMux[63].routeMux1.out
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[0].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[1].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[2].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[3].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[4].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[5].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[6].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[7].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[8].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[9].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[10].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[11].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[12].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[13].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[14].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[15].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[16].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[17].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[18].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[19].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[20].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[21].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[22].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[23].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[24].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[25].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[26].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[27].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[28].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[29].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[30].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[31].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[32].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[33].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[34].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[35].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[36].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[37].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[38].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[39].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[40].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[41].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[42].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[43].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[44].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[45].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[46].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[47].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[48].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[49].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[50].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[51].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[52].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[53].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[54].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[55].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[56].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[57].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[58].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[59].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[60].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[61].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[62].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU_64bit|mux128_64:isLDURB|mux2_1:eachRouteMux[63].routeMux1
+in[0] => and1.IN0
+in[1] => and2.IN0
+sel => and2.IN1
+sel => and1.IN1
+out <= or1.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |CPU_64bit|mux128_64:datamemMUX

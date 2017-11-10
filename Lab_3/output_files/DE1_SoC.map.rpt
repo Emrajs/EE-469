@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC
-Thu Nov 09 23:59:09 2017
+Fri Nov 10 02:55:04 2017
 Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
 
 
@@ -15,23 +15,24 @@ Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Parameter Settings for User Entity Instance: controlLogic:theBrain
- 10. Port Connectivity Checks: "alu:mainALU|alu_1bit:firstAlu|mux8_1:submodule2"
- 11. Port Connectivity Checks: "mux128_64:immOrAddrMux"
- 12. Port Connectivity Checks: "shifter:movzShifter1"
- 13. Port Connectivity Checks: "regfile:registerFile|decode_5_32:Decoder"
- 14. Port Connectivity Checks: "regfile:registerFile"
- 15. Port Connectivity Checks: "mux10_5:regMux"
- 16. Port Connectivity Checks: "fullAdder_64bit:normalCounter|fullAdder_1bit:sixtyFourthAdder"
- 17. Port Connectivity Checks: "fullAdder_64bit:normalCounter|fullAdder_1bit:firstAdder"
- 18. Port Connectivity Checks: "fullAdder_64bit:normalCounter"
- 19. Port Connectivity Checks: "shifter:brShifter"
- 20. Port Connectivity Checks: "mux128_64:brSelect"
- 21. Port Connectivity Checks: "D_FF_enable:forZero|D_FF:d0"
- 22. Port Connectivity Checks: "controlLogic:theBrain"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
- 26. Analysis & Synthesis Suppressed Messages
+ 10. Port Connectivity Checks: "mux128_64:isLDURB"
+ 11. Port Connectivity Checks: "alu:mainALU|alu_1bit:firstAlu|mux8_1:submodule2"
+ 12. Port Connectivity Checks: "mux128_64:immOrAddrMux"
+ 13. Port Connectivity Checks: "shifter:movzShifter1"
+ 14. Port Connectivity Checks: "regfile:registerFile|decode_5_32:Decoder"
+ 15. Port Connectivity Checks: "regfile:registerFile"
+ 16. Port Connectivity Checks: "mux10_5:regMux"
+ 17. Port Connectivity Checks: "fullAdder_64bit:normalCounter|fullAdder_1bit:sixtyFourthAdder"
+ 18. Port Connectivity Checks: "fullAdder_64bit:normalCounter|fullAdder_1bit:firstAdder"
+ 19. Port Connectivity Checks: "fullAdder_64bit:normalCounter"
+ 20. Port Connectivity Checks: "shifter:brShifter"
+ 21. Port Connectivity Checks: "mux128_64:brSelect"
+ 22. Port Connectivity Checks: "D_FF_enable:forZero|D_FF:d0"
+ 23. Port Connectivity Checks: "controlLogic:theBrain"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -58,7 +59,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Nov 09 23:59:09 2017           ;
+; Analysis & Synthesis Status     ; Successful - Fri Nov 10 02:55:03 2017           ;
 ; Quartus Prime Version           ; 17.0.2 Build 602 07/19/2017 SJ Standard Edition ;
 ; Revision Name                   ; DE1_SoC                                         ;
 ; Top-level Entity Name           ; CPU_64bit                                       ;
@@ -287,6 +288,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------+
+; Port Connectivity Checks: "mux128_64:isLDURB"  ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; inOne[63..8] ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
 +-----------------------------------------------------------------------------+
 ; Port Connectivity Checks: "alu:mainALU|alu_1bit:firstAlu|mux8_1:submodule2" ;
 +-------+-------+----------+--------------------------------------------------+
@@ -435,7 +445,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -445,7 +455,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
-    Info: Processing started: Thu Nov 09 23:58:37 2017
+    Info: Processing started: Fri Nov 10 02:54:23 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 2 entities, in source file zero_flag.sv
@@ -512,7 +522,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file d_ff.sv
     Info (12023): Found entity 1: D_FF File: U:/EE-469/Lab_3/D_FF.sv Line: 1
 Info (12021): Found 2 design units, including 2 entities, in source file controllogic.sv
     Info (12023): Found entity 1: controlLogic File: U:/EE-469/Lab_3/controlLogic.sv Line: 16
-    Info (12023): Found entity 2: controlLogic_testbench File: U:/EE-469/Lab_3/controlLogic.sv Line: 247
+    Info (12023): Found entity 2: controlLogic_testbench File: U:/EE-469/Lab_3/controlLogic.sv Line: 260
 Info (12021): Found 1 design units, including 1 entities, in source file alustim.sv
     Info (12023): Found entity 1: alustim File: U:/EE-469/Lab_3/alustim.sv Line: 201
 Info (12021): Found 1 design units, including 1 entities, in source file alu_64bit.sv
@@ -548,11 +558,11 @@ Info (12128): Elaborating entity "fullAdder_64bit" for hierarchy "fullAdder_64bi
 Info (12128): Elaborating entity "fullAdder_1bit" for hierarchy "fullAdder_64bit:normalCounter|fullAdder_1bit:firstAdder" File: U:/EE-469/Lab_3/fullAdder_64bit.sv Line: 24
 Info (12128): Elaborating entity "mux10_5" for hierarchy "mux10_5:regMux" File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 110
 Info (12128): Elaborating entity "regfile" for hierarchy "regfile:registerFile" File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 116
-Info (12128): Elaborating entity "decode_5_32" for hierarchy "regfile:registerFile|decode_5_32:Decoder" File: U:/EE-469/Lab_3/regfile.sv Line: 39
+Info (12128): Elaborating entity "decode_5_32" for hierarchy "regfile:registerFile|decode_5_32:Decoder" File: U:/EE-469/Lab_3/regfile.sv Line: 40
 Info (12128): Elaborating entity "decode_2_4" for hierarchy "regfile:registerFile|decode_5_32:Decoder|decode_2_4:submodule1" File: U:/EE-469/Lab_3/decode_5_32.sv Line: 21
 Info (12128): Elaborating entity "decode_3_8" for hierarchy "regfile:registerFile|decode_5_32:Decoder|decode_3_8:submodule2" File: U:/EE-469/Lab_3/decode_5_32.sv Line: 22
 Info (12128): Elaborating entity "decode_1_2" for hierarchy "regfile:registerFile|decode_5_32:Decoder|decode_3_8:submodule2|decode_1_2:submodule1" File: U:/EE-469/Lab_3/decode_3_8.sv Line: 21
-Info (12128): Elaborating entity "mux32_1" for hierarchy "regfile:registerFile|mux32_1:eachMux[0].largeMux1" File: U:/EE-469/Lab_3/regfile.sv Line: 46
+Info (12128): Elaborating entity "mux32_1" for hierarchy "regfile:registerFile|mux32_1:eachMux[0].largeMux1" File: U:/EE-469/Lab_3/regfile.sv Line: 47
 Info (12128): Elaborating entity "mux16_1" for hierarchy "regfile:registerFile|mux32_1:eachMux[0].largeMux1|mux16_1:submodule_1" File: U:/EE-469/Lab_3/mux32_1.sv Line: 17
 Info (12128): Elaborating entity "mux_4_1" for hierarchy "regfile:registerFile|mux32_1:eachMux[0].largeMux1|mux16_1:submodule_1|mux_4_1:submodule1" File: U:/EE-469/Lab_3/mux16_1.sv Line: 18
 Info (12128): Elaborating entity "mux256_64" for hierarchy "mux256_64:movKMux" File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 132
@@ -561,17 +571,206 @@ Info (12128): Elaborating entity "alu_1bit" for hierarchy "alu:mainALU|alu_1bit:
 Info (12128): Elaborating entity "mux8_1" for hierarchy "alu:mainALU|alu_1bit:firstAlu|mux8_1:submodule2" File: U:/EE-469/Lab_3/alu_1bit.sv Line: 57
 Info (12128): Elaborating entity "zero_flag" for hierarchy "alu:mainALU|zero_flag:check" File: U:/EE-469/Lab_3/alu.sv Line: 55
 Info (12128): Elaborating entity "nor_16x1" for hierarchy "alu:mainALU|zero_flag:check|nor_16x1:nor1" File: U:/EE-469/Lab_3/zero_flag.sv Line: 27
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
+    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_3/CPU_64bit.sv Line: 19
 Info (144001): Generated suppressed messages file U:/EE-469/Lab_3/output_files/DE1_SoC.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 799 megabytes
-    Info: Processing ended: Thu Nov 09 23:59:10 2017
-    Info: Elapsed time: 00:00:33
-    Info: Total CPU time (on all processors): 00:00:34
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 191 warnings
+    Info: Peak virtual memory: 805 megabytes
+    Info: Processing ended: Fri Nov 10 02:55:05 2017
+    Info: Elapsed time: 00:00:42
+    Info: Total CPU time (on all processors): 00:00:36
 
 
 +------------------------------------------+

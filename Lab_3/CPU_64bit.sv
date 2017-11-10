@@ -19,7 +19,7 @@ module CPU_64bit (clk, reset);
 	logic [63:0] Da, Db, WriteData, aluB, aluResult, dataMemOut, 
 	             fullImm16, addIMuxOut, immSelector, newPC, oldPC, 
 					 normalIncPC, branchIncPC, bToAdder, postShiftB,
-					 altBInput, movzMux;
+					 altBInput, movzMux, toRegFinal;
 	logic [31:0] instruction;
 	logic [25:0] brAddr26;
 	logic [18:0] condAddr19;
@@ -31,7 +31,7 @@ module CPU_64bit (clk, reset);
 	logic [1:0] shamt;
 	
    //Control signals
-   logic negative, zero, overflow, carry_out, nTrue, zTrue, oTrue, cTrue;
+   logic negative, zero, overflow, carry_out, nTrue, zTrue, oTrue, cTrue, ctlLDURB;
 	logic [2:0] ALUOp;
 	logic RegWrite;
 	logic movz, movk;
@@ -60,9 +60,9 @@ module CPU_64bit (clk, reset);
 
 //Control Logic Call
 	
-   controlLogic theBrain (.OpCode(opcode), .zero(zTrue), .negative(nTrue), .carryout(cTrue), .overflow(oTrue), .RegWrite, .Reg2Loc, 
+   controlLogic theBrain (.OpCode(opcode), .zero(zTrue), .notFlagZero(zero), .negative(nTrue), .carryout(cTrue), .overflow(oTrue), .RegWrite, .Reg2Loc, 
    	                    .ALUSrc, .ALUOp, .MemWrite, .MemToReg, .UncondBr, .BrTaken,  
-   						     .Imm_12, .xfer_size, .read_en(read_enable), .movz(movz), .flagSet, .movk(movk)); 
+   						     .Imm_12, .xfer_size, .read_en(read_enable), .movz(movz), .flagSet, .movk(movk), .ctlLDURB); 
 
 //D_FF_enable the flags so they don't change until certain operations.
 
@@ -147,8 +147,10 @@ module CPU_64bit (clk, reset);
    
 	datamem dataMemory (.address(aluResult), .write_enable(MemWrite), .read_enable, .write_data(Db), .clk(clk), .xfer_size, .read_data(dataMemOut));
 	
+	mux128_64 isLDURB (.inOne({{56{1'b0}}, dataMemOut[7:0]}), .inZero(dataMemOut), .sel(ctlLDURB), .out(toRegFinal));
+	
 	// The mux which chooses between the alu result and Dout (from data memory) to write backt to the register
 	// file.
-	mux128_64 datamemMUX (.inOne(dataMemOut), .inZero(aluResult), .sel(MemToReg), .out(WriteData));	
+	mux128_64 datamemMUX (.inOne(toRegFinal), .inZero(aluResult), .sel(MemToReg), .out(WriteData));	
 
 endmodule

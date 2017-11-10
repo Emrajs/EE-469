@@ -16,7 +16,7 @@
 
 module cpustim(); 		
 
-	parameter ClockDelay = 50000000;
+	parameter ClockDelay = 20;
 
 	logic reset, clk;
 
@@ -40,37 +40,9 @@ module cpustim();
 		reset = 1; @(posedge clk);
 	   reset = 0; @(posedge clk);
 		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
-		           @(posedge clk);
+		for (i=0; i<1000; i++) begin
+			@(posedge clk);
+		end
 		$stop;
 	end
 
