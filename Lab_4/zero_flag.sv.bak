@@ -1,0 +1,31 @@
+module zero_flag(result, checkZero);
+	input logic [63:0] result;
+	output logic checkZero;
+	
+	wire [15:0] x;
+	wire [3:0] x1;
+	nor nor1(x[0], result[3:0]);
+	nor nor2(x[1], result[7:4]);
+	nor nor3(x[2], result[11:8]);
+	nor nor4(x[3], result[15:12]);
+	nor nor5(x[4], result[19:16]);
+	nor nor6(x[5], result[23:20]);
+	nor nor7(x[6], result[27:24]);
+	nor nor8(x[7], result[31:28]);
+	nor nor9(x[8], result[35:32]);
+	nor nor10(x[9], result[39:36]);
+	nor nor11(x[10], result[43:40]);
+	nor nor12(x[11], result[47:44]);
+	nor nor13(x[12], result[51:48]);
+	nor nor14(x[13], result[55:52]);
+	nor nor15(x[14], result[59:56]);
+	nor nor16(x[15], result[63:60]);
+	
+	nor nor17(x1[0], x[3:0]);
+	nor nor18(x1[1], x[7:4]);
+	nor nor19(x1[2], x[11:8]);
+	nor no20 (x1[3], x[15:12]);
+	
+	nor nor21 (checkZero, x1[3:0]);
+
+endmodule
