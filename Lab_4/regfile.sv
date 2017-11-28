@@ -35,6 +35,10 @@ module regfile (ReadData1, ReadData2, WriteData,
 	logic [63:0][31:0]   ffout;
 	logic [31:0]         fromDecoder;
 	logic [31:0][63:0]   insideReg;
+	logic clk_bar;
+	
+	//Set up inverted clock for forwarding
+	not clkinvert (clk_bar, clk);
 	
 	//Setting up input Decoder from the decode_5_32 submodule
 	decode_5_32 Decoder (.in(WriteRegister[4:0]), .out(fromDecoder[31:0]), .en(RegWrite));
@@ -56,7 +60,7 @@ module regfile (ReadData1, ReadData2, WriteData,
 	generate
 		for(i=0; i<31; i++) begin : eachReg //This loop creates registers 0-30 needed for the system
 			for(j=0; j<64; j++) begin : eachDff //This loop creates a single register of 64 flip flops
-				D_FF_enable theReg (.q(insideReg[i][j]), .d(WriteData[j]), .en(fromDecoder[i]), .clk);
+				D_FF_enable theReg (.q(insideReg[i][j]), .d(WriteData[j]), .en(fromDecoder[i]), .clk(clk_bar));
 		   end
 		end
 	endgenerate 
