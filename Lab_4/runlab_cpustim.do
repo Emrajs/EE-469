@@ -35,6 +35,7 @@ vlog "./D_FF_enable.sv"
 vlog "./Pipe_D_FF.sv"
 vlog "./Pipe_D_FF_5.sv"
 vlog "./Pipe_D_FF_32.sv"
+vlog "./ForwardingUnit.sv"
 
 
 # Call vsim to invoke simulator

@@ -1,0 +1,19 @@
+Wed Nov 29 14:55:28 PST 2017
+Trace back: can't read "saveFormatPriv(checkFile)": no such element in array
+    while executing
+"if { $saveFormatPriv(checkFile) && ([string length $saveFormatPriv(file)] > 0) } {
+        set the_file [MtiFS::NormalizeFileName $saveFormatPriv(file..."
+    (procedure "Wave::SaveFormatOk" line 5)
+    invoked from within
+"Wave::SaveFormatOk .saveformat"
+    invoked from within
+".saveformat.bb.ok invoke"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel #0 [list $w invoke]"
+    (procedure "tk::ButtonUp" line 24)
+    invoked from within
+"tk::ButtonUp .saveformat.bb.ok"
+    (command bound to event)
+  <2:C:/intelFPGA/17.0/modelsim_ase/win32aloem/tk8.5/bgerror.tcl:92: ::tkerror {can't read "saveFormatPriv(checkFile)": no such element in array}
+  <1:proc:70: ::tk::dialog::error::bgerror {can't read "saveFormatPriv(checkFile)": no such element in array}

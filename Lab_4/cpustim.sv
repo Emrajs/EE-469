@@ -40,7 +40,7 @@ module cpustim();
 		reset = 1; @(posedge clk);
 	   reset = 0; @(posedge clk);
 		           @(posedge clk);
-		for (i=0; i<1000; i++) begin
+		for (i=0; i<20; i++) begin
 			@(posedge clk);
 		end
 		$stop;

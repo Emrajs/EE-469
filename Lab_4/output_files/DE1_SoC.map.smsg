@@ -1,3 +1,7 @@
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (10281): Verilog HDL Declaration information at controlLogic.sv(20): object "movk" differs only in case from object "MOVK" in the same scope File: C:/Users/Emraj/Desktop/EE-469/Lab_4/controlLogic.sv Line: 20
-Info (10281): Verilog HDL Declaration information at controlLogic.sv(20): object "movz" differs only in case from object "MOVZ" in the same scope File: C:/Users/Emraj/Desktop/EE-469/Lab_4/controlLogic.sv Line: 20
+Info (10281): Verilog HDL Declaration information at controlLogic.sv(20): object "movk" differs only in case from object "MOVK" in the same scope File: U:/EE-469/Lab_4/controlLogic.sv Line: 20
+Info (10281): Verilog HDL Declaration information at controlLogic.sv(20): object "movz" differs only in case from object "MOVZ" in the same scope File: U:/EE-469/Lab_4/controlLogic.sv Line: 20
+Warning (10030): Net "DaRF" at CPU_64bit.sv(19) has no driver or initial value, using a default initial value '0' File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
+Warning (10030): Net "instructionIF" at CPU_64bit.sv(22) has no driver or initial value, using a default initial value '0' File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 22
+Warning (10030): Net "RnRF" at CPU_64bit.sv(104) has no driver or initial value, using a default initial value '0' File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 104
+Warning (10030): Net "RmRF" at CPU_64bit.sv(104) has no driver or initial value, using a default initial value '0' File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 104

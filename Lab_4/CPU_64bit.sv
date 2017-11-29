@@ -16,7 +16,7 @@
 
 module CPU_64bit (clk, reset);
 	input logic clk, reset;
-	logic [63:0] DaRF, DaEX, DbRF, DbEX, DbMem, WriteDataWB, WriteDataMem, aluBRF, aluBEX, aluResultEX, aluResultMem, dataMemOut, 
+	logic [63:0] DaRF, DaForward, DaEX, DbRF, DbForward, DbEX, DbMem, WriteDataWB, WriteDataMem, aluBRF, aluBForward, aluBEX, aluResultEX, aluResultMem, dataMemOut, 
 	             fullImm16, addIMuxOut, immSelector, newPC, oldPC, normalIncPC, branchIncPC, bToAdder, 
 					 postShiftB, altBInput, movzMux, toRegFinal;
 	logic [31:0] instructionIF, instructionRF;
@@ -27,10 +27,10 @@ module CPU_64bit (clk, reset);
 	logic [10:0] opcode;
 	logic [8:0] dAddr9;
 	logic [4:0] RdRF, RdEX, RdMem, RdWB, Rm, Rn, Rmux;
-	logic [1:0] shamt;
+	logic [1:0] shamt, ForwardA, ForwardB;
 	
    //Control signals
-   logic negative, zero, overflow, carry_out, nTrue, zTrue, oTrue, cTrue, ctlLDURBRF, ctlLDURBEX, ctlLDURBMem;
+   logic negative, zero, fastZero, overflow, carry_out, nTrue, zTrue, oTrue, cTrue, ctlLDURBRF, ctlLDURBEX, ctlLDURBMem;
 	logic [2:0] ALUOpRF, ALUOpEX;
 	logic RegWriteRF, RegWriteEX, RegWriteMem, RegWriteWB;
 	logic movz, movk;
@@ -59,10 +59,13 @@ module CPU_64bit (clk, reset);
 
 //Control Logic Call
 	
-   controlLogic theBrain (.OpCode(opcode), .zero(zTrue), .notFlagZero(zero), .negative(nTrue), .carryout(cTrue), .overflow(oTrue), .RegWrite(RegWriteRF), .Reg2Loc, 
+   controlLogic theBrain (.OpCode(opcode), .zero(zTrue), .notFlagZero(fastZero), .negative(nTrue), .carryout(cTrue), .overflow(oTrue), .RegWrite(RegWriteRF), .Reg2Loc, 
    	                    .ALUSrc, .ALUOp(ALUOpRF), .MemWrite(MemWriteRF), .MemToReg(MemToRegRF), .UncondBr, .BrTaken,  
    						     .Imm_12, .xfer_size(xfer_sizeRF), .read_en(read_enableRF), .movz(movz), .flagSet(flagSetRF), .movk(movk), .ctlLDURB(ctlLDURBRF)); 
 
+	//Fast zero flag for pipeline
+	
+	zero_flag advancedBranch (.result(aluBRF), .checkZero(fastZero));
 	
 	
 	//Control signal "buffers"/pipline stages
@@ -99,7 +102,19 @@ module CPU_64bit (clk, reset);
 	D_FF RegWriteFlop2 (.q(RegWriteWB), .d(RegWriteMem), .reset, .clk);
 	
 	
-								  
+	//Forwarding logic
+	
+	ForwardingUnit superFast (.ForwardA, .ForwardB, .ExMem_RegWrite(RegWriteEX), .MemWB_RegWrite(RegWriteMem), .ExMem_Rd(RdEX), .MemWB_Rd(RdMem), .Rn(Rn), .Rm(Rm));
+	
+	
+	//MUXs for forwarding
+
+	mux256_64 forwardAMUX (.inThree(64'h0000000000000000), .inTwo(aluResultEX), .inOne(WriteDataMem), .inZero(DaForward), .sel(ForwardA), .out(DaRF));
+	mux256_64 forwardBMUX (.inThree(64'h0000000000000000), .inTwo(aluResultEX), .inOne(WriteDataMem), .inZero(DbForward), .sel(ForwardB), .out(DbRF));
+	mux256_64 forwardDataBMUX (.inThree(64'h0000000000000000), .inTwo(DbEX), .inOne(DbMem), .inZero(aluBForward), .sel(ForwardB), .out(aluBRF));
+
+
+	
 //D_FF_enable the flags so they don't change until certain operations.
 
 	D_FF_enable forZero (.q(zTrue), .d(zero), .en(flagSetEX), .clk);
@@ -155,7 +170,7 @@ module CPU_64bit (clk, reset);
 	// Regfile will have two 64 bit outputs. Registers Rn, Rd, and the output of mux10_5 (choosing between
 	// Rd and Rm) are being input. RegWrite is the signal used to decide if a value is being written to Register
 	// Rd. WriteData is the value being written back to register Rd.
-	regfile registerFile (.ReadData1(DaRF), .ReadData2(DbRF), .WriteData(WriteDataWB), .ReadRegister1(Rn), 
+	regfile registerFile (.ReadData1(DaForward), .ReadData2(DbForward), .WriteData(WriteDataWB), .ReadRegister1(Rn), 
 	                      .ReadRegister2(Rmux), .WriteRegister(RdWB), .RegWrite(RegWriteWB), .clk(clk));
    
 	
@@ -180,7 +195,7 @@ module CPU_64bit (clk, reset);
 	//ALU Hookups
 		
 	//Sends either ReadData2 (register Db) or the choice between Imm_12 and Daddr9
-	mux128_64 alusrcMUX (.inOne(altBInput), .inZero(DbRF), .sel(ALUSrc), .out(aluBRF));
+	mux128_64 alusrcMUX (.inOne(altBInput), .inZero(DbForward), .sel(ALUSrc), .out(aluBForward));
 	
 	
 	
