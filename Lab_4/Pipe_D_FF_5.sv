@@ -3,11 +3,11 @@
 *		A D_FF module for a pipelined cpu. Used to break up logic in stages.
 *	
 *	Inputs:
-*		d: The 64 bits of data to be written to the flipflop.
+*		d: The 5 bits of data to be written to the flipflop.
 *		clk: The system clock.
 *
 *	Outputs:
-*		q: The 64 bits of data signal stored in the flip flop.
+*		q: The 5 bits of data signal stored in the flip flop.
 *
 *******************************************************************************/
 

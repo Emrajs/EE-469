@@ -17,7 +17,7 @@
 module CPU_64bit (clk, reset);
 	input logic clk, reset;
 	logic [63:0] DaRF, DaEX, DbRF, DbEX, DbMem, WriteDataWB, WriteDataMem, aluBRF, aluBEX, aluResultEX, aluResultMem, dataMemOut, 
-	             fullImm16, addIMuxOut, immSelector, newPC, oldPC, normalIncPC, branchIncPCIF, branchIncPCRF, branchIncPCEX, bToAdder, 
+	             fullImm16, addIMuxOut, immSelector, newPC, oldPC, normalIncPC, branchIncPC, bToAdder, 
 					 postShiftB, altBInput, movzMux, toRegFinal;
 	logic [31:0] instructionIF, instructionRF;
 	logic [25:0] brAddr26;
@@ -126,22 +126,21 @@ module CPU_64bit (clk, reset);
 	fullAdder_64bit normalCounter (.A(oldPC), .B({{60{1'b0}}, 4'b0100}), .result(normalIncPC));
 	
 	// PC = PC + SignExtend((BrAddr26)/(CondAddr19))<<2.
-	fullAdder_64bit branchCounter (.A(bToAdder), .B(oldPC), .result(branchIncPCIF));
+	fullAdder_64bit branchCounter (.A(bToAdder), .B(oldPC), .result(branchIncPC));
 	
 	// Mux that decides between PC+4 or PC = PC + SignExtend((BrAddr26)/(CondAddr19))<<2.
-	mux128_64 pcSelect (.inOne(branchIncPC2), .inZero(normalIncPC), .sel(BrTaken), .out(newPC));
+	mux128_64 pcSelect (.inOne(branchIncPC), .inZero(normalIncPC), .sel(BrTaken), .out(newPC));
 	
 	
    //Instruction Memory
 	
-	//instructmem theInstructions (.address(oldPC), .instruction(instructionIF), .clk(clk));
+	instructmem theInstructions (.address(oldPC), .instruction(instructionIF), .clk(clk));
 
 	
 	
 	//IF - RF Pipe
 	
-	Pipe_D_FF ifrfo (.q(instructionRF), .d(instructionIF), .clk);
-	Pipe_D_FF ifrf1 (.q(branchIncPCRF), .d(branchIncPCIF), .clk); //PC counter pipe
+	Pipe_D_FF_32 ifrfo (.q(instructionRF), .d(instructionIF), .clk);
 	
 	
 	
@@ -190,7 +189,6 @@ module CPU_64bit (clk, reset);
 	Pipe_D_FF rfex0 (.q(DaEX), .d(DaRF), .clk);
 	Pipe_D_FF rfex1 (.q(DbEX), .d(DbRF), .clk);
 	Pipe_D_FF rfex2 (.q(aluBEX), .d(aluBRF), .clk);
-	Pipe_D_FF rfex3 (.q(branchIncPCEX), .d(branchIncPCRF), .clk); //PC counter pipe
 	
 	Pipe_D_FF_5 rfex4 (.q(RdEX), .d(RdRF), .clk);
 	
@@ -212,7 +210,7 @@ module CPU_64bit (clk, reset);
 	
 	//DataMem hookups
    
-	//datamem dataMemory (.address(aluResultMem), .write_enable(MemWriteMem), .read_enable(read_enableMem), .write_data(DbMem), .clk(clk), .xfer_size(xfer_sizeMem), .read_data(dataMemOut));
+	datamem dataMemory (.address(aluResultMem), .write_enable(MemWriteMem), .read_enable(read_enableMem), .write_data(DbMem), .clk(clk), .xfer_size(xfer_sizeMem), .read_data(dataMemOut));
 	
 	mux128_64 isLDURB (.inOne({{56{1'b0}}, dataMemOut[7:0]}), .inZero(dataMemOut), .sel(ctlLDURBMem), .out(toRegFinal));
 	
