@@ -3,7 +3,7 @@
 *		Emraj Sidhu and Nesta Isakovic	
 *
 *	Description:
-*		A 64 bit single cycle CPU for ARM architecture.
+*		A 64 bit Pipelined CPU for ARM architecture.
 *
 *	Inputs:
 *		clk: The clock input for the system.
@@ -26,24 +26,24 @@ module CPU_64bit (clk, reset);
 	logic [11:0] imm12;
 	logic [10:0] opcode;
 	logic [8:0] dAddr9;
-	logic [4:0] RdRF, RdEX, RdMem, RdWB, RdWBMem, RdWBEX Rm, Rn, Rmux;
+	logic [4:0] RdRF, RdEX, RdMem, RdWB, Rm, Rn, Rmux;
 	logic [1:0] shamt;
 	
    //Control signals
-   logic negative, zero, overflow, carry_out, nTrue, zTrue, oTrue, cTrue, ctlLDURB;
-	logic [2:0] ALUOp;
-	logic RegWrite;
+   logic negative, zero, overflow, carry_out, nTrue, zTrue, oTrue, cTrue, ctlLDURBRF, ctlLDURBEX, ctlLDURBMem;
+	logic [2:0] ALUOpRF, ALUOpEX;
+	logic RegWriteRF, RegWriteEX, RegWriteMem, RegWriteWB;
 	logic movz, movk;
-	logic MemWrite;
+	logic MemWriteRF, MemWriteEX, MemWriteMem;
 	logic Reg2Loc;
 	logic Imm_12;
 	logic ALUSrc;
-	logic MemToReg;
+	logic MemToRegRF, MemToRegEX, MemToRegMem;
 	logic UncondBr;
 	logic BrTaken;
-	logic read_enable;
-	logic flagSet;
-	logic [3:0] xfer_size;	// xfer_size should either send 1000 (for 8 bytes) or 0001 (for 1 byte) to datamem.
+	logic read_enableRF, read_enableEX, read_enableMem;
+	logic flagSetRF, flagSetEx;
+	logic [3:0] xfer_sizeRF, xfer_sizeEX, xfer_sizeMem;	// xfer_size should either send 1000 (for 8 bytes) or 0001 (for 1 byte) to datamem.
 	
    //Assign statements for readability
 	assign RdRF = 	 	  instructionRF[4:0];
@@ -59,16 +59,53 @@ module CPU_64bit (clk, reset);
 
 //Control Logic Call
 	
-   controlLogic theBrain (.OpCode(opcode), .zero(zTrue), .notFlagZero(zero), .negative(nTrue), .carryout(cTrue), .overflow(oTrue), .RegWrite, .Reg2Loc, 
-   	                    .ALUSrc, .ALUOp, .MemWrite, .MemToReg, .UncondBr, .BrTaken,  
-   						     .Imm_12, .xfer_size, .read_en(read_enable), .movz(movz), .flagSet, .movk(movk), .ctlLDURB); 
+   controlLogic theBrain (.OpCode(opcode), .zero(zTrue), .notFlagZero(zero), .negative(nTrue), .carryout(cTrue), .overflow(oTrue), .RegWrite(RegWriteRF), .Reg2Loc, 
+   	                    .ALUSrc, .ALUOp(ALUOpRF), .MemWrite(MemWriteRF), .MemToReg(MemToRegRF), .UncondBr, .BrTaken,  
+   						     .Imm_12, .xfer_size(xfer_sizeRF), .read_en(read_enableRF), .movz(movz), .flagSet(flagSetRF), .movk(movk), .ctlLDURB(ctlLDURBRF)); 
 
+	
+	
+	//Control signal "buffers"/pipline stages
+	
+	D_FF ALUOpFlop0 (.q(ALUOpEX[0]), .d(ALUOpRF[0]), .reset, .clk);
+	D_FF ALUOpFlop1 (.q(ALUOpEX[1]), .d(ALUOpRF[1]), .reset, .clk);
+	D_FF ALUOpFlop2 (.q(ALUOpEX[2]), .d(ALUOpRF[2]), .reset, .clk);
+	
+	D_FF flagSetFlop0 (.q(flagSetEX), .d(flagSetRF), .reset, .clk);
+	
+	D_FF MemWriteFlop0 (.q(MemWriteEX), .d(MemWriteRF), .reset, .clk);
+	D_FF MemWriteFlop1 (.q(MemWriteMem), .d(MemWriteEX), .reset, .clk);
+	
+	D_FF read_enableFlop0 (.q(read_enableEX), .d(read_enableRF), .reset, .clk);
+	D_FF read_enableFlop1 (.q(read_enableMem), .d(read_enableEX), .reset, .clk);
+	
+	D_FF xfer_sizeFlop0 (.q(xfer_sizeEX[0]), .d(xfer_sizeRF[0]), .reset, .clk);
+	D_FF xfer_sizeFlop1 (.q(xfer_sizeEX[1]), .d(xfer_sizeRF[1]), .reset, .clk);
+	D_FF xfer_sizeFlop2 (.q(xfer_sizeEX[2]), .d(xfer_sizeRF[2]), .reset, .clk);
+	D_FF xfer_sizeFlop3 (.q(xfer_sizeEX[3]), .d(xfer_sizeRF[3]), .reset, .clk);
+	D_FF xfer_sizeFlop4 (.q(xfer_sizeMem[0]), .d(xfer_sizeEX[0]), .reset, .clk);
+	D_FF xfer_sizeFlop5 (.q(xfer_sizeMem[1]), .d(xfer_sizeEX[1]), .reset, .clk);
+	D_FF xfer_sizeFlop6 (.q(xfer_sizeMem[2]), .d(xfer_sizeEX[2]), .reset, .clk);
+	D_FF xfer_sizeFlop7 (.q(xfer_sizeMem[3]), .d(xfer_sizeEX[3]), .reset, .clk);
+	
+	D_FF ctlLDURBFlop0 (.q(ctlLDURBEX), .d(ctlLDURBRF), .reset, .clk);
+	D_FF ctlLDURBFlop1 (.q(ctlLDURBMem), .d(ctlLDURBEX), .reset, .clk);
+	
+	D_FF MemToRegFlop0 (.q(MemToRegEX), .d(MemToRegRF), .reset, .clk);
+	D_FF MemToRegFlop1 (.q(MemToRegMem), .d(MemToRegEX), .reset, .clk);
+	
+	D_FF RegWriteFlop0 (.q(RegWriteEX), .d(RegWriteRF), .reset, .clk);
+	D_FF RegWriteFlop1 (.q(RegWriteMem), .d(RegWriteEX), .reset, .clk);
+	D_FF RegWriteFlop2 (.q(RegWriteWB), .d(RegWriteMem), .reset, .clk);
+	
+	
+								  
 //D_FF_enable the flags so they don't change until certain operations.
 
-	D_FF_enable forZero (.q(zTrue), .d(zero), .en(flagSet), .clk);
-	D_FF_enable forNegative (.q(nTrue), .d(negative), .en(flagSet), .clk);
-	D_FF_enable forCarryout (.q(cTrue), .d(carry_out), .en(flagSet), .clk);
-	D_FF_enable forOverflow (.q(oTrue), .d(overflow), .en(flagSet), .clk);
+	D_FF_enable forZero (.q(zTrue), .d(zero), .en(flagSetEX), .clk);
+	D_FF_enable forNegative (.q(nTrue), .d(negative), .en(flagSetEX), .clk);
+	D_FF_enable forCarryout (.q(cTrue), .d(carry_out), .en(flagSetEX), .clk);
+	D_FF_enable forOverflow (.q(oTrue), .d(overflow), .en(flagSetEX), .clk);
 	
 //Program counter logic 
 	
@@ -97,14 +134,14 @@ module CPU_64bit (clk, reset);
 	
    //Instruction Memory
 	
-	instructmem theInstructions (.address(oldPC), .instruction(instructionIF), .clk(clk));
+	//instructmem theInstructions (.address(oldPC), .instruction(instructionIF), .clk(clk));
 
 	
 	
 	//IF - RF Pipe
 	
-	Pipe_D_FF ifrfo (.q(instructionRF), .d(instructionIF), .clk)
-	Pipe_D_FF ifrf1 (.q(branchIncPCRF), .d(branchIncPCIF), .clk) //PC counter pipe
+	Pipe_D_FF ifrfo (.q(instructionRF), .d(instructionIF), .clk);
+	Pipe_D_FF ifrf1 (.q(branchIncPCRF), .d(branchIncPCIF), .clk); //PC counter pipe
 	
 	
 	
@@ -120,7 +157,7 @@ module CPU_64bit (clk, reset);
 	// Rd and Rm) are being input. RegWrite is the signal used to decide if a value is being written to Register
 	// Rd. WriteData is the value being written back to register Rd.
 	regfile registerFile (.ReadData1(DaRF), .ReadData2(DbRF), .WriteData(WriteDataWB), .ReadRegister1(Rn), 
-	                      .ReadRegister2(Rmux), .WriteRegister(RdWB), .RegWrite, .clk(clk));
+	                      .ReadRegister2(Rmux), .WriteRegister(RdWB), .RegWrite(RegWriteWB), .clk(clk));
    
 	
    //Immediate and Address MUXing 	
@@ -150,45 +187,46 @@ module CPU_64bit (clk, reset);
 	
 	//RF - EX Pipes
 	
-	Pipe_D_FF rfex0 (.q(DaEX), .d(DaRF), .clk)
-	Pipe_D_FF rfex1 (.q(DbEX), .d(DbRF), .clk)
-	Pipe_D_FF rfex2 (.q(aluBEX), .d(aluBRF), .clk)
-	Pipe_D_FF rfex3 (.q(RdWB), .d(RdWBEX), .clk) // Rd to writeback 
-	Pipe_D_FF rfex4 (.q(RdEX), .d(RdRF), .clk)
-	Pipe_D_FF rfex5 (.q(branchIncPCEX), .d(branchIncPCRF), .clk) //PC counter pipe
+	Pipe_D_FF rfex0 (.q(DaEX), .d(DaRF), .clk);
+	Pipe_D_FF rfex1 (.q(DbEX), .d(DbRF), .clk);
+	Pipe_D_FF rfex2 (.q(aluBEX), .d(aluBRF), .clk);
+	Pipe_D_FF rfex3 (.q(branchIncPCEX), .d(branchIncPCRF), .clk); //PC counter pipe
+	
+	Pipe_D_FF_5 rfex4 (.q(RdEX), .d(RdRF), .clk);
 	
 	
 	
 	// The final 64 bit ALU hookup
-	alu mainALU (.A(DaEX), .B(aluBEX), .cntrl(ALUOp), .result(aluResultEX), .negative, .zero, .overflow, .carry_out);
+	alu mainALU (.A(DaEX), .B(aluBEX), .cntrl(ALUOpEX), .result(aluResultEX), .negative, .zero, .overflow, .carry_out);
 	
 	
 	
 	//EX - MEM Pipes
 	
-	Pipe_D_FF exmem0 (.q(DbMem), .d(DbEX), .clk)
-	Pipe_D_FF exmem1 (.q(aluResultMem), .d(aluResultEX), .clk)
-	Pipe_D_FF exmem2 (.q(RdWBEX), .d(RdWBMem), .clk) // Rd to writeback
-	Pipe_D_FF exmem3 (.q(RdMem), .d(RdEX), .clk)
+	Pipe_D_FF exmem0 (.q(DbMem), .d(DbEX), .clk);
+	Pipe_D_FF exmem1 (.q(aluResultMem), .d(aluResultEX), .clk);
+	
+	Pipe_D_FF_5 exmem3 (.q(RdMem), .d(RdEX), .clk);
 	
 	
 	
 	//DataMem hookups
    
-	datamem dataMemory (.address(aluResultMem), .write_enable(MemWrite), .read_enable, .write_data(DbMem), .clk(clk), .xfer_size, .read_data(dataMemOut));
+	//datamem dataMemory (.address(aluResultMem), .write_enable(MemWriteMem), .read_enable(read_enableMem), .write_data(DbMem), .clk(clk), .xfer_size(xfer_sizeMem), .read_data(dataMemOut));
 	
-	mux128_64 isLDURB (.inOne({{56{1'b0}}, dataMemOut[7:0]}), .inZero(dataMemOut), .sel(ctlLDURB), .out(toRegFinal));
+	mux128_64 isLDURB (.inOne({{56{1'b0}}, dataMemOut[7:0]}), .inZero(dataMemOut), .sel(ctlLDURBMem), .out(toRegFinal));
 	
 	// The mux which chooses between the alu result and Dout (from data memory) to write backt to the register
 	// file.
-	mux128_64 datamemMUX (.inOne(toRegFinal), .inZero(aluResultMem), .sel(MemToReg), .out(WriteDataMem));	
+	mux128_64 datamemMUX (.inOne(toRegFinal), .inZero(aluResultMem), .sel(MemToRegMem), .out(WriteDataMem));	
 	
 	
 	
 	//MEM - WB Pipes
 	
-	Pipe_D_FF memwb0 (.q(WriteDataWB), .d(WriteDataMem), .clk)
-	Pipe_D_FF memwb1 (.q(RdWBMem), .d(RdMem), .clk)
+	Pipe_D_FF memwb0 (.q(WriteDataWB), .d(WriteDataMem), .clk);
+	
+	Pipe_D_FF_5 memwb1 (.q(RdWB), .d(RdMem), .clk);
 	
 	
 	

@@ -4,7 +4,7 @@
 //
 // To change the file that is loaded, edit the filename here:
 //`define BENCHMARK "../benchmarks/test01_AddiB.arm"
-`define BENCHMARK "../benchmarks/test02_AddsSubs.arm"
+//`define BENCHMARK "../benchmarks/test02_AddsSubs.arm"
 //`define BENCHMARK "../benchmarks/test03_CbzB.arm"
 //`define BENCHMARK "../benchmarks/test04_LdurStur.arm"
 //`define BENCHMARK "../benchmarks/test05_Blt.arm"

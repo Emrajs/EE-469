@@ -32,6 +32,8 @@ vlog "./decode_3_8.sv"
 vlog "./decode_5_32.sv"
 vlog "./D_FF.sv"
 vlog "./D_FF_enable.sv"
+vlog "./Pipe_D_FF.sv"
+vlog "./Pipe_D_FF_5.sv"
 
 
 # Call vsim to invoke simulator
