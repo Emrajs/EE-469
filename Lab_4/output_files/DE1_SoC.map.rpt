@@ -1,113 +1,18 @@
-Analysis & Synthesis report for DE1_SoC
-Tue Nov 28 19:14:23 2017
-Quartus Prime Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
+Analysis & Elaboration report for DE1_SoC
+Wed Nov 29 13:33:37 2017
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: controlLogic:theBrain
- 10. Port Connectivity Checks: "mux128_64:isLDURB"
- 11. Port Connectivity Checks: "Pipe_D_FF:exmem0"
- 12. Port Connectivity Checks: "alu:mainALU|alu_1bit:firstAlu|mux8_1:submodule2"
- 13. Port Connectivity Checks: "Pipe_D_FF_5:rfex4|D_FF:eachFlop[4].oneFlop"
- 14. Port Connectivity Checks: "Pipe_D_FF_5:rfex4|D_FF:eachFlop[3].oneFlop"
- 15. Port Connectivity Checks: "Pipe_D_FF_5:rfex4|D_FF:eachFlop[2].oneFlop"
- 16. Port Connectivity Checks: "Pipe_D_FF_5:rfex4|D_FF:eachFlop[1].oneFlop"
- 17. Port Connectivity Checks: "Pipe_D_FF_5:rfex4|D_FF:eachFlop[0].oneFlop"
- 18. Port Connectivity Checks: "Pipe_D_FF:rfex3"
- 19. Port Connectivity Checks: "mux128_64:immOrAddrMux"
- 20. Port Connectivity Checks: "shifter:movzShifter1"
- 21. Port Connectivity Checks: "regfile:registerFile|decode_5_32:Decoder"
- 22. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[63].oneFlop"
- 23. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[62].oneFlop"
- 24. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[61].oneFlop"
- 25. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[60].oneFlop"
- 26. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[59].oneFlop"
- 27. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[58].oneFlop"
- 28. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[57].oneFlop"
- 29. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[56].oneFlop"
- 30. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[55].oneFlop"
- 31. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[54].oneFlop"
- 32. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[53].oneFlop"
- 33. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[52].oneFlop"
- 34. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[51].oneFlop"
- 35. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[50].oneFlop"
- 36. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[49].oneFlop"
- 37. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[48].oneFlop"
- 38. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[47].oneFlop"
- 39. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[46].oneFlop"
- 40. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[45].oneFlop"
- 41. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[44].oneFlop"
- 42. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[43].oneFlop"
- 43. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[42].oneFlop"
- 44. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[41].oneFlop"
- 45. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[40].oneFlop"
- 46. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[39].oneFlop"
- 47. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[38].oneFlop"
- 48. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[37].oneFlop"
- 49. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[36].oneFlop"
- 50. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[35].oneFlop"
- 51. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[34].oneFlop"
- 52. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[33].oneFlop"
- 53. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[32].oneFlop"
- 54. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[31].oneFlop"
- 55. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[30].oneFlop"
- 56. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[29].oneFlop"
- 57. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[28].oneFlop"
- 58. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[27].oneFlop"
- 59. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[26].oneFlop"
- 60. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[25].oneFlop"
- 61. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[24].oneFlop"
- 62. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[23].oneFlop"
- 63. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[22].oneFlop"
- 64. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[21].oneFlop"
- 65. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[20].oneFlop"
- 66. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[19].oneFlop"
- 67. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[18].oneFlop"
- 68. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[17].oneFlop"
- 69. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[16].oneFlop"
- 70. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[15].oneFlop"
- 71. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[14].oneFlop"
- 72. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[13].oneFlop"
- 73. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[12].oneFlop"
- 74. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[11].oneFlop"
- 75. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[10].oneFlop"
- 76. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[9].oneFlop"
- 77. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[8].oneFlop"
- 78. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[7].oneFlop"
- 79. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[6].oneFlop"
- 80. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[5].oneFlop"
- 81. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[4].oneFlop"
- 82. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[3].oneFlop"
- 83. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[2].oneFlop"
- 84. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[1].oneFlop"
- 85. Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[0].oneFlop"
- 86. Port Connectivity Checks: "Pipe_D_FF:ifrfo"
- 87. Port Connectivity Checks: "mux128_64:pcSelect"
- 88. Port Connectivity Checks: "fullAdder_64bit:normalCounter|fullAdder_1bit:sixtyFourthAdder"
- 89. Port Connectivity Checks: "fullAdder_64bit:normalCounter|fullAdder_1bit:firstAdder"
- 90. Port Connectivity Checks: "fullAdder_64bit:normalCounter"
- 91. Port Connectivity Checks: "shifter:brShifter"
- 92. Port Connectivity Checks: "D_FF_enable:forZero|D_FF:d0"
- 93. Port Connectivity Checks: "D_FF:xfer_sizeFlop7"
- 94. Port Connectivity Checks: "D_FF:xfer_sizeFlop6"
- 95. Port Connectivity Checks: "D_FF:xfer_sizeFlop5"
- 96. Port Connectivity Checks: "D_FF:xfer_sizeFlop4"
- 97. Port Connectivity Checks: "D_FF:read_enableFlop1"
- 98. Port Connectivity Checks: "D_FF:MemWriteFlop1"
- 99. Post-Synthesis Netlist Statistics for Top Partition
-100. Elapsed Time Per Partition
-101. Analysis & Synthesis Messages
-102. Analysis & Synthesis Suppressed Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "alu_1bit:firstAlu|mux8_1:submodule2"
+  6. Analysis & Elaboration Messages
+  7. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -131,36 +36,47 @@ agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 28 19:14:23 2017           ;
-; Quartus Prime Version           ; 17.0.2 Build 602 07/19/2017 SJ Standard Edition ;
-; Revision Name                   ; DE1_SoC                                         ;
-; Top-level Entity Name           ; CPU_64bit                                       ;
-; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 0                                               ;
-; Total pins                      ; 2                                               ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0                                               ;
-; Total DSP Blocks                ; 0                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Wed Nov 29 13:33:37 2017       ;
+; Quartus Prime Version         ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                 ; DE1_SoC                                     ;
+; Top-level Entity Name         ; alu                                         ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; CPU_64bit          ; DE1_SoC            ;
+; Top-level entity name                                                           ; alu                ; DE1_SoC            ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; State Machine Processing                                                        ; User-Encoded       ; Auto               ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -241,1596 +157,143 @@ agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                           ;
-+----------------------------------+-----------------+------------------------------+------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path       ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------+---------+
-; zero_flag.sv                     ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/zero_flag.sv       ;         ;
-; regfile.sv                       ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/regfile.sv         ;         ;
-; pcUnit.sv                        ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/pcUnit.sv          ;         ;
-; nor_16x1.sv                      ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/nor_16x1.sv        ;         ;
-; mux256_64.sv                     ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/mux256_64.sv       ;         ;
-; mux128_64.sv                     ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/mux128_64.sv       ;         ;
-; mux32_1.sv                       ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/mux32_1.sv         ;         ;
-; mux16_1.sv                       ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/mux16_1.sv         ;         ;
-; mux10_5.sv                       ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/mux10_5.sv         ;         ;
-; mux8_1.sv                        ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/mux8_1.sv          ;         ;
-; mux_4_1.sv                       ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/mux_4_1.sv         ;         ;
-; math.sv                          ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/math.sv            ;         ;
-; fullAdder_64bit.sv               ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/fullAdder_64bit.sv ;         ;
-; fullAdder_1bit.sv                ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/fullAdder_1bit.sv  ;         ;
-; decode_5_32.sv                   ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/decode_5_32.sv     ;         ;
-; decode_3_8.sv                    ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/decode_3_8.sv      ;         ;
-; decode_2_4.sv                    ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/decode_2_4.sv      ;         ;
-; decode_1_2.sv                    ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/decode_1_2.sv      ;         ;
-; D_FF_enable.sv                   ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/D_FF_enable.sv     ;         ;
-; D_FF.sv                          ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/D_FF.sv            ;         ;
-; CPU_64bit.sv                     ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/CPU_64bit.sv       ;         ;
-; controlLogic.sv                  ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/controlLogic.sv    ;         ;
-; alu_1bit.sv                      ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/alu_1bit.sv        ;         ;
-; alu.sv                           ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/alu.sv             ;         ;
-; mux2_1.sv                        ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/mux2_1.sv          ;         ;
-; Pipe_D_FF.sv                     ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/Pipe_D_FF.sv       ;         ;
-; Pipe_D_FF_5.sv                   ; yes             ; User SystemVerilog HDL File  ; U:/EE-469/Lab_4/Pipe_D_FF_5.sv     ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------+---------+
-
-
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimate of Logic utilization (ALMs needed) ; 0     ;
-;                                             ;       ;
-; Combinational ALUT usage for logic          ; 0     ;
-;     -- 7 input functions                    ; 0     ;
-;     -- 6 input functions                    ; 0     ;
-;     -- 5 input functions                    ; 0     ;
-;     -- 4 input functions                    ; 0     ;
-;     -- <=3 input functions                  ; 0     ;
-;                                             ;       ;
-; Dedicated logic registers                   ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 2     ;
-;                                             ;       ;
-; Total DSP Blocks                            ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 2     ;
-; Average fan-out                             ; 0.50  ;
-+---------------------------------------------+-------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |CPU_64bit                 ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 2    ; 0            ; |CPU_64bit          ; CPU_64bit   ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: controlLogic:theBrain ;
-+----------------+-------------+-------------------------------------+
-; Parameter Name ; Value       ; Type                                ;
-+----------------+-------------+-------------------------------------+
-; ADDI           ; 1001000100X ; Unsigned Binary                     ;
-; ADDS           ; 10101011000 ; Unsigned Binary                     ;
-; B              ; 000101XXXXX ; Unsigned Binary                     ;
-; CBZ            ; 10110100XXX ; Unsigned Binary                     ;
-; LDUR           ; 11111000010 ; Unsigned Binary                     ;
-; STUR           ; 11111000000 ; Unsigned Binary                     ;
-; SUBS           ; 11101011000 ; Unsigned Binary                     ;
-; B_LT           ; 01010100XXX ; Unsigned Binary                     ;
-; LDURB          ; 00111000010 ; Unsigned Binary                     ;
-; STURB          ; 00111000000 ; Unsigned Binary                     ;
-; MOVK           ; 111100101XX ; Unsigned Binary                     ;
-; MOVZ           ; 110100101XX ; Unsigned Binary                     ;
-+----------------+-------------+-------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------+
-; Port Connectivity Checks: "mux128_64:isLDURB"  ;
-+--------------+-------+----------+--------------+
-; Port         ; Type  ; Severity ; Details      ;
-+--------------+-------+----------+--------------+
-; inOne[63..8] ; Input ; Info     ; Stuck at GND ;
-+--------------+-------+----------+--------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:exmem0"                                                                   ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:mainALU|alu_1bit:firstAlu|mux8_1:submodule2" ;
-+-------+-------+----------+--------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                          ;
-+-------+-------+----------+--------------------------------------------------+
-; in[7] ; Input ; Info     ; Stuck at GND                                     ;
-; in[1] ; Input ; Info     ; Stuck at GND                                     ;
-+-------+-------+----------+--------------------------------------------------+
-
-
-+------------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF_5:rfex4|D_FF:eachFlop[4].oneFlop" ;
-+-------+-------+----------+---------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                     ;
-+-------+-------+----------+---------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                                ;
-+-------+-------+----------+---------------------------------------------+
-
-
-+------------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF_5:rfex4|D_FF:eachFlop[3].oneFlop" ;
-+-------+-------+----------+---------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                     ;
-+-------+-------+----------+---------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                                ;
-+-------+-------+----------+---------------------------------------------+
-
-
-+------------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF_5:rfex4|D_FF:eachFlop[2].oneFlop" ;
-+-------+-------+----------+---------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                     ;
-+-------+-------+----------+---------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                                ;
-+-------+-------+----------+---------------------------------------------+
-
-
-+------------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF_5:rfex4|D_FF:eachFlop[1].oneFlop" ;
-+-------+-------+----------+---------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                     ;
-+-------+-------+----------+---------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                                ;
-+-------+-------+----------+---------------------------------------------+
-
-
-+------------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF_5:rfex4|D_FF:eachFlop[0].oneFlop" ;
-+-------+-------+----------+---------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                     ;
-+-------+-------+----------+---------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                                ;
-+-------+-------+----------+---------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:rfex3"                                                                    ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------+
-; Port Connectivity Checks: "mux128_64:immOrAddrMux" ;
-+---------------+-------+----------+-----------------+
-; Port          ; Type  ; Severity ; Details         ;
-+---------------+-------+----------+-----------------+
-; inOne[63..12] ; Input ; Info     ; Stuck at GND    ;
-+---------------+-------+----------+-----------------+
-
-
-+--------------------------------------------------+
-; Port Connectivity Checks: "shifter:movzShifter1" ;
-+----------------+-------+----------+--------------+
-; Port           ; Type  ; Severity ; Details      ;
-+----------------+-------+----------+--------------+
-; value[63..16]  ; Input ; Info     ; Stuck at GND ;
-; direction      ; Input ; Info     ; Stuck at GND ;
-; distance[3..0] ; Input ; Info     ; Stuck at GND ;
-+----------------+-------+----------+--------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "regfile:registerFile|decode_5_32:Decoder"                                              ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; out[31] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[63].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[62].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[61].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[60].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[59].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[58].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[57].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[56].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[55].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[54].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[53].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[52].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[51].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[50].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[49].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[48].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[47].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[46].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[45].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[44].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[43].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[42].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[41].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[40].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[39].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[38].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[37].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[36].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[35].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[34].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[33].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[32].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[31].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[30].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[29].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[28].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[27].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[26].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[25].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[24].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[23].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[22].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[21].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[20].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[19].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[18].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[17].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[16].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[15].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[14].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[13].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[12].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[11].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[10].oneFlop" ;
-+-------+-------+----------+--------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                    ;
-+-------+-------+----------+--------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                               ;
-+-------+-------+----------+--------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[9].oneFlop" ;
-+-------+-------+----------+-------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                   ;
-+-------+-------+----------+-------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                              ;
-+-------+-------+----------+-------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[8].oneFlop" ;
-+-------+-------+----------+-------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                   ;
-+-------+-------+----------+-------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                              ;
-+-------+-------+----------+-------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[7].oneFlop" ;
-+-------+-------+----------+-------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                   ;
-+-------+-------+----------+-------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                              ;
-+-------+-------+----------+-------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[6].oneFlop" ;
-+-------+-------+----------+-------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                   ;
-+-------+-------+----------+-------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                              ;
-+-------+-------+----------+-------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[5].oneFlop" ;
-+-------+-------+----------+-------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                   ;
-+-------+-------+----------+-------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                              ;
-+-------+-------+----------+-------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[4].oneFlop" ;
-+-------+-------+----------+-------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                   ;
-+-------+-------+----------+-------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                              ;
-+-------+-------+----------+-------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[3].oneFlop" ;
-+-------+-------+----------+-------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                   ;
-+-------+-------+----------+-------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                              ;
-+-------+-------+----------+-------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[2].oneFlop" ;
-+-------+-------+----------+-------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                   ;
-+-------+-------+----------+-------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                              ;
-+-------+-------+----------+-------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[1].oneFlop" ;
-+-------+-------+----------+-------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                   ;
-+-------+-------+----------+-------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                              ;
-+-------+-------+----------+-------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo|D_FF:eachFlop[0].oneFlop" ;
-+-------+-------+----------+-------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                   ;
-+-------+-------+----------+-------------------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                              ;
-+-------+-------+----------+-------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipe_D_FF:ifrfo"                                                                         ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; q[63..32] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; d         ; Input  ; Info     ; Stuck at GND                                                                        ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux128_64:pcSelect"                                                                                                                             ;
-+-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                         ;
-+-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; inOne ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (64 bits) it drives.  Extra input bit(s) "inOne[63..1]" will be connected to GND. ;
-+-------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "fullAdder_64bit:normalCounter|fullAdder_1bit:sixtyFourthAdder"                      ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "fullAdder_64bit:normalCounter|fullAdder_1bit:firstAdder" ;
-+------+-------+----------+-----------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                   ;
-+------+-------+----------+-----------------------------------------------------------+
-; Cin  ; Input ; Info     ; Stuck at GND                                              ;
-+------+-------+----------+-----------------------------------------------------------+
-
-
-+-----------------------------------------------------------+
-; Port Connectivity Checks: "fullAdder_64bit:normalCounter" ;
-+----------+-------+----------+-----------------------------+
-; Port     ; Type  ; Severity ; Details                     ;
-+----------+-------+----------+-----------------------------+
-; B[63..3] ; Input ; Info     ; Stuck at GND                ;
-; B[1..0]  ; Input ; Info     ; Stuck at GND                ;
-; B[2]     ; Input ; Info     ; Stuck at VCC                ;
-+----------+-------+----------+-----------------------------+
-
-
-+--------------------------------------------------+
-; Port Connectivity Checks: "shifter:brShifter"    ;
-+----------------+-------+----------+--------------+
-; Port           ; Type  ; Severity ; Details      ;
-+----------------+-------+----------+--------------+
-; direction      ; Input ; Info     ; Stuck at GND ;
-; distance[5..2] ; Input ; Info     ; Stuck at GND ;
-; distance[1]    ; Input ; Info     ; Stuck at VCC ;
-; distance[0]    ; Input ; Info     ; Stuck at GND ;
-+----------------+-------+----------+--------------+
-
-
-+---------------------------------------------------------+
-; Port Connectivity Checks: "D_FF_enable:forZero|D_FF:d0" ;
-+-------+-------+----------+------------------------------+
-; Port  ; Type  ; Severity ; Details                      ;
-+-------+-------+----------+------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                 ;
-+-------+-------+----------+------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "D_FF:xfer_sizeFlop7"                                                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "D_FF:xfer_sizeFlop6"                                                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "D_FF:xfer_sizeFlop5"                                                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "D_FF:xfer_sizeFlop4"                                                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "D_FF:read_enableFlop1"                                                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "D_FF:MemWriteFlop1"                                                                 ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-------------------+---------------------------------+
-; Type              ; Count                           ;
-+-------------------+---------------------------------+
-; boundary_port     ; 2                               ;
-;                   ;                                 ;
-; Max LUT depth     ; 0.00                            ;
-; Average LUT depth ; 0.00                            ;
-+-------------------+---------------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "alu_1bit:firstAlu|mux8_1:submodule2" ;
++-------+-------+----------+--------------------------------------+
+; Port  ; Type  ; Severity ; Details                              ;
++-------+-------+----------+--------------------------------------+
+; in[7] ; Input ; Info     ; Stuck at GND                         ;
+; in[1] ; Input ; Info     ; Stuck at GND                         ;
++-------+-------+----------+--------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 17.0.2 Build 602 07/19/2017 SJ Standard Edition
-    Info: Processing started: Tue Nov 28 19:13:51 2017
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Wed Nov 29 13:33:22 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC -c DE1_SoC --analysis_and_elaboration
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 2 entities, in source file zero_flag.sv
-    Info (12023): Found entity 1: zero_flag File: U:/EE-469/Lab_4/zero_flag.sv Line: 21
-    Info (12023): Found entity 2: zero_flag_testbench File: U:/EE-469/Lab_4/zero_flag.sv Line: 37
+    Info (12023): Found entity 1: zero_flag File: C:/Users/Emraj/Desktop/EE-469/Lab_4/zero_flag.sv Line: 21
+    Info (12023): Found entity 2: zero_flag_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/zero_flag.sv Line: 37
 Info (12021): Found 1 design units, including 1 entities, in source file regstim.sv
-    Info (12023): Found entity 1: regstim File: U:/EE-469/Lab_4/regstim.sv Line: 4
+    Info (12023): Found entity 1: regstim File: C:/Users/Emraj/Desktop/EE-469/Lab_4/regstim.sv Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
-    Info (12023): Found entity 1: regfile File: U:/EE-469/Lab_4/regfile.sv Line: 27
+    Info (12023): Found entity 1: regfile File: C:/Users/Emraj/Desktop/EE-469/Lab_4/regfile.sv Line: 27
 Info (12021): Found 2 design units, including 2 entities, in source file pcunit.sv
-    Info (12023): Found entity 1: pcUnit File: U:/EE-469/Lab_4/pcUnit.sv Line: 21
-    Info (12023): Found entity 2: pcUnit_testbench File: U:/EE-469/Lab_4/pcUnit.sv Line: 36
+    Info (12023): Found entity 1: pcUnit File: C:/Users/Emraj/Desktop/EE-469/Lab_4/pcUnit.sv Line: 21
+    Info (12023): Found entity 2: pcUnit_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/pcUnit.sv Line: 36
 Info (12021): Found 2 design units, including 2 entities, in source file nor_16x1.sv
-    Info (12023): Found entity 1: nor_16x1 File: U:/EE-469/Lab_4/nor_16x1.sv Line: 19
-    Info (12023): Found entity 2: nor_16x1_testbench File: U:/EE-469/Lab_4/nor_16x1.sv Line: 35
+    Info (12023): Found entity 1: nor_16x1 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/nor_16x1.sv Line: 19
+    Info (12023): Found entity 2: nor_16x1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/nor_16x1.sv Line: 35
 Info (12021): Found 2 design units, including 2 entities, in source file mux256_64.sv
-    Info (12023): Found entity 1: mux256_64 File: U:/EE-469/Lab_4/mux256_64.sv Line: 19
-    Info (12023): Found entity 2: mux256_64_testbench File: U:/EE-469/Lab_4/mux256_64.sv Line: 34
+    Info (12023): Found entity 1: mux256_64 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux256_64.sv Line: 19
+    Info (12023): Found entity 2: mux256_64_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux256_64.sv Line: 34
 Info (12021): Found 2 design units, including 2 entities, in source file mux128_64.sv
-    Info (12023): Found entity 1: mux128_64 File: U:/EE-469/Lab_4/mux128_64.sv Line: 19
-    Info (12023): Found entity 2: mux128_64_testbench File: U:/EE-469/Lab_4/mux128_64.sv Line: 34
+    Info (12023): Found entity 1: mux128_64 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux128_64.sv Line: 19
+    Info (12023): Found entity 2: mux128_64_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux128_64.sv Line: 34
 Info (12021): Found 1 design units, including 1 entities, in source file mux32_1.sv
-    Info (12023): Found entity 1: mux32_1 File: U:/EE-469/Lab_4/mux32_1.sv Line: 11
+    Info (12023): Found entity 1: mux32_1 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux32_1.sv Line: 11
 Info (12021): Found 2 design units, including 2 entities, in source file mux16_1.sv
-    Info (12023): Found entity 1: mux16_1 File: U:/EE-469/Lab_4/mux16_1.sv Line: 11
-    Info (12023): Found entity 2: mux16_1_testbench File: U:/EE-469/Lab_4/mux16_1.sv Line: 25
+    Info (12023): Found entity 1: mux16_1 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux16_1.sv Line: 11
+    Info (12023): Found entity 2: mux16_1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux16_1.sv Line: 25
 Info (12021): Found 2 design units, including 2 entities, in source file mux10_5.sv
-    Info (12023): Found entity 1: mux10_5 File: U:/EE-469/Lab_4/mux10_5.sv Line: 19
-    Info (12023): Found entity 2: mux10_5_testbench File: U:/EE-469/Lab_4/mux10_5.sv Line: 34
+    Info (12023): Found entity 1: mux10_5 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux10_5.sv Line: 19
+    Info (12023): Found entity 2: mux10_5_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux10_5.sv Line: 34
 Info (12021): Found 2 design units, including 2 entities, in source file mux8_1.sv
-    Info (12023): Found entity 1: mux8_1 File: U:/EE-469/Lab_4/mux8_1.sv Line: 28
-    Info (12023): Found entity 2: mux8_1_testbench File: U:/EE-469/Lab_4/mux8_1.sv Line: 41
+    Info (12023): Found entity 1: mux8_1 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux8_1.sv Line: 28
+    Info (12023): Found entity 2: mux8_1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux8_1.sv Line: 41
 Info (12021): Found 2 design units, including 2 entities, in source file mux_4_1.sv
-    Info (12023): Found entity 1: mux_4_1 File: U:/EE-469/Lab_4/mux_4_1.sv Line: 24
-    Info (12023): Found entity 2: mux_4_1_testbench File: U:/EE-469/Lab_4/mux_4_1.sv Line: 40
+    Info (12023): Found entity 1: mux_4_1 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux_4_1.sv Line: 24
+    Info (12023): Found entity 2: mux_4_1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux_4_1.sv Line: 40
 Info (12021): Found 4 design units, including 4 entities, in source file math.sv
-    Info (12023): Found entity 1: mult File: U:/EE-469/Lab_4/math.sv Line: 3
-    Info (12023): Found entity 2: shifter File: U:/EE-469/Lab_4/math.sv Line: 33
-    Info (12023): Found entity 3: shifter_testbench File: U:/EE-469/Lab_4/math.sv Line: 48
-    Info (12023): Found entity 4: mult_testbench File: U:/EE-469/Lab_4/math.sv Line: 68
-Critical Warning (10191): Verilog HDL Compiler Directive warning at instructmem.sv(47): text macro "BENCHMARK" is undefined File: U:/EE-469/Lab_4/instructmem.sv Line: 47
+    Info (12023): Found entity 1: mult File: C:/Users/Emraj/Desktop/EE-469/Lab_4/math.sv Line: 3
+    Info (12023): Found entity 2: shifter File: C:/Users/Emraj/Desktop/EE-469/Lab_4/math.sv Line: 33
+    Info (12023): Found entity 3: shifter_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/math.sv Line: 48
+    Info (12023): Found entity 4: mult_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/math.sv Line: 68
 Info (12021): Found 2 design units, including 2 entities, in source file instructmem.sv
-    Info (12023): Found entity 1: instructmem File: U:/EE-469/Lab_4/instructmem.sv Line: 22
-    Info (12023): Found entity 2: instructmem_testbench File: U:/EE-469/Lab_4/instructmem.sv Line: 62
+    Info (12023): Found entity 1: instructmem File: C:/Users/Emraj/Desktop/EE-469/Lab_4/instructmem.sv Line: 22
+    Info (12023): Found entity 2: instructmem_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/instructmem.sv Line: 62
 Info (12021): Found 2 design units, including 2 entities, in source file fulladder_64bit.sv
-    Info (12023): Found entity 1: fullAdder_64bit File: U:/EE-469/Lab_4/fullAdder_64bit.sv Line: 18
-    Info (12023): Found entity 2: adderstim File: U:/EE-469/Lab_4/fullAdder_64bit.sv Line: 39
+    Info (12023): Found entity 1: fullAdder_64bit File: C:/Users/Emraj/Desktop/EE-469/Lab_4/fullAdder_64bit.sv Line: 18
+    Info (12023): Found entity 2: adderstim File: C:/Users/Emraj/Desktop/EE-469/Lab_4/fullAdder_64bit.sv Line: 39
 Info (12021): Found 2 design units, including 2 entities, in source file fulladder_1bit.sv
-    Info (12023): Found entity 1: fullAdder_1bit File: U:/EE-469/Lab_4/fullAdder_1bit.sv Line: 23
-    Info (12023): Found entity 2: fullAdder_1bit_testbench File: U:/EE-469/Lab_4/fullAdder_1bit.sv Line: 51
+    Info (12023): Found entity 1: fullAdder_1bit File: C:/Users/Emraj/Desktop/EE-469/Lab_4/fullAdder_1bit.sv Line: 23
+    Info (12023): Found entity 2: fullAdder_1bit_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/fullAdder_1bit.sv Line: 51
 Info (12021): Found 2 design units, including 2 entities, in source file decode_5_32.sv
-    Info (12023): Found entity 1: decode_5_32 File: U:/EE-469/Lab_4/decode_5_32.sv Line: 14
-    Info (12023): Found entity 2: decode_5_32_testbench File: U:/EE-469/Lab_4/decode_5_32.sv Line: 28
+    Info (12023): Found entity 1: decode_5_32 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/decode_5_32.sv Line: 14
+    Info (12023): Found entity 2: decode_5_32_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/decode_5_32.sv Line: 28
 Info (12021): Found 2 design units, including 2 entities, in source file decode_3_8.sv
-    Info (12023): Found entity 1: decode_3_8 File: U:/EE-469/Lab_4/decode_3_8.sv Line: 14
-    Info (12023): Found entity 2: decode_3_8_testbench File: U:/EE-469/Lab_4/decode_3_8.sv Line: 26
+    Info (12023): Found entity 1: decode_3_8 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/decode_3_8.sv Line: 14
+    Info (12023): Found entity 2: decode_3_8_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/decode_3_8.sv Line: 26
 Info (12021): Found 2 design units, including 2 entities, in source file decode_2_4.sv
-    Info (12023): Found entity 1: decode_2_4 File: U:/EE-469/Lab_4/decode_2_4.sv Line: 10
-    Info (12023): Found entity 2: decode_2_4_testbench File: U:/EE-469/Lab_4/decode_2_4.sv Line: 26
+    Info (12023): Found entity 1: decode_2_4 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/decode_2_4.sv Line: 10
+    Info (12023): Found entity 2: decode_2_4_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/decode_2_4.sv Line: 26
 Info (12021): Found 2 design units, including 2 entities, in source file decode_1_2.sv
-    Info (12023): Found entity 1: decode_1_2 File: U:/EE-469/Lab_4/decode_1_2.sv Line: 10
-    Info (12023): Found entity 2: decode_1_2_testbench File: U:/EE-469/Lab_4/decode_1_2.sv Line: 22
+    Info (12023): Found entity 1: decode_1_2 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/decode_1_2.sv Line: 10
+    Info (12023): Found entity 2: decode_1_2_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/decode_1_2.sv Line: 22
 Info (12021): Found 2 design units, including 2 entities, in source file datamem.sv
-    Info (12023): Found entity 1: datamem File: U:/EE-469/Lab_4/datamem.sv Line: 12
-    Info (12023): Found entity 2: datamem_testbench File: U:/EE-469/Lab_4/datamem.sv Line: 70
+    Info (12023): Found entity 1: datamem File: C:/Users/Emraj/Desktop/EE-469/Lab_4/datamem.sv Line: 12
+    Info (12023): Found entity 2: datamem_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/datamem.sv Line: 70
 Info (12021): Found 2 design units, including 2 entities, in source file d_ff_enable.sv
-    Info (12023): Found entity 1: D_FF_enable File: U:/EE-469/Lab_4/D_FF_enable.sv Line: 18
-    Info (12023): Found entity 2: D_FF_enable_testbench File: U:/EE-469/Lab_4/D_FF_enable.sv Line: 35
+    Info (12023): Found entity 1: D_FF_enable File: C:/Users/Emraj/Desktop/EE-469/Lab_4/D_FF_enable.sv Line: 18
+    Info (12023): Found entity 2: D_FF_enable_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/D_FF_enable.sv Line: 35
 Info (12021): Found 1 design units, including 1 entities, in source file d_ff.sv
-    Info (12023): Found entity 1: D_FF File: U:/EE-469/Lab_4/D_FF.sv Line: 1
+    Info (12023): Found entity 1: D_FF File: C:/Users/Emraj/Desktop/EE-469/Lab_4/D_FF.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file cpustim.sv
-    Info (12023): Found entity 1: cpustim File: U:/EE-469/Lab_4/cpustim.sv Line: 17
+    Info (12023): Found entity 1: cpustim File: C:/Users/Emraj/Desktop/EE-469/Lab_4/cpustim.sv Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file cpu_64bit.sv
-    Info (12023): Found entity 1: CPU_64bit File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 17
+    Info (12023): Found entity 1: CPU_64bit File: C:/Users/Emraj/Desktop/EE-469/Lab_4/CPU_64bit.sv Line: 17
 Info (12021): Found 2 design units, including 2 entities, in source file controllogic.sv
-    Info (12023): Found entity 1: controlLogic File: U:/EE-469/Lab_4/controlLogic.sv Line: 16
-    Info (12023): Found entity 2: controlLogic_testbench File: U:/EE-469/Lab_4/controlLogic.sv Line: 260
+    Info (12023): Found entity 1: controlLogic File: C:/Users/Emraj/Desktop/EE-469/Lab_4/controlLogic.sv Line: 16
+    Info (12023): Found entity 2: controlLogic_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/controlLogic.sv Line: 260
 Info (12021): Found 1 design units, including 1 entities, in source file alustim.sv
-    Info (12023): Found entity 1: alustim File: U:/EE-469/Lab_4/alustim.sv Line: 201
+    Info (12023): Found entity 1: alustim File: C:/Users/Emraj/Desktop/EE-469/Lab_4/alustim.sv Line: 201
 Info (12021): Found 1 design units, including 1 entities, in source file alu_64bit.sv
-    Info (12023): Found entity 1: alu_64bit File: U:/EE-469/Lab_4/alu_64bit.sv Line: 10
+    Info (12023): Found entity 1: alu_64bit File: C:/Users/Emraj/Desktop/EE-469/Lab_4/alu_64bit.sv Line: 10
 Info (12021): Found 2 design units, including 2 entities, in source file alu_1bit.sv
-    Info (12023): Found entity 1: alu_1bit File: U:/EE-469/Lab_4/alu_1bit.sv Line: 37
-    Info (12023): Found entity 2: alu_1bit_testbench File: U:/EE-469/Lab_4/alu_1bit.sv Line: 60
+    Info (12023): Found entity 1: alu_1bit File: C:/Users/Emraj/Desktop/EE-469/Lab_4/alu_1bit.sv Line: 37
+    Info (12023): Found entity 2: alu_1bit_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/alu_1bit.sv Line: 60
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
-    Info (12023): Found entity 1: alu File: U:/EE-469/Lab_4/alu.sv Line: 32
+    Info (12023): Found entity 1: alu File: C:/Users/Emraj/Desktop/EE-469/Lab_4/alu.sv Line: 32
 Warning (12019): Can't analyze file -- file DE1_SoC.sv is missing
 Info (12021): Found 2 design units, including 2 entities, in source file mux2_1.sv
-    Info (12023): Found entity 1: mux2_1 File: U:/EE-469/Lab_4/mux2_1.sv Line: 18
-    Info (12023): Found entity 2: mux2_1_testbench File: U:/EE-469/Lab_4/mux2_1.sv Line: 31
+    Info (12023): Found entity 1: mux2_1 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux2_1.sv Line: 18
+    Info (12023): Found entity 2: mux2_1_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux2_1.sv Line: 31
 Info (12021): Found 2 design units, including 2 entities, in source file pipe_d_ff.sv
-    Info (12023): Found entity 1: Pipe_D_FF File: U:/EE-469/Lab_4/Pipe_D_FF.sv Line: 14
-    Info (12023): Found entity 2: Pipe_D_FF_testbench File: U:/EE-469/Lab_4/Pipe_D_FF.sv Line: 29
+    Info (12023): Found entity 1: Pipe_D_FF File: C:/Users/Emraj/Desktop/EE-469/Lab_4/Pipe_D_FF.sv Line: 14
+    Info (12023): Found entity 2: Pipe_D_FF_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/Pipe_D_FF.sv Line: 29
 Info (12021): Found 2 design units, including 2 entities, in source file pipe_d_ff_5.sv
-    Info (12023): Found entity 1: Pipe_D_FF_5 File: U:/EE-469/Lab_4/Pipe_D_FF_5.sv Line: 14
-    Info (12023): Found entity 2: Pipe_D_FF_5_testbench File: U:/EE-469/Lab_4/Pipe_D_FF_5.sv Line: 29
-Warning (10236): Verilog HDL Implicit Net warning at CPU_64bit.sv(74): created implicit net for "flagSetEX" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 74
-Warning (10236): Verilog HDL Implicit Net warning at CPU_64bit.sv(132): created implicit net for "branchIncPC2" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 132
-Info (12127): Elaborating entity "CPU_64bit" for the top level hierarchy
-Info (12128): Elaborating entity "controlLogic" for hierarchy "controlLogic:theBrain" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 64
-Info (12128): Elaborating entity "D_FF" for hierarchy "D_FF:ALUOpFlop0" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 70
-Info (12128): Elaborating entity "D_FF_enable" for hierarchy "D_FF_enable:forZero" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 105
-Info (12128): Elaborating entity "mux2_1" for hierarchy "D_FF_enable:forZero|mux2_1:theMux" File: U:/EE-469/Lab_4/D_FF_enable.sv Line: 31
-Info (12128): Elaborating entity "mux128_64" for hierarchy "mux128_64:brSelect" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 115
-Info (12128): Elaborating entity "shifter" for hierarchy "shifter:brShifter" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 118
-Info (12128): Elaborating entity "pcUnit" for hierarchy "pcUnit:theProgramCounter" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 123
-Info (12128): Elaborating entity "fullAdder_64bit" for hierarchy "fullAdder_64bit:normalCounter" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 126
-Info (12128): Elaborating entity "fullAdder_1bit" for hierarchy "fullAdder_64bit:normalCounter|fullAdder_1bit:firstAdder" File: U:/EE-469/Lab_4/fullAdder_64bit.sv Line: 24
-Info (12128): Elaborating entity "Pipe_D_FF" for hierarchy "Pipe_D_FF:ifrfo" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 143
-Info (12128): Elaborating entity "mux10_5" for hierarchy "mux10_5:regMux" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 154
-Info (12128): Elaborating entity "regfile" for hierarchy "regfile:registerFile" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 160
-Info (12128): Elaborating entity "decode_5_32" for hierarchy "regfile:registerFile|decode_5_32:Decoder" File: U:/EE-469/Lab_4/regfile.sv Line: 44
-Info (12128): Elaborating entity "decode_2_4" for hierarchy "regfile:registerFile|decode_5_32:Decoder|decode_2_4:submodule1" File: U:/EE-469/Lab_4/decode_5_32.sv Line: 21
-Info (12128): Elaborating entity "decode_3_8" for hierarchy "regfile:registerFile|decode_5_32:Decoder|decode_3_8:submodule2" File: U:/EE-469/Lab_4/decode_5_32.sv Line: 22
-Info (12128): Elaborating entity "decode_1_2" for hierarchy "regfile:registerFile|decode_5_32:Decoder|decode_3_8:submodule2|decode_1_2:submodule1" File: U:/EE-469/Lab_4/decode_3_8.sv Line: 21
-Info (12128): Elaborating entity "mux32_1" for hierarchy "regfile:registerFile|mux32_1:eachMux[0].largeMux1" File: U:/EE-469/Lab_4/regfile.sv Line: 51
-Info (12128): Elaborating entity "mux16_1" for hierarchy "regfile:registerFile|mux32_1:eachMux[0].largeMux1|mux16_1:submodule_1" File: U:/EE-469/Lab_4/mux32_1.sv Line: 17
-Info (12128): Elaborating entity "mux_4_1" for hierarchy "regfile:registerFile|mux32_1:eachMux[0].largeMux1|mux16_1:submodule_1|mux_4_1:submodule1" File: U:/EE-469/Lab_4/mux16_1.sv Line: 18
-Info (12128): Elaborating entity "mux256_64" for hierarchy "mux256_64:movKMux" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 176
-Info (12128): Elaborating entity "Pipe_D_FF_5" for hierarchy "Pipe_D_FF_5:rfex4" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 195
-Info (12128): Elaborating entity "alu" for hierarchy "alu:mainALU" File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 200
-Info (12128): Elaborating entity "alu_1bit" for hierarchy "alu:mainALU|alu_1bit:firstAlu" File: U:/EE-469/Lab_4/alu.sv Line: 40
-Info (12128): Elaborating entity "mux8_1" for hierarchy "alu:mainALU|alu_1bit:firstAlu|mux8_1:submodule2" File: U:/EE-469/Lab_4/alu_1bit.sv Line: 57
-Info (12128): Elaborating entity "zero_flag" for hierarchy "alu:mainALU|zero_flag:check" File: U:/EE-469/Lab_4/alu.sv Line: 55
-Info (12128): Elaborating entity "nor_16x1" for hierarchy "alu:mainALU|zero_flag:check|nor_16x1:nor1" File: U:/EE-469/Lab_4/zero_flag.sv Line: 27
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "dataMemOut[7]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[6]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[5]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[4]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[3]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[2]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[1]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-    Warning (12110): Net "dataMemOut[0]" is missing source, defaulting to GND File: U:/EE-469/Lab_4/CPU_64bit.sv Line: 19
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (144001): Generated suppressed messages file U:/EE-469/Lab_4/output_files/DE1_SoC.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 491 warnings
-    Info: Peak virtual memory: 802 megabytes
-    Info: Processing ended: Tue Nov 28 19:14:23 2017
-    Info: Elapsed time: 00:00:32
-    Info: Total CPU time (on all processors): 00:00:33
+    Info (12023): Found entity 1: Pipe_D_FF_5 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/Pipe_D_FF_5.sv Line: 14
+    Info (12023): Found entity 2: Pipe_D_FF_5_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/Pipe_D_FF_5.sv Line: 29
+Info (12021): Found 2 design units, including 2 entities, in source file pipe_d_ff_32.sv
+    Info (12023): Found entity 1: Pipe_D_FF_32 File: C:/Users/Emraj/Desktop/EE-469/Lab_4/Pipe_D_FF_32.sv Line: 14
+    Info (12023): Found entity 2: Pipe_D_FF_32_testbench File: C:/Users/Emraj/Desktop/EE-469/Lab_4/Pipe_D_FF_32.sv Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file forwardingunit.sv
+    Info (12023): Found entity 1: ForwardingUnit File: C:/Users/Emraj/Desktop/EE-469/Lab_4/ForwardingUnit.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at CPU_64bit.sv(74): created implicit net for "flagSetEX" File: C:/Users/Emraj/Desktop/EE-469/Lab_4/CPU_64bit.sv Line: 74
+Info (12127): Elaborating entity "alu" for the top level hierarchy
+Info (12128): Elaborating entity "alu_1bit" for hierarchy "alu_1bit:firstAlu" File: C:/Users/Emraj/Desktop/EE-469/Lab_4/alu.sv Line: 40
+Info (12128): Elaborating entity "fullAdder_1bit" for hierarchy "alu_1bit:firstAlu|fullAdder_1bit:submodule1" File: C:/Users/Emraj/Desktop/EE-469/Lab_4/alu_1bit.sv Line: 51
+Info (12128): Elaborating entity "mux2_1" for hierarchy "alu_1bit:firstAlu|mux2_1:mux1" File: C:/Users/Emraj/Desktop/EE-469/Lab_4/alu_1bit.sv Line: 54
+Info (12128): Elaborating entity "mux8_1" for hierarchy "alu_1bit:firstAlu|mux8_1:submodule2" File: C:/Users/Emraj/Desktop/EE-469/Lab_4/alu_1bit.sv Line: 57
+Info (12128): Elaborating entity "mux_4_1" for hierarchy "alu_1bit:firstAlu|mux8_1:submodule2|mux_4_1:mux1" File: C:/Users/Emraj/Desktop/EE-469/Lab_4/mux8_1.sv Line: 35
+Info (12128): Elaborating entity "zero_flag" for hierarchy "zero_flag:check" File: C:/Users/Emraj/Desktop/EE-469/Lab_4/alu.sv Line: 55
+Info (12128): Elaborating entity "nor_16x1" for hierarchy "zero_flag:check|nor_16x1:nor1" File: C:/Users/Emraj/Desktop/EE-469/Lab_4/zero_flag.sv Line: 27
+Info (144001): Generated suppressed messages file C:/Users/Emraj/Desktop/EE-469/Lab_4/output_files/DE1_SoC.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 667 megabytes
+    Info: Processing ended: Wed Nov 29 13:33:37 2017
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:34
 
 
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in U:/EE-469/Lab_4/output_files/DE1_SoC.map.smsg.
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Users/Emraj/Desktop/EE-469/Lab_4/output_files/DE1_SoC.map.smsg.
 
 

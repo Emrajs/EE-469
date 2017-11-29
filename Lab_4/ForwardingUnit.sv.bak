@@ -1,0 +1,17 @@
+module ForwardingUnit(ForwardA, ForwardB, ExMem_RegWrite, MemWB_RegWrite, ExMem_Rd, MemWB_Rd, Rn, Rm);
+	input logic ExMem_RegWrite, MemWB_RegWrite;
+	input logic [4:0] ExMem_Rd, MemWB_Rd, Rn, Rm;
+	output logic [1:0] ForwardA, ForwardB;
+	
+	always_comb begin
+		if ((ExMem_RegWrite == 1) && (ExMem_Rd != 5'b11111) && (ExMem_Rd == Rn))
+			ForwardA = 2'b10;
+		else if ((ExMem_RegWrite == 1) && (ExMem_Rd != 5'b11111) && (ExMem_Rd = Rm)) 
+			ForwardB = 2'b10;
+		else 
+			ForWardA = 2'bx;
+			ForwardB = 2'bx;
+	
+	end
+
+endmodule 
