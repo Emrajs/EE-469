@@ -17,7 +17,7 @@
 module CPU_64bit (clk, reset);
 	input logic clk, reset;
 	logic [63:0] DaRF, DaForward, DaEX, DbRF, DbForward, DbEX, DbMem, WriteDataWB, WriteDataMem, aluBRF, aluBForward, aluBEX, aluResultEX, aluResultMem, dataMemOut, 
-	             fullImm16, addIMuxOut, immSelector, newPC, oldPC, normalIncPC, branchIncPC, bToAdder, 
+	             fullImm16, addIMuxOut, immSelector, newPC, oldPC, prevPC, thePC, normalIncPC, branchIncPC, bToAdder, 
 					 postShiftB, altBInput, movzMux, toRegFinal;
 	logic [31:0] instructionIF, instructionRF;
 	logic [25:0] brAddr26;
@@ -27,10 +27,11 @@ module CPU_64bit (clk, reset);
 	logic [10:0] opcode;
 	logic [8:0] dAddr9;
 	logic [4:0] RdRF, RdEX, RdMem, RdWB, Rm, Rn, Rmux;
-	logic [1:0] shamt, ForwardA, ForwardB;
+	logic [1:0] shamt, ForwardA, ForwardB, ForwardData;
 	
    //Control signals
-   logic negative, zero, fastZero, overflow, carry_out, nTrue, zTrue, oTrue, cTrue, ctlLDURBRF, ctlLDURBEX, ctlLDURBMem;
+   logic negative, zero, fastZero, overflow, carry_out, nTrue, zTrue, oTrue, cTrue, ctlLDURBRF, ctlLDURBEX, ctlLDURBMem,
+	      zeroFlag, carryFlag, overflowFlag, negativeFlag;
 	logic [2:0] ALUOpRF, ALUOpEX;
 	logic RegWriteRF, RegWriteEX, RegWriteMem, RegWriteWB;
 	logic movz, movk;
@@ -41,8 +42,9 @@ module CPU_64bit (clk, reset);
 	logic MemToRegRF, MemToRegEX, MemToRegMem;
 	logic UncondBr;
 	logic BrTaken;
+	logic wasBranch;
 	logic read_enableRF, read_enableEX, read_enableMem;
-	logic flagSetRF, flagSetEx;
+	logic flagSetRF, flagSetEx, ForwardFlag;
 	logic [3:0] xfer_sizeRF, xfer_sizeEX, xfer_sizeMem;	// xfer_size should either send 1000 (for 8 bytes) or 0001 (for 1 byte) to datamem.
 	
    //Assign statements for readability
@@ -59,9 +61,9 @@ module CPU_64bit (clk, reset);
 
 //Control Logic Call
 	
-   controlLogic theBrain (.OpCode(opcode), .zero(zTrue), .notFlagZero(fastZero), .negative(nTrue), .carryout(cTrue), .overflow(oTrue), .RegWrite(RegWriteRF), .Reg2Loc, 
+   controlLogic theBrain (.OpCode(opcode), .zero(zeroFlag), .notFlagZero(fastZero), .negative(negativeFlag), .carryout(carryFlag), .overflow(overflowFlag), .RegWrite(RegWriteRF), .Reg2Loc, 
    	                    .ALUSrc, .ALUOp(ALUOpRF), .MemWrite(MemWriteRF), .MemToReg(MemToRegRF), .UncondBr, .BrTaken,  
-   						     .Imm_12, .xfer_size(xfer_sizeRF), .read_en(read_enableRF), .movz(movz), .flagSet(flagSetRF), .movk(movk), .ctlLDURB(ctlLDURBRF)); 
+   						     .Imm_12, .xfer_size(xfer_sizeRF), .read_en(read_enableRF), .movz(movz), .flagSet(flagSetRF), .movk(movk), .ctlLDURB(ctlLDURBRF), .wasBranch); 
 
 	//Fast zero flag for pipeline
 	
@@ -104,14 +106,14 @@ module CPU_64bit (clk, reset);
 	
 	//Forwarding logic
 	
-	ForwardingUnit superFast (.ForwardA, .ForwardB, .ExMem_RegWrite(RegWriteEX), .MemWB_RegWrite(RegWriteMem), .ExMem_Rd(RdEX), .MemWB_Rd(RdMem), .Rn(Rn), .Rm(Rm));
+	ForwardingUnit superFast (.ForwardA, .ForwardB, .ForwardData, .ForwardFlag, .flagSetEX, .wasBranch, .movk, .movz, .ExMem_RegWrite(RegWriteEX), .MemWB_RegWrite(RegWriteMem), .ExMem_Rd(RdEX), .MemWB_Rd(RdMem), .Rn(Rn), .Rm(Rmux));
 	
 	
 	//MUXs for forwarding
 
 	mux256_64 forwardAMUX (.inThree(64'h0000000000000000), .inTwo(aluResultEX), .inOne(WriteDataMem), .inZero(DaForward), .sel(ForwardA), .out(DaRF));
-	mux256_64 forwardBMUX (.inThree(64'h0000000000000000), .inTwo(aluResultEX), .inOne(WriteDataMem), .inZero(DbForward), .sel(ForwardB), .out(DbRF));
-	mux256_64 forwardDataBMUX (.inThree(64'h0000000000000000), .inTwo(DbEX), .inOne(DbMem), .inZero(aluBForward), .sel(ForwardB), .out(aluBRF));
+	mux256_64 forwardBMUX (.inThree(64'h0000000000000000), .inTwo(aluResultEX), .inOne(WriteDataMem), .inZero(aluBForward), .sel(ForwardB), .out(aluBRF));
+	mux256_64 forwardDataBMUX (.inThree(64'h0000000000000000), .inTwo(aluResultEX), .inOne(WriteDataMem), .inZero(DbForward), .sel(ForwardData), .out(DbRF));
 
 
 	
@@ -121,13 +123,21 @@ module CPU_64bit (clk, reset);
 	D_FF_enable forNegative (.q(nTrue), .d(negative), .en(flagSetEX), .clk);
 	D_FF_enable forCarryout (.q(cTrue), .d(carry_out), .en(flagSetEX), .clk);
 	D_FF_enable forOverflow (.q(oTrue), .d(overflow), .en(flagSetEX), .clk);
-	
+
+//If the flag is needed early, route it forward with forwarding logic!
+
+   mux2_1 forZeroForward (.in({zero, zTrue}), .sel(ForwardFlag), .out(zeroFlag));
+	mux2_1 forNegativeForward (.in({negative, nTrue}), .sel(ForwardFlag), .out(negativeFlag));
+	mux2_1 forCarryoutForward (.in({carry_out, cTrue}), .sel(ForwardFlag), .out(carryFlag));
+	mux2_1 forOverflowForward (.in({overflow, oTrue}), .sel(ForwardFlag), .out(overflowFlag));
+
+
 //Program counter logic 
 	
 	//Conditional/unconditional branching PC increment logic
 	
 	// Selects between brAddr26 or condAddr19. Select signal is UncondBr.
-	mux128_64 brSelect (.inOne({{38{brAddr26[25]}}, brAddr26}), .inZero({{45{condAddr19[18]}}, condAddr19}), .sel(UncondBr), .out(postShiftB));
+	mux128_64 unCondBrMUX (.inOne({{38{brAddr26[25]}}, brAddr26}), .inZero({{45{condAddr19[18]}}, condAddr19}), .sel(UncondBr), .out(postShiftB));
 	
 	// Shifts value (either brAddr26 or condAddr19) from brSelect by 2 bits (<<2).
 	shifter brShifter (.value(postShiftB), .direction(1'b0), .distance(6'b000010), .result(bToAdder));
@@ -138,13 +148,13 @@ module CPU_64bit (clk, reset);
 	pcUnit theProgramCounter (.in(newPC), .clk(clk), .reset(reset), .out(oldPC));
 	
 	// PC = PC + 4
-	fullAdder_64bit normalCounter (.A(oldPC), .B({{60{1'b0}}, 4'b0100}), .result(normalIncPC));
+	fullAdder_64bit normalCounter (.A(thePC), .B({{60{1'b0}}, 4'b0100}), .result(normalIncPC));
 	
 	// PC = PC + SignExtend((BrAddr26)/(CondAddr19))<<2.
-	fullAdder_64bit branchCounter (.A(bToAdder), .B(oldPC), .result(branchIncPC));
+	fullAdder_64bit branchCounter (.A(bToAdder), .B(thePC), .result(branchIncPC));
 	
 	// Mux that decides between PC+4 or PC = PC + SignExtend((BrAddr26)/(CondAddr19))<<2.
-	mux128_64 pcSelect (.inOne(branchIncPC), .inZero(normalIncPC), .sel(BrTaken), .out(newPC));
+	mux128_64 brTakenMUX (.inOne(branchIncPC), .inZero(normalIncPC), .sel(BrTaken), .out(newPC));
 	
 	
    //Instruction Memory
@@ -152,10 +162,15 @@ module CPU_64bit (clk, reset);
 	instructmem theInstructions (.address(oldPC), .instruction(instructionIF), .clk(clk));
 
 	
+	//Old PC flip flop for branching
+	
+	mux128_64 oldPCMUX (.inOne(prevPC), .inZero(oldPC), .sel(wasBranch), .out(thePC));	
+	Pipe_D_FF oldPCDFF (.q(prevPC), .d(oldPC), .reset, .clk);
+	
 	
 	//IF - RF Pipe
 	
-	Pipe_D_FF_32 ifrfo (.q(instructionRF), .d(instructionIF), .clk);
+	Pipe_D_FF_32 ifrfo (.q(instructionRF), .d(instructionIF), .reset, .clk);
 	
 	
 	
@@ -201,11 +216,11 @@ module CPU_64bit (clk, reset);
 	
 	//RF - EX Pipes
 	
-	Pipe_D_FF rfex0 (.q(DaEX), .d(DaRF), .clk);
-	Pipe_D_FF rfex1 (.q(DbEX), .d(DbRF), .clk);
-	Pipe_D_FF rfex2 (.q(aluBEX), .d(aluBRF), .clk);
+	Pipe_D_FF rfex0 (.q(DaEX), .d(DaRF), .reset, .clk);
+	Pipe_D_FF rfex1 (.q(DbEX), .d(DbRF), .reset, .clk);
+	Pipe_D_FF rfex2 (.q(aluBEX), .d(aluBRF), .reset, .clk);
 	
-	Pipe_D_FF_5 rfex4 (.q(RdEX), .d(RdRF), .clk);
+	Pipe_D_FF_5 rfex4 (.q(RdEX), .d(RdRF), .reset, .clk);
 	
 	
 	
@@ -216,10 +231,10 @@ module CPU_64bit (clk, reset);
 	
 	//EX - MEM Pipes
 	
-	Pipe_D_FF exmem0 (.q(DbMem), .d(DbEX), .clk);
-	Pipe_D_FF exmem1 (.q(aluResultMem), .d(aluResultEX), .clk);
+	Pipe_D_FF exmem0 (.q(DbMem), .d(DbEX), .reset, .clk);
+	Pipe_D_FF exmem1 (.q(aluResultMem), .d(aluResultEX), .reset, .clk);
 	
-	Pipe_D_FF_5 exmem3 (.q(RdMem), .d(RdEX), .clk);
+	Pipe_D_FF_5 exmem3 (.q(RdMem), .d(RdEX), .reset, .clk);
 	
 	
 	
@@ -237,9 +252,9 @@ module CPU_64bit (clk, reset);
 	
 	//MEM - WB Pipes
 	
-	Pipe_D_FF memwb0 (.q(WriteDataWB), .d(WriteDataMem), .clk);
+	Pipe_D_FF memwb0 (.q(WriteDataWB), .d(WriteDataMem), .reset, .clk);
 	
-	Pipe_D_FF_5 memwb1 (.q(RdWB), .d(RdMem), .clk);
+	Pipe_D_FF_5 memwb1 (.q(RdWB), .d(RdMem), .reset, .clk);
 	
 	
 	

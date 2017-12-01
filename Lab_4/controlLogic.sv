@@ -14,10 +14,10 @@ I am not too sure about. STURB and LDURB require bytes. B_LT I'm also not sure o
 
 
 module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, RegWrite, Reg2Loc, ALUSrc, ALUOp, MemWrite,
-                     MemToReg, UncondBr, BrTaken, Imm_12, xfer_size, read_en, movz, flagSet, movk, ctlLDURB);
+                     MemToReg, UncondBr, BrTaken, Imm_12, xfer_size, read_en, movz, flagSet, movk, ctlLDURB, wasBranch);
 	input logic [10:0] OpCode;
 	input logic zero, negative, carryout, overflow, notFlagZero;
-	output logic RegWrite, Reg2Loc, ALUSrc, MemWrite, MemToReg, UncondBr, BrTaken, Imm_12, read_en, movk, movz, flagSet, ctlLDURB;
+	output logic RegWrite, Reg2Loc, ALUSrc, MemWrite, MemToReg, UncondBr, BrTaken, Imm_12, read_en, movk, movz, flagSet, ctlLDURB, wasBranch;
 	output logic [2:0] ALUOp;
 	output logic [3:0] xfer_size;
 	
@@ -48,6 +48,7 @@ module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, Re
 										flagSet   = 1'b0;
 										movk      = 1'b0;
 										ctlLDURB  = 1'b0;
+										wasBranch = 1'b0;
 									  end
 				ADDS:            begin   // Need to add flags
 										RegWrite  = 1'b1;
@@ -65,6 +66,7 @@ module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, Re
 										flagSet   = 1'b1;
 										movk      = 1'b0;
 										ctlLDURB  = 1'b0;
+										wasBranch = 1'b0;
 									  end
 				B: 				  begin   
 									   RegWrite  = 1'b0;
@@ -82,6 +84,7 @@ module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, Re
 										flagSet   = 1'b0;
 										movk      = 1'b0;
 										ctlLDURB  = 1'b0;
+										wasBranch = 1'b1;
 									  end
 				B_LT:            begin
 									   RegWrite  = 1'b0;
@@ -99,6 +102,7 @@ module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, Re
 										flagSet   = 1'b0;
 										movk      = 1'b0;
 										ctlLDURB  = 1'b0;
+										wasBranch = 1'b1;
 									  end
 				CBZ: 				  begin  
 										RegWrite  = 1'b0;
@@ -116,6 +120,7 @@ module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, Re
 										flagSet   = 1'b0;
 										movk      = 1'b0;
 										ctlLDURB  = 1'b0;
+										wasBranch = 1'b1;
 									  end
 				LDUR:            begin  
 										RegWrite  = 1'b1;
@@ -133,6 +138,7 @@ module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, Re
 										flagSet   = 1'b0;
 										movk      = 1'b0;
 										ctlLDURB  = 1'b0;
+										wasBranch = 1'b0;
 									  end
 			   LDURB:           begin             
 										RegWrite  = 1'b1;
@@ -149,7 +155,8 @@ module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, Re
 										movz      = 1'b0;
 										flagSet   = 1'b0;
 										movk      = 1'b0;
-										ctlLDURB  = 1'b1;										
+										ctlLDURB  = 1'b1;
+										wasBranch = 1'b0;										
 									  end
 				STUR:            begin 
 										RegWrite  = 1'b0;
@@ -166,7 +173,8 @@ module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, Re
 										movz      = 1'b0;
 										flagSet   = 1'b0;
 										movk      = 1'b0;
-										ctlLDURB  = 1'b0;											
+										ctlLDURB  = 1'b0;
+										wasBranch = 1'b0;
 									  end
 				STURB:           begin      
 										RegWrite  = 1'b0;
@@ -183,7 +191,8 @@ module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, Re
 										movz      = 1'b0;
 										flagSet   = 1'b0;
 										movk      = 1'b0;
-										ctlLDURB  = 1'b0;											
+										ctlLDURB  = 1'b0;
+										wasBranch = 1'b0;
 									  end
 				SUBS:            begin // Need to add flags
 										RegWrite  = 1'b1;
@@ -200,7 +209,8 @@ module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, Re
 										movz      = 1'b0;
 										flagSet   = 1'b1;
 										movk      = 1'b0;	
-										ctlLDURB  = 1'b0;										
+										ctlLDURB  = 1'b0;
+										wasBranch = 1'b0;
 									  end 
 				MOVK:            begin
 										RegWrite  = 1'b1;
@@ -217,7 +227,8 @@ module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, Re
 										movz      = 1'b0;
 										flagSet   = 1'b0;
 										movk      = 1'b1;	
-										ctlLDURB  = 1'b0;										
+										ctlLDURB  = 1'b0;
+										wasBranch = 1'b0;
 									  end
 				MOVZ:            begin
 										RegWrite  = 1'b1;
@@ -234,7 +245,8 @@ module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, Re
 										movz      = 1'b1;
 										flagSet   = 1'b0;
 										movk      = 1'b0;
-										ctlLDURB  = 1'b0;											
+										ctlLDURB  = 1'b0;
+										wasBranch = 1'b0;
 									  end
 				default          begin
 									   RegWrite  = 1'b0;
@@ -243,15 +255,16 @@ module controlLogic (OpCode, zero, notFlagZero, negative, carryout, overflow, Re
 										ALUOp     = 3'bxxx;
 										MemWrite  = 1'b0;
 										MemToReg  = 1'bx;
-										BrTaken   = 1'bx;
+										BrTaken   = 1'b0;
 										UncondBr  = 1'bx;
 										Imm_12    = 1'bx;
 										xfer_size = 4'bxxxx;
 										read_en   = 1'b0;
-										movz      = 1'b0;
+										movz      = 1'bx;
 										flagSet   = 1'b0;
-										movk      = 1'b0;
-										ctlLDURB  = 1'b0;	
+										movk      = 1'bx;
+										ctlLDURB  = 1'bx;
+										wasBranch = 1'b0;
 										end
 			endcase																				
 		end	
@@ -260,13 +273,13 @@ endmodule
 module controlLogic_testbench();
 	logic [31:21] OpCode;
 	logic zero, notFlagZero, negative, carryout, overflow;
-   logic RegWrite, Reg2Loc, ALUSrc, MemWrite, MemToReg, UncondBr, BrTaken, Imm_12, read_en, movz, flagSet, movk, ctlLDURB;
+   logic RegWrite, Reg2Loc, ALUSrc, MemWrite, MemToReg, UncondBr, BrTaken, Imm_12, read_en, movz, flagSet, movk, ctlLDURB, wasBranch;
 	logic [2:0] ALUOp;
 	logic [3:0] xfer_size;
 	
 	controlLogic dut (.OpCode, .zero, .notFlagZero, .negative, .carryout, .overflow, .RegWrite, .Reg2Loc, 
 	                  .ALUSrc, .ALUOp,.MemWrite, .MemToReg, .UncondBr, .BrTaken, 
-							.Imm_12, .xfer_size, .read_en, .movz, .flagSet, .movk, .ctlLDURB);
+							.Imm_12, .xfer_size, .read_en, .movz, .flagSet, .movk, .ctlLDURB, .wasBranch);
 	
 	initial begin
 		OpCode = 11'b00000000000; #100;             // should go to default

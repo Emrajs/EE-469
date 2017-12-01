@@ -11,16 +11,16 @@
 *
 *******************************************************************************/
 
-module Pipe_D_FF_32 (q, d, clk);
+module Pipe_D_FF_32 (q, d, reset, clk);
 	input logic [31:0] d;
-	input logic clk;
+	input logic clk, reset;
 	output logic [31:0] q;
 	
 	genvar a;
 	
 	generate 
 		for (a = 0; a < 32; a++) begin : eachFlop
-			D_FF oneFlop (.q(q[a]), .d(d[a]), .reset(1'b0), .clk);
+			D_FF oneFlop (.q(q[a]), .d(d[a]), .reset, .clk);
 		end
 	endgenerate
 	
@@ -28,9 +28,9 @@ endmodule
 
 module Pipe_D_FF_32_testbench();
 	logic [31:0] q, d;
-	logic clk;
+	logic clk, reset;
 
-	Pipe_D_FF_32 dut (.q, .d, .clk);
+	Pipe_D_FF_32 dut (.q, .d, .reset, .clk);
 
 	initial begin
 		q=64'h00000000; d=64'h00000000; clk=0; #10;
