@@ -106,7 +106,7 @@ module CPU_64bit (clk, reset);
 	
 	//Forwarding logic
 	
-	ForwardingUnit superFast (.ForwardA, .ForwardB, .ForwardData, .ForwardFlag, .flagSetEX, .wasBranch, .movk, .movz, .ExMem_RegWrite(RegWriteEX), .MemWB_RegWrite(RegWriteMem), .ExMem_Rd(RdEX), .MemWB_Rd(RdMem), .Rn(Rn), .Rm(Rmux));
+	ForwardingUnit superFast (.ForwardA, .ForwardB, .ForwardData, .ForwardFlag, .flagSetEX, .wasBranch, .movk, .movz, .ALUSrc, .ExMem_RegWrite(RegWriteEX), .MemWB_RegWrite(RegWriteMem), .ExMem_Rd(RdEX), .MemWB_Rd(RdMem), .Rn(Rn), .Rm(Rmux));
 	
 	
 	//MUXs for forwarding

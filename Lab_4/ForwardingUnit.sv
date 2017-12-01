@@ -1,5 +1,5 @@
-module ForwardingUnit(ForwardA, ForwardB, ForwardData, ForwardFlag, flagSetEX, wasBranch, movk, movz, ExMem_RegWrite, MemWB_RegWrite, ExMem_Rd, MemWB_Rd, Rn, Rm);
-	input logic ExMem_RegWrite, MemWB_RegWrite, flagSetEX, wasBranch, movk, movz;
+module ForwardingUnit(ForwardA, ForwardB, ForwardData, ForwardFlag, flagSetEX, wasBranch, movk, movz, ALUSrc, ExMem_RegWrite, MemWB_RegWrite, ExMem_Rd, MemWB_Rd, Rn, Rm);
+	input logic ExMem_RegWrite, MemWB_RegWrite, flagSetEX, wasBranch, movk, movz, ALUSrc;
 	input logic [4:0] ExMem_Rd, MemWB_Rd, Rn, Rm;
 	output logic [1:0] ForwardA, ForwardB, ForwardData;
 	output logic ForwardFlag;
@@ -18,10 +18,10 @@ module ForwardingUnit(ForwardA, ForwardB, ForwardData, ForwardFlag, flagSetEX, w
 		
 		// EX hazard. Check if destination register is equal to X31 and if Rd in instruction k
 		// is equal to source register (Rn) in instruction k+1.
-		if ((ExMem_RegWrite) & (ExMem_Rd != 5'b11111) & (ExMem_Rd == Rm) & (!movz) & (!movk)) begin
+		if ((ExMem_RegWrite) & (ExMem_Rd != 5'b11111) & (ExMem_Rd == Rm) & (!movz) & (!movk) & (!ALUSrc)) begin
 			ForwardB = 2'b10;
 		// MEM hazard. 	
-		end else if ((MemWB_RegWrite) & (MemWB_Rd != 5'b11111) & (MemWB_Rd == Rm) & (!movz) & (!movk)) begin
+		end else if ((MemWB_RegWrite) & (MemWB_Rd != 5'b11111) & (MemWB_Rd == Rm) & (!movz) & (!movk) & (!ALUSrc)) begin
 			ForwardB = 2'b01;
 		end else begin
 			ForwardB = 2'b00;	
