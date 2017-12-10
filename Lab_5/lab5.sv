@@ -12,7 +12,7 @@
 // 
 //   When start_access = 0, the other input values do not matter.
 //   bytemask controls which bytes are actually written (ignored on a read).
-//     If bytemask[i] == 1, we do write the byte from data_in[8*i+7 : 8*i] to memory at the corresponding position.  If == 0, that byte not written.
+//     If bytemask[i] == 1, we do write the byte from data_in[8*i+7 : 8*i] to memory at the corresponding position.  If == 0, that byte is not written.
 //   To do a read: write = 0,  data_in does not matter.  data_out will have the proper data for the single cycle where access_done==1.
 //   On a write, write = 1 and data_in must have the data to write.
 //
@@ -25,7 +25,7 @@
 // Line to set up the timing of simulation: says units to use are ns, and smallest resolution is 10ps.
 `timescale 1ns/10ps
 
-module lab5 #(parameter [22:0] MODEL_NUMBER = 1350364, parameter DMEM_ADDRESS_WIDTH = 20) (
+module lab5 #(parameter [22:0] MODEL_NUMBER = 0, parameter DMEM_ADDRESS_WIDTH = 20) (
 	// Commands:
 	//   (Comes from processor).
 	input		logic [DMEM_ADDRESS_WIDTH-1:0]	address,			// The byte address.  Must be word-aligned if byte_access != 1.
@@ -51,7 +51,7 @@ endmodule
 // Test the data memory, and figure out the settings.
 
 module lab5_testbench ();
-	localparam USERID = 1470460;  // Set to your student ID #
+	localparam USERID = 0;  // Set to your student ID #
 	localparam ADDRESS_WIDTH = 20;
 	localparam DATA_WIDTH = 8;
 	
@@ -65,7 +65,7 @@ module lab5_testbench ();
 	// Control signals:
 	logic										clk;
 	logic										reset;				// A reset will invalidate all cache entries, and return main memory to the default initial values.
-
+	
 	lab5 #(.MODEL_NUMBER(USERID), .DMEM_ADDRESS_WIDTH(ADDRESS_WIDTH)) dut
 		(.address, .data_in, .bytemask, .write, .start_access, .access_done, .data_out, .clk, .reset); 
 
@@ -240,6 +240,9 @@ module lab5_testbench ();
 	logic [ADDRESS_WIDTH-1:0]		addr;
 	int	i, delay, minval, maxval;
 	
+	//testing int
+	int blocksize, minD, temp, count, replacement, assoc, L2minD;
+	
 	initial begin
 		dummy_data <= '0;
 		resetMem();				// Initialize the memory.
@@ -265,7 +268,140 @@ module lab5_testbench ();
 		// Read all of the first KB
 		readStride(0, 8, 1024/8, minval, maxval);
 		$display("%t Reading the first KB took between %d and %d cycles each", $time, minval, maxval);
-
+		
+		//Blocksize
+		//Pulls data to the first entry in the cache, keeps accessing higher and higher alligned addresses until a cache miss
+		resetMem();
+		addr = 0;
+		temp = 0;
+		blocksize = 0;
+		readMem(addr, dummy_data, delay);
+		minD = delay;
+		//$display("%t Blocksize read took %d cycles", $time, delay);
+		
+		for (i=0; i<10; i++) begin
+			addr = i*8; // *8 to doubleword-align the access.
+			readMem(addr, dummy_data, delay);
+			minD = min(minD, delay);
+			if ((minD < delay) & temp != 1) begin
+				temp = 1;
+				blocksize = i * 8;
+			end
+			//$display("%t Read took %d cycles", $time, delay);
+		end
+		
+		$display("Block Size: %d", blocksize);
+		
+		//Number of Blocks
+		//Goes through accessing an increasing number of blocks until something gets replaced
+		
+		resetMem();
+		addr = 0;
+		count = 0;
+		replacement = 0;
+		readMem(addr, dummy_data, delay);
+		//$display("%t First read took %d cycles", $time, delay);
+		readMem(addr, dummy_data, delay);
+		//$display("%t Second read took %d cycles", $time, delay);
+		minD = delay;
+		
+		while(delay <= minD) begin
+			count++;
+			resetMem();
+			for (i=0;i<=count;i++) begin
+				addr = i*blocksize;
+				readMem(addr, dummy_data, delay);
+				//$display("%t Read took %d cycles", $time, delay);
+			end
+		
+			for (i=0;i<=count;i++) begin
+				addr = i*blocksize;
+				readMem(addr, dummy_data, delay);
+				//$display("%t Checking took %d cycles", $time, delay);
+				if (delay > minD)
+					continue;
+			end
+		
+			if(i == 0)
+				replacement = 1;
+		end
+		
+		$display("Replacement: %d", replacement);
+		$display("Number of Blocks: %d", count);
+		$display("Hit Time: %d", minD);
+		$display("L2 Hit Time: %d", delay-minD);
+		L2minD = delay-minD;
+		
+		//Associativity
+		//Reads from address zero and increments by the total cache size, 
+		//and then checks to see if any of the original values in the cache were overwritten
+		
+		resetMem();
+		addr = 0;
+		assoc = 0;
+		readMem(addr, dummy_data, delay);
+		//$display("%t First read took %d cycles", $time, delay);
+		readMem(addr, dummy_data, delay);
+		//$display("%t Second read took %d cycles", $time, delay);
+		minD = delay;
+		
+		while(delay <= minD) begin
+			assoc++;
+			resetMem();
+			for (i=0;i<=assoc;i++) begin
+				addr = i*count*blocksize;
+				readMem(addr, dummy_data, delay);
+				//$display("%t Read took %d cycles", $time, delay);
+			end
+			
+			for (i=0;i<=assoc;i++) begin
+				addr = i*count*blocksize;
+				readMem(addr, dummy_data, delay);
+				//$display("%t Checking took %d cycles", $time, delay);
+				if (delay > minD)
+					continue;
+			end
+		end
+		
+		$display("Associativity: %d", assoc);
+		
+		//L2 Number of Blocks
+		//
+		/*
+		resetMem();
+		addr = 0;
+		count = 0;
+		readMem(addr, dummy_data, delay);
+		//$display("%t First read took %d cycles", $time, delay);
+		readMem(addr, dummy_data, delay);
+		//$display("%t Second read took %d cycles", $time, delay);
+		minD = delay;
+		
+		while (delay <= L2minD) begin
+			while(delay <= minD) begin
+				count++;
+				resetMem();
+				for (i=0;i<=count;i++) begin
+					addr = i*blocksize;
+					readMem(addr, dummy_data, delay);
+					//$display("%t Read took %d cycles", $time, delay);
+				end
+			
+				for (i=0;i<=count;i++) begin
+					addr = i*blocksize;
+					readMem(addr, dummy_data, delay);
+					//$display("%t Checking took %d cycles", $time, delay);
+					if (delay > minD)
+						continue;
+				end
+			
+			end
+		end
+		
+		//Write Back
+		//
+		*/
+		
 		$stop();
 	end
 	
